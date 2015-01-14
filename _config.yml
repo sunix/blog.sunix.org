@@ -1,27 +1,26 @@
 ### Site info:
-title: Freshman21
-tagline: Another Jekyll theme, Freshman twenty-first
-author: Lijia Yu
-email: yu@lijiayu.net
-description: "Freshman21 is a Jekyll blog theme." # You can edit this line in _config.yml. It will appear in your document head meta and in your feed.xml site description
-keywords: "Jekyll, theme, Freshman21"
-baseurl: "/freshman21" # the subpath of your site, e.g. /blog/
-url: "http://yulijia.net/freshman21" # the base hostname & protocol for your site
+title: "{ blog.sunix.org }"
+tagline: "Java Eclipse Che Codenvy Nuxeo Linux Cloud"
+author: Sun Seng David TAN (a.k.a Sunix)
+email: sunix@sunix.org
+description: "Sunix's blog site about Java, Eclipse, software development and FOSS"
+keywords: "sunix. Java. Eclipse. Che. Codenvy. Nuxeo"
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://blog.sunix.org" # the base hostname & protocol for your site
 locale: en_US
 
 ### Personal info and site tools info:
-twitter_username: yulijia
-github_username:  yulijia
-disqus_shortname: freshman21
+twitter_username: sunsengdavidtan
+github_username:  sunix
+disqus_shortname: sunix
 favicon:     "/images/favicon.ico"
-aboutme: Hi, this is Lijia Yu. I made the Freshman21 theme. Please enjoy it. # these are shown on aboutme-sidebar.
-aboutme_photo: https://i.imgur.com/Mdc4szJl.jpg# your photo.
-google_analytics_key: UA-57979084-1 # put YOUR key here to enable tracking! (blank to disable)
+aboutme: Hi there, I'm Sun Seng David TAN (a.k.a. Sunix), a Java software developer working for Serli. I'm a Codenvy/Eclipse Che commiter. As a developer and a team leader, I'm working on the SaaS developer environment Codenvy. I've previously worked as a Java developer for Nuxeo, the Enterprise Content Management framework.
+aboutme_photo: https://secure.gravatar.com/avatar/b1f5e51435209676f03b1332e7fcf405?&s=200 # your photo.
 
 
 ### Site setting:
 ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
-default_column: "two" # blog style: two columns, if default_column != "two", you will see a one column blog.
+default_column: "one" # blog style: two columns, if default_column != "two", you will see a one column blog.
 default_locale: "en" # blog sidebar language set, only include: English(en) and Chinese (cn)
 
 locales:

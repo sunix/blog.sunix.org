@@ -1,0 +1,1 @@
+{"mixinTypes":[],"builders":{"configs":{}},"runners":{"configs":{"project:/Jekyll":{"variables":{"configurationType":"blank"},"ram":1000,"options":{}},"project://Jekyll":{"variables":{},"ram":0,"options":{}}},"default":"project:/Jekyll"},"description":"Welcome to use Jekyll theme Freshman21. ","type":"blank","attributes":{}}

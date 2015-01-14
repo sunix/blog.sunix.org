@@ -1,28 +1,15 @@
 ---
 layout: page
-title: About
+title: About me
 comments: yes
 permalink: /about/
 ---
 
+<img title="{{site.author}}" src="{{site.aboutme_photo}}" alt="{{site.author}}"/>
+<span>{{site.aboutme}}</span>
+<br />
 
-### Freshman21 is a Jekyll theme.
-
-A tribute to Twenty Twelve and Twenty eleven.
-
-I like wordpress's theme Twenty Twelve and Twenty eleven very much. 
-So I called my Jekyll theme Freshman21 (Freshman <q>twenty-first</q> , it means twenty-first century, not twenty-one), this theme is based on my former theme [Freshman](https://github.com/yulijia/freshman/).
-
-Freshman21 have two main page format, one is [single column](http://yulijia.net/en/  "see demo"), the other is two columns. For more details, please see the articles on the site.
-
-<cite>Proudly enjoy using Freshman21 theme.</cite> <code>;)</code>
-
-<img title="麋鹿" src="https://i.imgur.com/Mdc4szJl.jpg" alt="麋鹿" width="580" height="668" />
-
-#### Hi, the picture you have seen in the sample-page is a Père David's deer photoed by my friend at Beijing Milu Park, China.
-
-
-Milu(麋鹿) is the chinese name of Père David's deer.
-
-All photos on this website are copyrighted material and all rights are reserved.
+{% if site.ShowContactInfo == "True" %}
+You can contact me via: {% if site.email != empty %}[Email](mailto:{{site.email}}) / {% endif %}{% if site.github_username != empty %}[Github](https://github.com/{{site.github_username}}){% endif %} / {% if site.twitter_username != empty %}[Twitter](https://twitter.com/{{site.twitter_username}}){% endif %}
+{% endif %}
 
