@@ -17,6 +17,7 @@ Hi everyone ! I'm starting my new blog site. In this first blog post, we are goi
 Jekyll, Github Pages, Docker, Eclipse Che cloud IDE and Codenvy.
 
 <!-- more -->
+and more and more
 
 You can right away help me in improving this blog site by clicking on this link [![open in IDE]({{ site.url }}/images/contribute.svg)](https://codenvy.com/f?id=k307cp4ad7ib5gex).
 If this is the first time, pay attention to the blocked popup: please authorize `codenvy.com` to popup dialog boxes, go back the this page and click again on this link.
