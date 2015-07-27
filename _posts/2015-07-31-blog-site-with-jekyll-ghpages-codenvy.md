@@ -195,7 +195,7 @@ reloaded. You will need to restart the Docker runner.
 
 
 ### Overriding url configuration at runtime
-The last lines of the Dockerfile override the baserurl and the url so that the site works well when running on Eclipse Che Docker AND on Github Pages.
+The last lines of the Dockerfile override the base url and the url so that the site works well when running on Eclipse Che Docker AND on Github Pages.
 
 ## 6. Customisation
 
