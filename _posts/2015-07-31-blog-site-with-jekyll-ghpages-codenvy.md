@@ -52,19 +52,19 @@ For our blog site, we are going to create our site on a new Github project. A Je
 
 All theses folders are templates or sass css that will be use to generate the static site. If you have any folders not starting with `_`, these ones won't change and stay statics.
 
-For Github Pages sites, Github will regenerate the site with Jekyll each time a modification is done in your Git project.
+For Github Pages sites, Github will regenerate the site with Jekyll each time a modification is done in your Github git project.
 
 ### Docker
 Docker is a container technology. As opposed to virtualisation (Virtual box or VMWare), containers are lightweight:
 containers use isolated and native host processes. When a Docker image is running, all the processes are actually running on the host machine.
 Thus, Docker can run only machines based on the operating system kernel. For instance, you can run any linux distribution on a Docker hosted by linux.
-Docker offer a way to write and build images based on recipe with inheritance capabilities. You write how to build an image providing linux command to run.
+Docker offers a way to write and build images based on recipes with inheritance capabilities. You write how to build an image providing linux command to run.
 Typically, we will run commands using `apt-get install` or `wget http://archive.zip && unzip archive.zip` to build our images.
 Docker is a nice tool for developers as it describes a reproducible way to build an image. You can share the recipe of your Docker image and use Git to
-keep all the change history of this file. It's like you have the source code of your virtual machine.
+keep all the change history of this file. Anyone can then rebuild your image. It's like you have the source code of your virtual machine.
 
 ### Eclipse Che hosted by Codenvy
-When writing our blog post, we may not want to publish the site to 'production' each time you make a change just to see how it looks.
+When writing our blog post, we may not want to publish the site to 'production' each time you make a change just to see how it looks like.
 To test the site before publishing it, we could install Jekyll locally on our computer and run the site generation locally for testing.
 However, installing Jekyll is not that easy. Ruby, NodeJS and gem are required and the installation steps may differ from one system to another.
 Plus, we want to have our editing environment available from anywhere.
@@ -79,8 +79,8 @@ In the site [http://jekyllthemes.org/](http://jekyllthemes.org/), we can find a 
 As far as I'm concerned, I've chosen this one: [Freshman21](http://jekyllthemes.org/themes/freshman21/).
 
 ## 3. Fork Jekyll theme in your Github
-Once log in [Github.com](http://github.com), we will fork the `Freshman21` project.
-You can fork it from [https://github.com/yulijia/freshman](https://github.com/yulijia/freshman21).
+Once logged in [Github.com](http://github.com), we will fork the `Freshman21` project.
+You can fork it from [https://github.com/yulijia/freshman21](https://github.com/yulijia/freshman21).
 
 ![fork]({{ site.url }}/images/github_fork.png)
 
@@ -88,6 +88,7 @@ You can fork it from [https://github.com/yulijia/freshman](https://github.com/yu
 
 ![forked]({{ site.url }}/images/github_forked.png)
 
+You can try the result of the forked theme right away [http://yourgithubname.github.io/freshman21](http://yourgithubname.github.io/freshman21).
 
 ### Main website
 With Github Pages, a site can be served directly from `http://yourgithubname.github.io` or `http://yourgithubname.github.io/asitename`
@@ -96,7 +97,8 @@ If not, Github will use the branch `gh-pages` that will be used by Github Pages.
 The site will be available at `http://yourgithubname.github.io/githubProjectName/`.
 
 Freshman21 themes already include both branches. In this project, they represent 2 differents versions of the site (with and without javascript).
-You can try the result of the forked theme right away [http://yourgithubname.github.io/freshman21](http://yourgithubname.github.io/freshman21).
+
+In our case, we are going to start from the `gh-pages` branch version.
 
 ## 4. Import in Codenvy Eclipse Che
 In [Codenvy](http://codenvy.com) website, log in with your Github account and import the forked project.
