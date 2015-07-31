@@ -13,7 +13,7 @@ comments: true
 ---
 
 
-Hello everyone! I'm starting my new blog site. This blog site is hosted by Github pages and use Jekyll as blog engine. For this first blog post, Let's see how to create such a blog post: I'm going to detail all the steps to create a blog site with
+Hello everyone! I'm starting my new blog site. This blog site is hosted by Github pages and use Jekyll as blog engine. For this first blog post, let's see how to create such a blog post: I'm going to detail all the steps to create a blog site with
 Jekyll, Github Pages, Docker, Eclipse Che cloud IDE and Codenvy.
 
 <!-- more -->
