@@ -291,5 +291,5 @@ From now, people will be able to add comments on your blog posts.
 
 ## Done !
 
-That's all, don't hesitate to make any comments and improve this blog post :) thank YOU for reading.
+That's all, don't hesitate to make any comments and improve this blog post and [![open in IDE]({{ site.url }}/images/contribute.svg)](https://codenvy.com/f?id=k307cp4ad7ib5gex) :) thank YOU for reading.
 
