@@ -92,7 +92,7 @@ You can try the result of the forked theme right away [http://yourgithubname.git
 
 ### Main website
 With Github Pages, a site can be served directly from `http://yourgithubname.github.io` or `http://yourgithubname.github.io/asitename`
-If this is going to be your main site, rename it `yourgithubname.github.io`. The site will be available in `http://yourgithubname.github.io/`.
+If this is going to be your main site, rename it `yourgithubname.github.com`. The site will be available in `http://yourgithubname.github.io/`.
 If not, Github will use the branch `gh-pages` that will be used by Github Pages.
 The site will be available at `http://yourgithubname.github.io/githubProjectName/`.
 
