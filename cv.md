@@ -18,7 +18,7 @@ I am currently an Eclipse commiter for the Eclipse Che project.
 I believe that improving his own tools is part of the job of every developer. It's a long term investment but it's worth it.
 I've been involved in the development of the Codenvy Cloud IDE platform including Eclipse CHE extensions.
 I've also been involved in improving Nuxeo IDE plugin for Eclipse IDE when working on Nuxeo Platform.
-Bash and now Docker are my best friend for speeding my everyday tasks.
+Bash and now Docker are my best friends for speeding my everyday tasks.
 
 ### Eclipse RCP
 While working at Nuxeo and Economic Outlook over 6 years, I gained valuable experience while working on and contributing to projects with Eclipse RCP.
