@@ -27,7 +27,7 @@ While working at Nuxeo and Economic Outlook over 6 years, I gained valuable expe
 As a Nuxeo core developer and trainer, I position myself as a "Nuxeo expert".
 
 ###Agile developer
-I am fond of TDD and BDD and believe that even documentations should be the result of test.
+I am fond of TDD and BDD and believe that even documentations should be the result of tests.
 In addition, I also have experience as a SCRUM master at Nuxeo.
 
 ###Training
@@ -45,7 +45,7 @@ Nuxeo, GWT, JaxRS, Freemarker, Tomcat, CDI, Seam, JSF, Struts, JSP
 Java, Scala, C++, Python, Php, C, C#, VB
 
 #### Testing
-Selenium Webdriver, SWTBot, Selenium 1, Concordion, FunkLoad, Open STA
+Selenium Webdriver, SWTBot, Selenium 1, Concordion, Jmeter, FunkLoad, Open STA
 
 #### Project management
 SCRUM, Agile, TDD, BDD, Continuous improvement, Design Pattern
@@ -54,7 +54,7 @@ SCRUM, Agile, TDD, BDD, Continuous improvement, Design Pattern
 Git, Github, Maven, Jenkins, Mercurial HG, Subversion, CVS, Subversion, Saga, Clear Case
 
 #### System and Database
-PostgreSQL, Couchbase, Administration (Debian/Ubuntu)
+Docker, PostgreSQL, Couchbase, Administration (Debian/Ubuntu)
 
 #### Conferences
 Jug Summer Camp 2015, Devoxx France 2015, EclipseCon Europe 2008/2014, EclipseCon France 2015, Nuxeo DevDay 2008 and Nuxeo World 13, BreizhCamp 2013, OW2Con 13
