@@ -10,6 +10,7 @@ tags:
   - eclipse che
   - github pages
 comments: true
+contribute: https://codenvy.com/f?id=k307cp4ad7ib5gex
 ---
 
 
