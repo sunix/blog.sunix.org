@@ -83,3 +83,18 @@ Choose a resolution that works with the external monitor. Make sure your VGA cab
 
 
 Wait 5 seconds and it should work!
+
+# Arandr
+(Edit 21/01/2015)
+
+It's also possible to use the GUI arandr to generate xrandr commands.
+
+![arandr]({{ site.url }}/images/arandr.png)
+
+It generates this kind of script:
+
+    $ cat ~/.screenlayout/clone.sh 
+    #!/bin/sh
+    xrandr --output HDMI1 --off --output VIRTUAL1 --off --output DP1 --mode 1920x1080 --pos 0x0 --rotate normal --output eDP1 --mode 1920x1080 --pos 0x0 --rotate normal --output VGA1 --off
+
+So each time i need to clone my screen, I can just execute the right script ... et voilà ! 
