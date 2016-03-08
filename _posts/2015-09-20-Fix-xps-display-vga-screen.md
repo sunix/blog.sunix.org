@@ -19,6 +19,7 @@ Here is how I managed to get rid of my display issues.
 
 <!-- more -->
 
+hello Mathieu et Charles
 
 # Searching ...
 When I plugged the VGA cable to my display port, the projector was showing: "SEARCHING ...". No screen was detected on my laptop configuration screen.
