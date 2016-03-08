@@ -12,6 +12,7 @@ tags:
 comments: true
 contribute: https://codenvy.com/f?id=6z5761px6w9exebd
 ---
+test
 
 Just got back from an amazing [Jug Summercamp](http://www.jugsummercamp.org/edition/6) at La Rochelle. I was ready for the presentation of the [Live Pair Programing with Eclipse Cloud Development](http://www.jugsummercamp.org/edition/6/presentation/1121) and ...
 AGAIN ! I got display issues with the external VGA projector not detected on my computer. The same one I had few months ago at Eclipse Con France.
