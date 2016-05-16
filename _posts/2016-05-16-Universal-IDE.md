@@ -32,9 +32,7 @@ In Randika’s demo, although “ssh -X” worked fine on our Iocal computer I h
 On another side, Che is missing a lot of features and I don’t see how it can fill the gap compared to the classic Eclipse Desktop IDE.
 At last, when you install and Eclipse IDE plugin, it asks you to restart …. But what ? I thought it was running on OSGi and that was one of its key features? I heard someone saying that the problem come from SWT and that we should replace it with JAVA FX. I believe we should use web technologie, because it’s the future!!! ... sorry the present !!!!
 
-So ... I have a dream ...
-
-... that one day each single Eclipse plugin would have its services exposed in REST and/or WebSocket.
+So ... I have a dream ... that one day each single Eclipse plugin would have its services exposed in REST and/or WebSocket.
 
 I have a dream that one day Eclipse developers could write plugins that works either for Che or classic Eclipse IDE.
 
@@ -46,10 +44,10 @@ I have a dream that one day we won’t have to restart our IDE after a plugin in
 
 I have a dream, today, that one day we would all use a Universal Eclipse IDE.
 
-## Can we ?
+## Yes we can!
 In my opinion, this isn’t that hard:
 
-Eclipse core bundle could expose Rest API or Websocket. We would just need to have an additional `org.eclipse.bundle.web` next to the `org.eclipse.bundle.ui` and both would use `org.eclipse.bundle.core` bundle. Eclipse would be running with a jetty http server bundle.
+Eclipse core bundle could expose Rest API or Websocket. We would just need to have an additional "org.eclipse.bundle.web" next to the "org.eclipse.bundle.ui" and both would use "org.eclipse.bundle.core" bundle. Eclipse would be running with a jetty http server bundle.
 
 - We would run that headless Eclipse IDE inside a Che docker based workspace as we did previously but with X forwarding.
 - Eclipse Che cloud IDE client extension and Orion would connect to this Eclipse web services.
@@ -57,14 +55,14 @@ Eclipse core bundle could expose Rest API or Websocket. We would just need to ha
 
 Everyone would get benefits from it:
 
-- Che would reuse existing bundles of Eclipse IDE
-- Che could get plugins from the existing Eclipse Marketplace
-- For Eclipse Desktop IDE, it would be time to rethink design and decouple the UI from core services
-- Javascript works everywhere. No need to maintain all the SWT graphical libraries binding for each target architectures
+- Che would reuse existing bundles of Eclipse IDE.
+- Che could get plugins from the existing Eclipse Marketplace.
+- For Eclipse Desktop IDE, it would be time to rethink design and decouple the UI from core services.
+- Javascript works everywhere. No need to maintain all the SWT graphical libraries binding for each target architectures.
 - We would be free of using any UI library, we could even mix them: SWT for navigation, GWT for view content, pure Orion javascript for the editor and Angular JS for the marketplace :)
 
 ## Recap
-To recap, to me, the Eclipse Universal IDE would be:
+To me, the Eclipse Universal IDE would be:
 
 - Eclipse Che with a docker-based workspace
 - Eclipse IDE running in the container
