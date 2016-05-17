@@ -30,7 +30,7 @@ OK, so now what? You have probably seen Tyler’s keynote at EclipseCon 2016 tal
 
 In Randika’s demo, although “ssh -X” worked fine on our Iocal computer I had a bit of latency when it was running in the Cloud.
 On another side, Che is missing a lot of features and I don’t see how it can fill the gap compared to the classic Eclipse Desktop IDE.
-At last, when you install and Eclipse IDE plugin, it asks you to restart …. But what ? I thought it was running on OSGi and that was one of its key features? I heard someone saying that the problem was comming from SWT and that we should replace it with JAVA FX. I believe we should use web technologie, because it’s the future!!! ... sorry the present!!!!
+At last, when you install and Eclipse IDE plugin, it asks you to restart …. But what ? I thought it was running on OSGi and that was one of its key features? I heard someone saying that the problem was coming from SWT and that we should replace it with JAVA FX. I believe we should use web technologie, because it’s the future!!! ... sorry the present!!!!
 
 So ... I have a dream ... that one day each single Eclipse plugin would have its services exposed in REST and/or WebSocket.
 
