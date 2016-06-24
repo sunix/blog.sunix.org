@@ -30,7 +30,7 @@ To me, the guest star to this conference was the Language Server Protocol. Broug
 
 
 # Language Server Protocol
-During the Xtext on Che presentation, Sven was telling us his story about providing Xtext to Eclipse Che: at the very beginning, his plan to implementing Xtext for yet another new editor looked like the straw that breaks the camel's back: many new editor are showing up every month and it would have been too much work to maintain and support them all. Instead of that, he introduced us to the [TypeScript/VSCode Language Server Protocol](https://github.com/Microsoft/language-server-protocol) that would kill two birds with one stone: 
+During the Xtext on Che presentation, Sven was telling us his story about providing Xtext to Eclipse Che: at the very beginning, his plan to implementing Xtext for yet another new editor looked like the straw that breaks the camel's back: many new editors are showing up every month and it would have been too much work to maintain and support them all. Instead of that, he introduced us to the [TypeScript/VSCode Language Server Protocol](https://github.com/Microsoft/language-server-protocol) that would kill two birds with one stone: 
 
 Many programing languages already provide a service API for developers tools and IDE. What TypeScript is doing is making its Language Server Protocol a standard and an API that can be reused not only by Microsoft VSCode, but also by any other editors. This is not only for TypeScript: the language server could have multiple implementations using the same and unique SPI.
 
