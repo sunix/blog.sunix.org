@@ -15,11 +15,11 @@ contribute: https://codenvy.com/f?id=k307cp4ad7ib5gex
 ---
 
 
-This blog post will be soon available in French in [Serli blog site](http://www.serli.com/blog/articles)
+This blog post will be soon available in French on the [Serli blog site](http://www.serli.com/blog/articles)
 
-Once again, I've spent a very nice week at EclipseCon France in Toulouse. Thank you Eclipse foundation for this great event! This year I've learned a lot and had very nice and interesting discussions about Eclipse technologies.
+Once again, I've spent a great week at EclipseCon France in Toulouse. Thank you Eclipse foundation for this fantastic event! This year I've learned a lot and had very interesting discussions about Eclipse technologies.
 
-To me, the guest star to this conference was the Language Server Protocol. Brought to us by Microsoft TypeScript and its Language server. It had been featured during 3 presentations:
+To me, the star guest at the conference was the Language Server Protocol. Brought to us by Microsoft TypeScript and its Language server. It was featured in 3 presentations:
 
 <!-- more -->
 
@@ -30,22 +30,22 @@ To me, the guest star to this conference was the Language Server Protocol. Broug
 
 
 # Language Server Protocol
-During the Xtext on Che presentation, Sven was telling us his story about providing Xtext to Eclipse Che: at the very beginning, his plan to implementing Xtext for yet another new editor looked like the straw that breaks the camel's back: many new editors are showing up every month and it would have been too much work to maintain and support them all. Instead of that, he introduced us to the [TypeScript/VSCode Language Server Protocol](https://github.com/Microsoft/language-server-protocol) that would kill two birds with one stone: 
+During the Xtext on Che presentation, Sven was telling us his story about providing Xtext to Eclipse Che: at the very beginning, his plan to implement Xtext for yet another new editor looked like the straw that breaks the camel's back: many new editors are showing up every month and it would have been too much work to maintain and support them all. Instead of that, he introduced us to the [TypeScript/VSCode Language Server Protocol](https://github.com/Microsoft/language-server-protocol) that would kill two birds with one stone: 
 
-Many programing languages already provide a service API for developers tools and IDE. What TypeScript is doing is making its Language Server Protocol a standard and an API that can be reused not only by Microsoft VSCode, but also by any other editors. This is not only for TypeScript: the language server could have multiple implementations using the same and unique SPI.
+Many programing languages already provide a service API for developer tools and IDEs. What TypeScript is doing is making its Language Server Protocol a standard and an API that can be reused not only by Microsoft VSCode, but also by any other editor. This is not only for TypeScript: the language server could have multiple implementations using the same and unique SPI.
 
-So sven is starting 2 things:
+So Sven is starting 2 things:
 
-- Providing an XText implementation to Language Service SPI
+- Providing an XText implementation of the Language Service SPI
 - Making Eclipse Che compatible with the Language Server Protocol
 
-They all would get benefits:
+This benefits everyone:
 
-- Xtext developers won’t have to create and maintain each editor implementations.
-- Eclipse Che would get benefit of all languages that implement the Language Service SPI 
+- Xtext developers won’t have to create and maintain implementations for each editor.
+- Eclipse Che will benefit from languages that implement the Language Service SPI.
 
-During JSDT by Ilya Buziuk and the TypeScript talk by Sebastien Pertus, the Eclipse plugin from Angelo Zerr was featured. Angelo has been working on a Eclipse Ide TypeScript plugin that use the Language Server Protocol!!! For your information, you can write classic Javascript in TypeScript and thus all the existing Eclipse Javascript plugin will be replace by this.
-It seems that the api is based on TypeScript JSON RPC, to me, maybe it would be interesting to expose this with websocket and do something similar to Eclipse Flux.
+During JSDT by Ilya Buziuk and the TypeScript talk by Sebastien Pertus, the Eclipse plugin from Angelo Zerr was featured. Angelo has been working on an Eclipse IDE TypeScript plugin that uses the Language Server Protocol!!! For your information, you can write classic Javascript in TypeScript and thus all the existing Eclipse Javascript plugin will be replace by this.
+It seems that the api is based on TypeScript JSON RPC, to me, maybe it would be interesting to expose this with websockets and do something similar to Eclipse Flux.
 
 
 
@@ -58,23 +58,23 @@ Eclipse Che was also a subject that interested a lot of people. We had 4 slots r
 - [Xtext’s New Adventures With Che](https://www.eclipsecon.org/france2016/session/xtext%E2%80%99s-new-adventures-che)
 - Lunchtime Demo: Pair programming in the cloud with Eclipse Che
 
-The workshop was the first one we were doing for Eclipse Che. The goal of this workshop was to create a ready to use developer environment for the Go language:  Attendees learned how to create a custom workspace stack with Docker, how to add menu actions in the Cloud IDE, etc. It is a good way to understand how things are architectured in Che.
+The workshop was the first one we did for Eclipse Che. The goal of this workshop was to create a ready to use developer environment for the Go language:  attendees learned how to create a custom workspace stack with Docker, how to add menu actions in the Cloud IDE, etc. It is a good way to understand how things are architectured in Che.
 
-During the talk ”Introduction to Eclipse Che”, Stevan and Florent made a great introduction to Eclipse Che, showing Che Java IDE capabilities from basic code completion to remote debugging. They talked about the concept of universal workspace and finished with the Github contribution factory link (which is BTW a contribution made with love by Serli team): each click triggers a clone of a github project in a preconfigured Che workspace. They made a live demo showing a contribution to a github project in less than 1 minutes … explanations included.
+During the ”Introduction to Eclipse Che” talk, Stevan and Florent made a great introduction to Eclipse Che, showing Che Java IDE's capabilities from basic code completion to remote debugging. They talked about the concept of universal workspaces and finished with the Github contribution factory link (which is a contribution made with love by the Serli team): each click triggers a clone of a github project in a preconfigured Che workspace. They did a live demo showing a contribution to a github project in less than 1 minute … explanations included.
 
-At lunch time, I did myself a live demo of my pair programming plugin for Che. This is the very first step to have a Google Docs like experience.
+At lunch time, I myself did a live demo of my pair programming plugin for Che. This is the very first step to having a Google Docs-like experience.
 
 
 
 
 # CommitStrip
-If you, “coders” haven’t heard about Commit strip, it’s time to go to <http://commitstrip.com> and have fun reading their comics.
-Thomas and Etienne did a great keynote of Eclipsecon France, presenting their work through the subject [Explaining Code to My Mom](https://www.eclipsecon.org/france2016/session/explaining-code-my-mom-cassiop%C3%A9e). Through great jokes and comics slides, they managed to share their experience of as “coders” in a very fun way. At some point, we all felt like it was our own coder life experience. By the way, my favorite strip is this one:  [
+If you “coders” haven’t heard about Commit strip, it’s time to go to <http://commitstrip.com> and have fun reading their comics.
+Thomas and Etienne did a great keynote at Eclipsecon France, presenting their work through the subject [Explaining Code to My Mom](https://www.eclipsecon.org/france2016/session/explaining-code-my-mom-cassiop%C3%A9e). Through great jokes and comics slides, they managed to share their experience as “coders” in a very fun way. At some point, we all felt like it was our own coder life experience. By the way, my favorite strip is this one:  [
 Why Marty and the Doc might not arrive after all](http://www.commitstrip.com/fr/2015/10/21/why-marty-and-the-doc-might-not-arrive-after-all/) .
 
 
 # Last but not least
-... here are some notes of other presentations I attended and liked:
+... here are some notes on other presentations I attended and liked:
 
 ### [What every Java developer should know about AngularJS.](https://www.eclipsecon.org/france2016/session/what-every-java-developer-should-know-about-angularjs)
 By Maximilian Koegel and Edgar Mueller [Eclipsesource]
@@ -86,7 +86,7 @@ I would love to help them setting up a developer environment with Eclipse Che fo
 
 By Sopot Cela and Mickael Istria [Red Hat]
 
-This talk was about news and noteworthy that is coming with the next Neon release.
+This talk was about news and noteworthy items that are coming with the next Neon release.
 These are the ones I’m looking forward to test in Neon
 
  - Theme: disable theme to use native GTK widget
@@ -103,10 +103,10 @@ Ideas for the future:
 ### [The State of Docker and Vagrant Tooling in Eclipse](https://www.eclipsecon.org/france2016/session/state-docker-and-vagrant-tooling-eclipse )
 By Roland Grunberg [Red Hat]
 
-He presented the status of the docker and Vagrant tools in Eclipse.
+Roland presented the status of the docker and Vagrant tools in Eclipse.
 
 #### Docker tooling:
- - UI for pulling and search in registries
+ - UI for pulling and searching in registries
  - Exec shell running docker container (which seems to be a simple docker exec)
 
 #### Vagrant tooling:
@@ -117,19 +117,19 @@ He presented the status of the docker and Vagrant tools in Eclipse.
 
 #### Future:
  - Support of compose
- - Debug support for any language (c/c++)
+ - Debug support for any language (C/C++)
 
 ### [Java 9 support in Eclipse](https://www.eclipsecon.org/france2016/session/java-9-support-eclipse )
 By Sasikanth Bharadwaj [IBM]
 
 It was mainly an overview of the Jigsaw support in Eclipse. For the time being, to get the support in Eclipse (even neon) we need to install a patch from the market place.
 
-Sasikanth explained how Jigsaw module-info.java worked and how to create and configure jigsaw modules in Eclipse. At the moment, the content assist is very basic: only syntax completion on module-info.java is supported, no completion on packages to be exported. Though these stuff are very promising.
+Sasikanth explained how Jigsaw module-info.java worked and how to create and configure jigsaw modules in Eclipse. At the moment the content assist is very basic: only syntax completion in module-info.java is supported, no completion on packages to be exported. Though this stuff is very promising.
 
 ### [JSDT 2.0](https://www.eclipsecon.org/france2016/session/jsdt-20)
 By Ilya Buziuk [Red Hat]
 
-JSDT is not dead!!! It is actually getting renewed and is trying to fill the gap with other competitors. After all we are more and more full stack developers. During this session, we had a live demo of the following features:
+JSDT is not dead!!! It is actually getting renewed and is trying to fill the gap with other competitors. After all there are more and more of us full-stack developers. During this session, we had a live demo of the following features:
 
 - Run / debug of nodejs code
 - Json editor (by Angelo Zerr)
@@ -152,10 +152,10 @@ For the demo, he used Angelo’s plugin:
 ### [Fast Unit tests for Eclipse plugins - possible architectures and available tooling](https://www.eclipsecon.org/france2016/session/fast-unit-tests-eclipse-plugins-possible-architectures-and-available-tooling)
 By Aurelien Pupier [Red Hat]
 
-In my opinion, unit tests were not well covered in the very first PDE design. And this why most of us still have troubles in finding the right setup in Eclipse plugins development for unit testing. Aurelien shared his experience in this exercise and talked about different options on where to organize our unit tests in our eclipse plugins source code.
+In my opinion, unit tests were not well covered in the very first PDE design. And this why most of us still have troubles in finding the right setup in Eclipse plugin development for unit testing. Aurelien shared his experience in this exercise and talked about different options on where to organize our unit tests in our eclipse plugin source code.
 
 - In a source folder in the same project
-- In a separate plug-in with “optional” require-bundle
+- In a separate plug-in with an “optional” require-bundle
 - In a fragment
 
 The samples of his demo are available in this Github project <https://github.com/apupier/EclipsePlugins-Testing>
@@ -163,15 +163,15 @@ The samples of his demo are available in this Github project <https://github.com
 Aurelien also showed us few tools he is using to be more productive with unit tests:
 
 - More unit : Provide short cut and navigation features for testing: For instance, Ctrl-G to switch the open editor from the class to test to tested class. 
-- Infinitest: auto run test on the fly of modified test classes. Provides instance feedback while writing tests.
+- Infinitest: auto run modified classes' tests on the fly. Provides instant feedback while writing tests.
 - eclEmma: a tool that shows code coverage in Eclipse.
 
 ### [A generic REST API on top of Eclipse CDO for web-based modelling](https://www.eclipsecon.org/france2016/session/generic-rest-api-top-eclipse-cdo-web-based-modelling)
 By Christophe Ponsard
 
-These guys demoed their modeling application that runs EMF behind the scene. The demo contained a Web UI of the EMF based application. It looks promising if we keep in mind our wishes to have EMF running inside Eclipse CHE.
+These guys demoed their modeling application that runs EMF behind the scenes. The demo contained a Web UI of the EMF-based application. It looks promising if we keep in mind our wishes to have EMF running inside Eclipse CHE.
 
 # The end
-That’s all guys, I’m very sorry not having covered the other subjects that were present in the conference (IoT, Science, Modeling …). I will keep this blog updated and will provide links to any recorded talk available online.
-Thank you to the Eclipsecon people for organizing this so great event :)
+That’s all guys, I’m very sorry for not having covered the other subjects that were present at the conference (IoT, Science, Modeling…). I will keep this blog updated and will provide links to any recorded talks available online.
+Thank you to the Eclipsecon people for organizing this great event :)
 
