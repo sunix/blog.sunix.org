@@ -176,5 +176,5 @@ That’s all guys, I’m very sorry for not having covered the other subjects th
 Thank you to the Eclipsecon people for organizing this great event :)
 
 
-PS Thank you David Gosling for the review :)
+PS: Thank you David Gosling, Stévan Le Meur, Florent Benoît and Aurélien Pupier for the review :)
 
