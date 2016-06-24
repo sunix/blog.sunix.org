@@ -15,7 +15,7 @@ contribute: https://codenvy.com/f?id=k307cp4ad7ib5gex
 ---
 
 
-This blog post will be soon available in French in Serli blog site
+This blog post will be soon available in French in [Serli blog site](http://www.serli.com/blog/articles)
 
 Once again, I've spent a very nice week at EclipseCon France in Toulouse. Thank you Eclipse foundation for this great event! This year I've learned a lot and had very nice and interesting discussions about Eclipse technologies.
 
