@@ -162,9 +162,9 @@ The samples of his demo are available in this Github project <https://github.com
 
 Aurelien also showed us few tools he is using to be more productive with unit tests:
 
-- More unit : Provide short cut and navigation features for testing: For instance, Ctrl-G to switch the open editor from the class to test to tested class. 
-- Infinitest: auto run modified classes' tests on the fly. Provides instant feedback while writing tests.
-- eclEmma: a tool that shows code coverage in Eclipse.
+- [More unit](http://moreunit.sourceforge.net/) : Provide short cut and navigation features for testing: For instance, Ctrl-j to switch the open editor from the class to test to tested class. 
+- [Infinitest](https://infinitest.github.io/): auto run modified classes' tests on the fly. Provides instant feedback while writing tests.
+- [EclEmma](http://www.eclemma.org/): a tool that shows code coverage in Eclipse.
 
 ### [A generic REST API on top of Eclipse CDO for web-based modelling](https://www.eclipsecon.org/france2016/session/generic-rest-api-top-eclipse-cdo-web-based-modelling)
 By Christophe Ponsard
