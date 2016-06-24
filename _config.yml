@@ -65,6 +65,6 @@ Blogroll:
 
 ### Build settings
 markdown: kramdown
-highlighter: pygments
+highlighter: rouge
 paginate: 5
 excerpt_separator: <!-- more -->
