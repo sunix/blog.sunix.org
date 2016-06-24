@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  EclipseCon France 2016: Language Server Protocol, Eclipse Che and Commit Strip.
+title:  EclipseCon France 2016 - Language Server Protocol, Eclipse Che and Commit Strip
 modified: 2016-06-24
 categories: [articles]
 tags: 
