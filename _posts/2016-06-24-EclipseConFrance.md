@@ -175,3 +175,6 @@ These guys demoed their modeling application that runs EMF behind the scenes. Th
 That’s all guys, I’m very sorry for not having covered the other subjects that were present at the conference (IoT, Science, Modeling…). I will keep this blog updated and will provide links to any recorded talks available online.
 Thank you to the Eclipsecon people for organizing this great event :)
 
+
+PS Thank you David Gosling for the review :)
+
