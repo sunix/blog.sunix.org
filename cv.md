@@ -26,14 +26,14 @@ While working at Nuxeo and Economic Outlook over 6 years, I gained valuable expe
 ### Nuxeo
 As a Nuxeo core developer and trainer, I position myself as a "Nuxeo expert".
 
-###Agile developer
+### Agile developer
 I am fond of TDD and BDD and believe that even documentations should be the result of tests.
 In addition, I also have experience as a SCRUM master at Nuxeo.
 
-###Training
+### Training
 As one of the main trainers at Nuxeo, I have a great opportunity to share my knowledge with other people, especially my team mates, which is a responsibility that I enjoy having.
 
-##Skills
+## Skills
 
 #### Java Eclipse
 Java, Eclipse CHE, Eclipse RCP, Eclipse RCP, SWT/JFace, OSGi, PDE, JDT, Birt, GEF
