@@ -127,8 +127,10 @@ Implementation of a new feature in Nuxeo IDE (Eclipse): code completion of exten
 Sun is giving trainings on the functional test tool Selenium Webdriver
 
 #### Conferences
- - Presenter at Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux)
- - Presenter at Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121)
+ - Presenter at Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
+ - Presenter at Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
+ - Presenter at Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
+ - Presenter at Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121) - [Video](https://www.youtube.com/watch?v=33CW70-sXRo)
  - Presenter at Devoxx France 2015: Dévelopement Java avec un IDE Cloud: YES WE CAN
  - Presenter at Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
  - Presenter at Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
