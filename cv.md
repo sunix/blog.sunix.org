@@ -57,7 +57,19 @@ Git, Github, Maven, Jenkins, Mercurial HG, Subversion, CVS, Subversion, Saga, Cl
 Docker, PostgreSQL, Couchbase, Administration (Debian/Ubuntu)
 
 #### Conferences
-Jug Summer Camp 2015, Devoxx France 2015, EclipseCon Europe 2008/2014, EclipseCon France 2015, Nuxeo DevDay 2008 and Nuxeo World 13, BreizhCamp 2013, OW2Con 13
+I've been speaking at several international conferences: Jug Summer Camp 2015, Devoxx France 2015, EclipseCon Europe 2008/2014, EclipseCon France 2015, Nuxeo DevDay 2008 and Nuxeo World 13, BreizhCamp 2013, OW2Con 13
+
+ - Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
+ - Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
+ - Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
+ - Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121) - [Video](https://www.youtube.com/watch?v=33CW70-sXRo)
+ - Devoxx France 2015: Dévelopement Java avec un IDE Cloud: YES WE CAN
+ - Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
+ - Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
+ - Breizhcamp 2013: BDD and Concordion
+ - Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
+ - OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
+ - EclipseCon 2008: [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
 
 #### Training
 Selenium Webdriver Trainer, Nuxeo Trainer
@@ -126,18 +138,6 @@ Implementation of a new feature in Nuxeo IDE (Eclipse): code completion of exten
 #### Zenika
 Sun is giving trainings on the functional test tool Selenium Webdriver
 
-#### Conferences
- - Presenter at Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
- - Presenter at Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
- - Presenter at Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
- - Presenter at Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121) - [Video](https://www.youtube.com/watch?v=33CW70-sXRo)
- - Presenter at Devoxx France 2015: Dévelopement Java avec un IDE Cloud: YES WE CAN
- - Presenter at Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
- - Presenter at Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
- - Presenter at Breizhcamp 2013: BDD and Concordion
- - Presenter at Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
- - Presenter at OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
-
 ### [Nuxeo](http://www.nuxeo.com) (Paris)
 <time datetime="2007-07-21" class="end">July 2007</time>
 <time datetime="2013-01-31" class="start">Jan. 2013</time>
@@ -153,8 +153,6 @@ As a core developer I've been part of the development of
 - Live Edit: Libre/Open/Ms Office softwares integrated component
 - Nuxeo IDE: Eclipse tools for Nuxeo plugin development
 - Nuxeo Functional Test: Nuxeo Test framework based on Selenium Webdriver
-
-Presenter at [EclipseCon 2008](https://www.eclipsecon.org/summiteurope2008/) introducing [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
 
 
 #### Nuxeo Java developer - Production team
@@ -199,7 +197,6 @@ In charge of maintaining Nuxeo training material [github.com/nuxeo/NuxeoTraining
 #### Load testing consultant
 
 - Enim (Lorient, France): Testing and optimization of an application migrated to Java. 
-
 
 
 
