@@ -57,7 +57,7 @@ Git, Github, Maven, Jenkins, Mercurial HG, Subversion, CVS, Subversion, Saga, Cl
 Docker, PostgreSQL, Couchbase, Administration (Debian/Ubuntu)
 
 #### Conferences
-I've been speaking at several international conferences: Jug Summer Camp 2015, Devoxx France 2015, EclipseCon Europe 2008/2014, EclipseCon France 2015, Nuxeo DevDay 2008 and Nuxeo World 13, BreizhCamp 2013, OW2Con 13
+Speaker at several international conferences: 
 
  - Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
  - Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
@@ -69,7 +69,7 @@ I've been speaking at several international conferences: Jug Summer Camp 2015, D
  - Breizhcamp 2013: BDD and Concordion
  - Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
  - OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
- - EclipseCon 2008: [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
+ - EclipseCon 2008 and Nuxeo DevDay 2008: [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
 
 #### Training
 Selenium Webdriver Trainer, Nuxeo Trainer
