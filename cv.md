@@ -121,7 +121,7 @@ Writing of an diagnostic tools for the open source SSO connector â€œJaasloungeâ€
 During the upgrade to OSGi 4.3.1, Sun is taking part on improvements of Weld-OSGi in collaboration with RedHat team.
 
 #### Nuxeo Community
-Implementation of a new feature in Nuxeo IDE (Eclipse): code completion of extension points in Nuxeo XML components. Online video: [http://www.nuxeo.com/blog/development/2013/12/nuxeo-ide-released-12/](https://bitly.com/18zbYWt)
+Implementation of a new feature in Nuxeo IDE (Eclipse): code completion of extension points in Nuxeo XML components. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
 
 #### Zenika
 Sun is giving trainings on the functional test tool Selenium Webdriver
@@ -135,7 +135,7 @@ Sun is giving trainings on the functional test tool Selenium Webdriver
  - Presenter at Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
  - Presenter at Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
  - Presenter at Breizhcamp 2013: BDD and Concordion
- - Presenter at Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: [http://www.nuxeo.com/en/resource-center/Videos/events/nuxeo-world-2013-videos/xml-extension-point-completion-in-nuxeo-ide](http://bit.ly/16XYwL0)
+ - Presenter at Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
  - Presenter at OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
 
 ### [Nuxeo](http://www.nuxeo.com) (Paris)
