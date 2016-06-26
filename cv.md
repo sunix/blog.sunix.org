@@ -148,10 +148,10 @@ Nuxeo is a open source software vendor. Its main product, called Nuxeo EP, is a 
 #### Nuxeo Core Java developer
 As a core developer I've been part of the development of
  
+- Nuxeo IDE: Eclipse tools for Nuxeo plugin development <https://github.com/nuxeo/nuxeo-ide>
 - Nuxeo EP, DM, CMF, Webengine [nuxeo.github.com](http://nuxeo.github.com/)
 - Nuxeo RCP Apogee [hg.nuxeo.org/nuxeo-apogee](http://hg.nuxeo.org/nuxeo-apogee). An Eclipse RCP platform to build Destop applications that connect to a Nuxeo server.
 - Live Edit: Libre/Open/Ms Office softwares integrated component
-- Nuxeo IDE: Eclipse tools for Nuxeo plugin development
 - Nuxeo Functional Test: Nuxeo Test framework based on Selenium Webdriver
 
 
