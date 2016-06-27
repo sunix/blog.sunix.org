@@ -1,9 +1,10 @@
 ---
 layout: page
-title: Curiculum Vitae
+title: Java software engineer
 comments: no
 permalink: /cv/
 ---
+Sun Seng David Tan
 
 ## Summary
 
@@ -33,27 +34,30 @@ In addition, I also have experience as a SCRUM master at Nuxeo.
 ### Training
 As one of the main trainers at Nuxeo, I have a great opportunity to share my knowledge with other people, especially my team mates, which is a responsibility that I enjoy having.
 
-### Conferences
-I've been speaking at several international conferences: 
+### Community
 
- - Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
- - Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
- - Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
- - Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121) - [Video](https://www.youtube.com/watch?v=33CW70-sXRo)
- - Devoxx France 2015: Dévelopement Java avec un IDE Cloud: YES WE CAN
- - Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
- - Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
- - Breizhcamp 2013: BDD and Concordion
- - Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
- - OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
- - EclipseCon 2008 and Nuxeo DevDay 2008: [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
+- Paris JUG team member
+- Google summer of code 2016 initiator for subjects around Eclipse Cloud projects (Eclipse Che and Flux)
+- Speaker at several international conferences: 
+
+  - Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
+  - Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
+  - Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
+  - Jugsummercamp 2015: [Live editing and pair programming Eclipse Cloud Development top projects](http://www.jugsummercamp.org/edition/6/presentation/1121) - [Video](https://www.youtube.com/watch?v=33CW70-sXRo)
+  - Devoxx France 2015: Dévelopement Java avec un IDE Cloud: YES WE CAN
+  - Eclipse Con France 2015: [Code in the cloud with Eclipse Che](https://www.eclipsecon.org/france2015/session/code-cloud-eclipse-che) and [Live editing and pair programming Eclipse Cloud Development top projects](https://www.eclipsecon.org/france2015/session/live-editing-and-pair-programing-eclipse-cloud-development-top-projects)
+  - Eclipse Con Europe 2014: [Introduction to Eclipse Che](bit.ly/eclipse-che)
+  - Breizhcamp 2013: BDD and Concordion
+  - Nuxeo World 2013: Nuxeo XML components and extension points completion in Nuxeo IDE. Online video: <http://www.nuxeo.com/resources/xml-extension-point-completion-in-nuxeo-ide/>
+  - OW2Con 2013: NoSQL Landscape in collaboration with Couchbase
+  - EclipseCon 2008 and Nuxeo DevDay 2008: [Nuxeo Apogee](http://www.eclipsecon.org/summiteurope2008/sessions9bb2.html?id=111)
 
 ## Skills
 
 #### Java Eclipse
-Java, Eclipse CHE, Eclipse RCP, Eclipse RCP, SWT/JFace, OSGi, PDE, JDT, Birt, GEF
+Eclipse CHE, Flux, Orion, Eclipse RCP, SWT/JFace, OSGi, PDE, JDT, Birt, GEF
 
-#### Java JEE
+#### Java JEE, platform
 Nuxeo, GWT, JaxRS, Freemarker, Tomcat, CDI, Seam, JSF, Struts, JSP
 
 #### Programing language
@@ -98,9 +102,9 @@ Leading the development of Paris maintenance team.
 #### Codenvy
 Leading developments for [Codenvy](http://codenvy.com)/[Eclipse Che](https://eclipse.org/che/)
 
- - [Datasource plugin](https://github.com/codenvy/plugin-datasource)
+ - [Datasource plugin](https://github.com/codenvy/plugin-datasource) - [demo](https://drive.google.com/file/d/0B9vGYZYE8V2xUF9XcHRTOG5oV0k/view?usp=sharing)
  - [Codenvy plugin for Eclipse](https://github.com/codenvy/eclipse-plugin)
- - [Contribution Workflow plugin](https://github.com/codenvy/plugin-contribution)
+ - [Contribution Workflow plugin](https://github.com/codenvy/plugin-contribution) - [demo](https://drive.google.com/file/d/0B9vGYZYE8V2xNFQwVktBNlRpc1U/view?usp=sharing)
  - Eclipse Che Flux integration:
    - [Java File sync watcher](https://github.com/kevinpollet/flux-file-watcher)
    - [Pair Programming extension](https://github.com/sunix/che-plugin-flux-live-edit)
