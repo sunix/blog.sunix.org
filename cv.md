@@ -157,19 +157,19 @@ As a core developer I've been part of the development of
 
 #### Nuxeo Java developer - Production team
 
-#####Press Association (London)
+##### Press Association (London)
 As part of the development team, we used Eclipse RCP, Nuxeo Apogee and Nuxeo EP to build their news content management system. 
 
 - Nutxt: PA Teletext news content system  
 - Fuel: PA Digital news content system  
 - MPA: HA and clustering on top of FUEL
 
-#####IRSN - French Institute for Radiological Protection and Nuclear Safety (Paris)
+##### IRSN - French Institute for Radiological Protection and Nuclear Safety (Paris)
 
 - Code and data migration of IRSN mail management system to Nuxeo CMF.
 - Load Testing and optimization.
 
-####Scrum Master
+#### Scrum Master
 Scrum master of the Nuxeo team for PA and IRSN projects
 
 
@@ -179,7 +179,7 @@ In charge of maintaining Nuxeo training material [github.com/nuxeo/NuxeoTraining
 50+ trainings and consulting over 5 years
 
 
-###[Economic Outlook Ltd](http://economicoutlook.net) (Adelaide, Australia)
+### [Economic Outlook Ltd](http://economicoutlook.net) (Adelaide, Australia)
 
 <time datetime="2006-03-00" class="start">March 2006</time>
 <time datetime="2007-06-01" class="end">June 2007</time>
@@ -190,7 +190,7 @@ In charge of maintaining Nuxeo training material [github.com/nuxeo/NuxeoTraining
 - Adserve: Developing a Eclipse RCP software for maintaining and following the advertisements of a sport news website.
 
 
-###[Metaware Scopteam](http://www.scopteam.fr) (Paris, France)
+### [Metaware Scopteam](http://www.scopteam.fr) (Paris, France)
 <time datetime="2006-02-01" class="start">Feb 2006</time>
 <time datetime="2006-03-31" class="end">March 2006</time>
 
@@ -200,7 +200,7 @@ In charge of maintaining Nuxeo training material [github.com/nuxeo/NuxeoTraining
 
 
 
-###[Economic Outlook Ltd](http://economicoutlook.net) (Adelaide, Australia)
+### [Economic Outlook Ltd](http://economicoutlook.net) (Adelaide, Australia)
 
 <time datetime="2005-04-01" class="start">April 2005</time>
 <time datetime="2005-06-31" class="end">June 2005</time>
@@ -211,7 +211,7 @@ Creating a rich client application to display and export reports.
 
 
 
-###[Thales Communication](http://www.thalesgroup.com) (Colombes, France)
+### [Thales Communication](http://www.thalesgroup.com) (Colombes, France)
 
 <time datetime="2004-03-01" class="start">March 2004</time>
 <time datetime="2004-09-31" class="end">Sept 2004</time>
@@ -223,7 +223,7 @@ Development in C++ on a French army software (MARTHA).
 
 
 
-###Netpepper (Paris)
+### Netpepper (Paris)
 
 <time datetime="2001-04-01" class="start">April 2001</time>
 <time datetime="2003-08-31" class="end">Aug 2003</time>
@@ -240,34 +240,34 @@ Development and integration of portlets with WebServices and .NET technologies.
 
 
 
-##Education
+## Education
 
-###Ingénieurs 2000. Marne La Vallée University.
+### Ingénieurs 2000. Marne La Vallée University.
 <span>Paris, France</span>.
 
 Master in engineering - IT and network. 2001-2004
 
-###IUT de Montreuil. Paris 8 University.
+### IUT de Montreuil. Paris 8 University.
 <span>Paris, France</span>.
 
 Technical diploma in IT. 1999-2001
 
-###St. Mark's International College.
+### St. Mark's International College.
 <span>Sydney, Australia</span>.
 
 First Cambridge in English. B. 2005
 
-###Fitec.
+### Fitec.
 <span>Paris, France</span>
 
 Professional knowledges Certificate in Software Qualification. 2005
 
-###Lycée Charlemagne.
+### Lycée Charlemagne.
 <span>Paris, France</span>
 
 Graduated with HSC. Major in Mathematics. 1999
 
-##Hobbies &amp; Interests
+## Hobbies &amp; Interests
 
  - Traveling
  - Gaming (PS3/Wii/PC)
