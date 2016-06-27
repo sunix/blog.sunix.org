@@ -68,3 +68,5 @@ markdown: kramdown
 highlighter: rouge
 paginate: 5
 excerpt_separator: <!-- more -->
+
+gems: [jekyll-paginate]
