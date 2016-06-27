@@ -1,9 +1,12 @@
 ---
 layout: page
-title: Java software engineer
+title: Curriculum Vitae
 comments: no
 permalink: /cv/
 ---
+
+# Java Software Engineer
+
 Sun Seng David Tan
 
 ## Summary
@@ -13,7 +16,7 @@ I have 10 years of experience as a Java developer. In addition, I have worked fo
 
 ### FOSS
 I am fortunate to have had an opportunity to work with Nuxeo, an open source software vendor. For its many advantages, I am very inclined to continue working with and promoting the use of Free and Open Source Softwares.
-I am currently an Eclipse commiter for the Eclipse Che project.
+I am currently an Eclipse committer for the Eclipse Che project.
 
 ### Tooling
 I believe that improving his own tools is part of the job of every developer. It's a long term investment but it's worth it.
