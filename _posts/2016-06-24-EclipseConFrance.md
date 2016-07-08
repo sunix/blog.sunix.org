@@ -71,7 +71,7 @@ At lunch time, I myself did a live demo of my pair programming plugin for Che. T
 If you “coders” haven’t heard about Commit strip, it’s time to go to <http://commitstrip.com> and have fun reading their comics.
 Thomas and Etienne did a great keynote at Eclipsecon France, presenting their work through the subject [Explaining Code to My Mom](https://www.eclipsecon.org/france2016/session/explaining-code-my-mom-cassiop%C3%A9e). Through great jokes and comics slides, they managed to share their experience as “coders” in a very fun way. At some point, we all felt like it was our own coder life experience. By the way, my favorite strip is this one:  [
 Why Marty and the Doc might not arrive after all](http://www.commitstrip.com/fr/2015/10/21/why-marty-and-the-doc-might-not-arrive-after-all/) .
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x2EQJpYBdc0?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
 
 # Last but not least
 ... here are some notes on other presentations I attended and liked:
