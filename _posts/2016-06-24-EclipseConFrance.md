@@ -62,6 +62,8 @@ The workshop was the first one we did for Eclipse Che. The goal of this workshop
 
 During the ”Introduction to Eclipse Che” talk, Stevan and Florent made a great introduction to Eclipse Che, showing Che Java IDE's capabilities from basic code completion to remote debugging. They talked about the concept of universal workspaces and finished with the Github contribution factory link (which is a contribution made with love by the Serli team): each click triggers a clone of a github project in a preconfigured Che workspace. They did a live demo showing a contribution to a github project in less than 1 minute … explanations included.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ekTT36vwHJI?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
+
 At lunch time, I myself did a live demo of my pair programming plugin for Che. This is the very first step to having a Google Docs-like experience.
 
 
@@ -119,12 +121,15 @@ Roland presented the status of the docker and Vagrant tools in Eclipse.
  - Support of compose
  - Debug support for any language (C/C++)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eK11zKJ21F0?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
+
 ### [Java 9 support in Eclipse](https://www.eclipsecon.org/france2016/session/java-9-support-eclipse )
 By Sasikanth Bharadwaj [IBM]
 
 It was mainly an overview of the Jigsaw support in Eclipse. For the time being, to get the support in Eclipse (even neon) we need to install a patch from the market place.
 
 Sasikanth explained how Jigsaw module-info.java worked and how to create and configure jigsaw modules in Eclipse. At the moment the content assist is very basic: only syntax completion in module-info.java is supported, no completion on packages to be exported. Though this stuff is very promising.
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VWykDLRb8fs?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
 
 ### [JSDT 2.0](https://www.eclipsecon.org/france2016/session/jsdt-20)
 By Ilya Buziuk [Red Hat]
@@ -137,6 +142,8 @@ JSDT is not dead!!! It is actually getting renewed and is trying to fill the gap
 
 He also told us about a new Eclipse product for web development that will come with Neon: EPP
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sEnc6nL0UI4?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
+
 ### [TypeScript: Feedback from a real life project within TypeScript and the future of JavaScript](https://www.eclipsecon.org/france2016/session/typescript-feedback-real-life-project-within-typescript-and-future-javascript-sponsored)
 By Sebastien Pertus [Microsoft]
 
@@ -148,6 +155,7 @@ For the demo, he used Angelo’s plugin:
 - Running serializer
 - Not nullable
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pfbv9Xy656s?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
 
 ### [Fast Unit tests for Eclipse plugins - possible architectures and available tooling](https://www.eclipsecon.org/france2016/session/fast-unit-tests-eclipse-plugins-possible-architectures-and-available-tooling)
 By Aurelien Pupier [Red Hat]
@@ -166,10 +174,14 @@ Aurelien also showed us few tools he is using to be more productive with unit te
 - [Infinitest](https://infinitest.github.io/): auto run modified classes' tests on the fly. Provides instant feedback while writing tests.
 - [EclEmma](http://www.eclemma.org/): a tool that shows code coverage in Eclipse.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IGkFy2H-d60?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
+
 ### [A generic REST API on top of Eclipse CDO for web-based modelling](https://www.eclipsecon.org/france2016/session/generic-rest-api-top-eclipse-cdo-web-based-modelling)
 By Christophe Ponsard
 
 These guys demoed their modeling application that runs EMF behind the scenes. The demo contained a Web UI of the EMF-based application. It looks promising if we keep in mind our wishes to have EMF running inside Eclipse CHE.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/C-kWMlz5yEY?list=PLy7t4z5SYNaRJff0KBMbubOaj8gevvML4" frameborder="0" allowfullscreen></iframe>
 
 # The end
 That’s all guys, I’m very sorry for not having covered the other subjects that were present at the conference (IoT, Science, Modeling…). I will keep this blog updated and will provide links to any recorded talks available online.
