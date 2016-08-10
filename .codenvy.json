@@ -1,0 +1,64 @@
+{
+  "v": "4.0",
+  "name": "blog-sunix-org-factory",
+  "workspace": {
+    "environments": [
+      {
+        "name": "blog.sunix.org",
+        "machineConfigs": [
+          {
+            "limits": {
+              "ram": 1000
+            },
+            "name": "ws-machine",
+            "type": "docker",
+            "source": {
+              "type": "dockerfile",
+              "content": "FROM sunix/jekyll4che"
+            },
+            "dev": true,
+            "servers": [],
+            "envVariables": {},
+            "links": []
+          }
+        ]
+      }
+    ],
+    "defaultEnv": "blog.sunix.org",
+    "projects": [
+      {
+        "links": [],
+        "name": "blog.sunix.org",
+        "attributes": {
+          "contribute_to_branch": [
+            "gh-pages"
+          ]
+        },
+        "type": "javac",
+        "source": {
+          "location": "https://github.com/sunix/blog.sunix.org",
+          "type": "git",
+          "parameters": {}
+        },
+        "path": "/blog.sunix.org",
+        "description": "A simple ASP.net web sample.",
+        "problems": [],
+        "mixins": [
+          "pullrequest"
+        ]
+      }
+    ],
+    "name": "blog.sunix.org",
+    "commands": [
+      {
+        "commandLine": "cd ${current.project.path} && jekyll serve --host 0.0.0.0",
+        "name": "Run Jekyll",
+        "attributes": {
+          "previewUrl": "http://${server.port.4000}/"
+        },
+        "type": "custom"
+      }
+    ],
+    "links": []
+  }
+}
