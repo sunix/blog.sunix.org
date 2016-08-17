@@ -4,7 +4,8 @@ blog.sunix.org
 
 This is the sources of [http://blog.sunix.org](http://blog.sunix.org).
 
- [![open in IDE](http://blog.sunix.org/images/contribute.svg)](https://codenvy.com/f?id=k307cp4ad7ib5gex).
+[![Open workspace in Eclipse Che](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](https://beta.codenvy.com/f?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages)
+
 
 Enjoy.
 
