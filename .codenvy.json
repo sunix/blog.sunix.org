@@ -61,4 +61,16 @@
     ],
     "links": []
   }
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "file": "/blog.sunix.org/_posts/2016-06-24-EclipseConFrance.md"
+          },
+          "id": "openFile"
+        }
+      ]
+    }
+  }
 }
