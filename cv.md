@@ -43,6 +43,9 @@ As one of the main trainers at Nuxeo, I have a great opportunity to share my kno
 - Google summer of code 2016 initiator for subjects around Eclipse Cloud projects (Eclipse Che and Flux)
 - Speaker at several international conferences: 
 
+  - JavaOne 2016: [Pair Programming with Eclipse Cloud Development Top Projects](https://www.youtube.com/watch?v=S8_aub7oy1w)
+  - Devfest Nantes 2016: [Pair programming with Eclipse Cloud Development top projects](https://devfest.gdgnantes.com/session.html?id=1466874066735)
+  - JugSummerCamp 2016: [Simplified Open Source Contributions with Eclipse Che](http://www.jugsummercamp.com/edition/7/presentation/1141)
   - Eclipse Con NA 2016: [Pair programming in the Cloud with Eclipse Che, Eclipse Flux, Orion, Eclipse IDE and Docker](https://www.eclipsecon.org/na2016/session/pair-programming-cloud-eclipse-che-eclipse-flux-orion-eclipse-ide-and-docker) - [Video soon available](https://www.infoq.com/EclipseCon-2016/presentations/)
   - Snowcamp 2016: [Pair programming with Cloud IDEs](https://snowcamp2016.sched.org/event/5nBF/pair-programming-with-cloud-ides)
   - Eclipse Con Europe 2015: [Join our live pair programming session with Eclipse Che, Eclipse IDE, Eclipse Orion, Eclipse Flux and Docker](https://www.eclipsecon.org/europe2015/session/join-our-live-pair-programming-session-eclipse-che-eclipse-ide-eclipse-orion-eclipse-flux) - [Video](https://www.youtube.com/watch?v=lX-4ftWzK3s)
