@@ -9,6 +9,14 @@ permalink: /cv/
 
 Sun Seng David Tan
 
+3 place Léon Blum  
+75011 Paris  
+France
+
++33 621 024 173  
+sunix@sunix.org  
+@sunsengdavidtan
+
 ## Summary
 
 ### Java
