@@ -45,7 +45,7 @@ In addition, I also have experience as a SCRUM master at Nuxeo.
 ### Training
 As one of the main trainers at Nuxeo, I have a great opportunity to share my knowledge with other people, especially my team mates, which is a responsibility that I enjoy having.
 
-### Community<div id="community"></div>
+### Community
 
 - Paris JUG team member
 - Google summer of code 2016 initiator for subjects around Eclipse Cloud projects (Eclipse Che and Flux)
