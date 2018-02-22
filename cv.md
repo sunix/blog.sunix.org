@@ -45,12 +45,15 @@ In addition, I also have experience as a SCRUM master at Nuxeo.
 ### Training
 As one of the main trainers at Nuxeo, I have a great opportunity to share my knowledge with other people, especially my team mates, which is a responsibility that I enjoy having.
 
-### Community
+### Community<div id="community"></div>
 
 - Paris JUG team member
 - Google summer of code 2016 initiator for subjects around Eclipse Cloud projects (Eclipse Che and Flux)
 - Speaker at several international conferences: 
-
+  - CheConf18: [The Path to Pair Programming in Che with Atom Teletype](https://www.eclipse.org/che/checonf18/sessions.html)
+  - Github constellation Paris 2017: Che demo show case
+  - EclipseCon Fr 17: Simplified Open Source Contributions with Che
+  - CheConf16: The Path to Pair Programming in Che
   - JavaOne 2016: [Pair Programming with Eclipse Cloud Development Top Projects](https://www.youtube.com/watch?v=S8_aub7oy1w)
   - Devfest Nantes 2016: [Pair programming with Eclipse Cloud Development top projects](https://devfest.gdgnantes.com/session.html?id=1466874066735)
   - JugSummerCamp 2016: [Simplified Open Source Contributions with Eclipse Che](http://www.jugsummercamp.com/edition/7/presentation/1141)
