@@ -9,12 +9,12 @@ permalink: /cv/
 
 Sun Seng David Tan
 
-3 place Léon Blum  
-75011 Paris  
+3 place Léon Blum
+75011 Paris
 France
 
-+33 621 024 173  
-sunix@sunix.org  
++33 621 024 173
+sunix@sunix.org
 @sunsengdavidtan
 
 ## Summary
@@ -49,7 +49,7 @@ As one of the main trainers at Nuxeo, I have a great opportunity to share my kno
 
 - Paris JUG team member
 - Google summer of code 2016 initiator for subjects around Eclipse Cloud projects (Eclipse Che and Flux)
-- Speaker at several international conferences: 
+- Speaker at several international conferences:
   - CheConf18: [The Path to Pair Programming in Che with Atom Teletype](https://www.eclipse.org/che/checonf18/sessions.html)
   - Github constellation Paris 2017: Che demo show case
   - EclipseCon Fr 17: Simplified Open Source Contributions with Che
@@ -94,9 +94,11 @@ Docker, PostgreSQL, Couchbase, Administration (Debian/Ubuntu)
 
 #### Training
 Selenium Webdriver Trainer, Nuxeo Trainer
-    
+
 ## Work Experience
 
+### [Red Hat](http://www.redhat.com) (Paris, France)
+that is cool
 
 ### [Serli](http://www.serli.com) (Poitier, France)
 <time datetime="2013-03-31" class="start">Since Mars. 2013</time>
@@ -135,7 +137,7 @@ Serli team is also behind these projects:
 
 Serli team helps Codenvy team to release the 3.x.x versions.
 
- 
+
 #### Practice Insight (Australia, Perth)
 Sun has been taking part to the development of a case and document management software. The application imports, indexes file documents daily used by lawyers. It provides a GUI it easily edit, share and search documents such as scanned pdf files, office documents, emails, etc.
 The application is based on Nuxeo and GWT.
@@ -168,7 +170,7 @@ Nuxeo is a open source software vendor. Its main product, called Nuxeo EP, is a 
 
 #### Nuxeo Core Java developer
 As a core developer I've been part of the development of
- 
+
 - Nuxeo IDE: Eclipse tools for Nuxeo plugin development <https://github.com/nuxeo/nuxeo-ide>
 - Nuxeo EP, DM, CMF, Webengine [nuxeo.github.com](http://nuxeo.github.com/)
 - Nuxeo RCP Apogee [hg.nuxeo.org/nuxeo-apogee](http://hg.nuxeo.org/nuxeo-apogee). An Eclipse RCP platform to build Destop applications that connect to a Nuxeo server.
