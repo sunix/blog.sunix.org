@@ -1,11 +1,10 @@
 ---
 layout: page
-title: Cheeze
+title: Cheeze Factory
 comments: no
-permalink: /cheeze
+permalink: /factory
 ---
 Start your devfiles on your favorite Che or CodeReady workpaces:
-
 
 Default server: https://che.openshift.io/
 
@@ -133,7 +132,7 @@ Default server: https://che.openshift.io/
 
 ## Update your badge
 ```
-<a href="https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
+<a href="https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
 ```
 
-Like that: <a href="https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
+Like that: <a href="https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
