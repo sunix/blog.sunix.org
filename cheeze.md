@@ -8,8 +8,6 @@ Start your devfiles on your favorite Che or CodeReady workpaces:
 
 Default server: https://che.openshift.io/
 
-## Select the server to use:
-
 <script>
             var selectedServer = "https://che.openshift.io/";
             var allcookies = document.cookie;
@@ -26,26 +24,30 @@ Default server: https://che.openshift.io/
                }
             }
             var servers = getServers(cookiearray);
-            if(!selected && servers.length > 0){
-                selected = servers[0].name;
-            }
 
-            var urlParams = new URLSearchParams(window.location.search);
-
-            // Now take key value pair out of this array
-            document.write("<select id='server' onchange=\"document.location.reload(setServer(document.getElementById('server').value))\">");
-
-            for(var i=0; i<servers.length; i++){
-                var server = servers[i];
-                console.log(getServers(cookiearray));
-                document.write ("  <option value='"+server.fullname+"' "+setSelected(server.name)+">"+unescape(server.name) + ": " + unescape(server.url)+"</option>");
-                if(isSelected(server.name)){
-                    selectedServer = server.url;
+            if(servers.length > 0){
+                if(!selected){
+                    selected = servers[0].name;
                 }
-               
+
+                document.write("<h2>Select the server to use:</h2>");
+
+                // Now take key value pair out of this array
+                document.write("<select id='server' onchange=\"document.location.reload(setServer(document.getElementById('server').value))\">");
+
+                for(var i=0; i<servers.length; i++){
+                    var server = servers[i];
+                    console.log(getServers(cookiearray));
+                    document.write ("  <option value='"+server.fullname+"' "+setSelected(server.name)+">"+unescape(server.name) + ": " + unescape(server.url)+"</option>");
+                    if(isSelected(server.name)){
+                        selectedServer = server.url;
+                    }
+                }
+                document.write("</select>");
             }
-            document.write("</select>");
+
             console.log('selected server: '+unescape(selectedServer));
+            var urlParams = new URLSearchParams(window.location.search);
             if(urlParams.has('url')){
                 window.location.href = unescape(selectedServer) + "f?url="+urlParams.get('url');
             }
@@ -124,7 +126,7 @@ Default server: https://che.openshift.io/
 
 <script>
     if(!selected){
-        selected = "Default"
+        selected = "My CheCRW server"
     }
     document.getElementsByTagName('form')[0].name.value = unescape(selected);
     document.getElementsByTagName('form')[0].url.value = unescape(selectedServer);
