@@ -45,7 +45,6 @@ Default server: https://che.openshift.io/
             document.write("</select>");
 
             if(urlParams.has('url')){
-                console.log("url !!!!" + urlParams.get('url'));
                 window.location.href = unescape(selectedServer) + "f?url="+urlParams.get('url');
             }
 
@@ -73,7 +72,7 @@ Default server: https://che.openshift.io/
                   url = url + '/';
               }
 
-              if(!url.startsWith('http://') || !url.startsWith('https://') ){
+              if(!url.startsWith('http://') && !url.startsWith('https://') ){
                   url = "https://" + url;
               }
 
