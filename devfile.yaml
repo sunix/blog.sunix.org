@@ -1,0 +1,49 @@
+apiVersion: 1.0.0
+metadata:
+  generateName: sunix-blog-site-
+
+projects:
+  - 
+    name: blog-sunix-org
+    source:
+      type: git
+      location: 'https://github.com/sunix/blog.sunix.org.git'
+
+components:
+  - mountSources: true
+    endpoints:
+      - name: che-docs-web-server
+        attributes:
+          public: 'true'
+          protocol: http
+          path: /
+        port: 4000
+      - name: che-docs-livereload-server
+        attributes:
+          public: 'true'
+          protocol: http
+          path: /
+        port: 35729
+    memoryLimit: 1Gi
+    type: dockerimage
+    image: 'eclipse/che-docs:latest'
+    alias: jekyll-dev
+
+commands:
+  - name: build
+    actions:
+      - workdir: /projects/blog-sunix-org/
+        type: exec
+        command: jekyll build
+        component: jekyll-dev
+  - name: serve
+    actions:
+      - workdir: /projects/blog-sunix-org/
+        type: exec
+        command: jekyll serve --incremental --livereload -H 0.0.0.0
+        component: jekyll-dev
+  - name: killall ruby
+    actions:
+      - type: exec
+        command: killall ruby
+        component: jekyll-dev
