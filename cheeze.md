@@ -9,6 +9,8 @@ Start your devfiles on your favorite Che or CodeReady workpaces:
 
 Default server: https://che.openshift.io/
 
+## Select the server to use:
+
 <script>
             var selectedServer = "https://che.openshift.io/";
             var allcookies = document.cookie;
@@ -65,9 +67,17 @@ Default server: https://che.openshift.io/
                return false;
             }
 
-            function setCookie(name, value)
+            function setCookie(name, url)
             {
-              document.cookie='che_'+ escape(name) + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+              if(!url.endsWith('/')){
+                  url = url + '/';
+              }
+
+              if(!url.startsWith('http://') || !url.startsWith('https://') ){
+                  url = "https://" + url;
+              }
+
+              document.cookie='che_'+ escape(name) + "=" + escape(url) + "; path=/; expires=" + expiry.toGMTString();
             }
 
             function setServer(value)
@@ -84,8 +94,20 @@ Default server: https://che.openshift.io/
 </script>
 
 <form>
-    <h2>Add a new Che/CodeReady Workspaces instance</h2>
+    <h2>Add a new Che/CodeReady Workspaces server</h2>
     Name: <input type="text" id="name" name='name'><br />
     URL: <input type="text" id="url" name='url'><br />
-    <input type="button" value="Add" id="submit" onclick="document.location.reload(putCookie(document.getElementsByTagName('form')));">
+    <input type="button" value="Add/update" id="submit" onclick="document.location.reload(putCookie(document.getElementsByTagName('form')));">
 </form>
+
+<script>
+    document.getElementsByTagName('form')[0].name.value = unescape(selected);
+    document.getElementsByTagName('form')[0].url.value = unescape(selectedServer);
+</script>
+
+## Update your badge
+```
+<a href="https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
+```
+
+Like that: <a href="https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>

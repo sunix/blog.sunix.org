@@ -9,7 +9,7 @@ tags:
   - pairprogramming
   - unittest
 comments: true
-contribute: https://beta.codenvy.com/f?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+contribute: https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
 ---
 
 Summer is getting hot in Eclipse Che ecosystem. We have more and more contributors joining this new Che adventure such as Red Hat and SAP. Everyone is working hard on Che improvements such as implementing the Language Server Protocol and multi-container workspaces.

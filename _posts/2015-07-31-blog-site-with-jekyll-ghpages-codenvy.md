@@ -10,7 +10,7 @@ tags:
   - eclipse che
   - github pages
 comments: true
-contribute: https://beta.codenvy.com/f?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+contribute: https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
 ---
 
 
