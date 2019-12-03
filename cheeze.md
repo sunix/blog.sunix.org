@@ -41,7 +41,7 @@ Default server: https://che.openshift.io/
                 console.log(getServers(cookiearray));
                 document.write ("  <option value='"+server.fullname+"' "+setSelected(server.fullname)+">"+unescape(server.name) + ": " + unescape(server.url)+"</option>");
                 if(isSelected(server.name)){
-                    selectedServer = url;
+                    selectedServer = server.url;
                 }
                
             }
