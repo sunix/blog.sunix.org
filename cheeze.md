@@ -46,7 +46,7 @@ Default server: https://che.openshift.io/
                
             }
             document.write("</select>");
-
+            console.log('selected server: '+unescape(selectedServer));
             if(urlParams.has('url')){
                 window.location.href = unescape(selectedServer) + "f?url="+urlParams.get('url');
             }
@@ -62,11 +62,12 @@ Default server: https://che.openshift.io/
                 return "";
             }
             function isSelected(value){
+                console.log('isSelected: value ' + value );
                 if(!value){
                     return false;
                 }
-                console.log(value.substring(4) + ' '+ selected)
-                if(value.substring(4)==selected){
+                console.log(value + ' '+ selected)
+                if(value==selected){
                     return true;
                 }
                 return false;
