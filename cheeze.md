@@ -49,6 +49,7 @@ Default server: https://che.openshift.io/
             console.log('selected server: '+unescape(selectedServer));
             var urlParams = new URLSearchParams(window.location.search);
             if(urlParams.has('url')){
+                setDevfileHistory(urlParams.get('url'));
                 window.location.href = unescape(selectedServer) + "f?url="+urlParams.get('url');
             }
 
@@ -72,6 +73,14 @@ Default server: https://che.openshift.io/
                     return true;
                 }
                 return false;
+            }
+
+            function setDevfileHistory(url) {
+            {
+                var today = new Date();
+                var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+                document.cookie='devfile_'+ escape(url) + "=" + escape(url) + "; path=/; expires=" + expiry.toGMTString();
+            }
             }
 
             function setCookie(name, url)
@@ -115,6 +124,18 @@ Default server: https://che.openshift.io/
                 return servers;
             }
 
+            function getDevfileHistory(){
+                var devfiles = [];
+                for(var i=0; i<cookiearray.length; i++) {
+                    name = cookiearray[i].split('=')[0];
+                    value = cookiearray[i].split('=')[1];
+                    if(name.startsWith("devfile_")){
+                       devfiles.push(value);
+                    }
+                }
+                return devfiles;
+            }
+
 </script>
 
 <form>
@@ -138,3 +159,14 @@ Default server: https://che.openshift.io/
 ```
 
 Like that: <a href="https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
+
+## Previous devfile:
+<ol>
+<script>
+    var devfiles = getDevfileHistory();
+    for(var i=0; i<devfiles.length; i++) {
+        devfile = devfiles[i];
+        document.write("<li><a href='"+ window.location.href + "/factory?url=" + devfile + "' >"+ unescape(devfile) + "</li>");
+    }
+</script>
+</ol>
