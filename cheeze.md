@@ -166,7 +166,7 @@ Like that: <a href="https://blog.sunix.org/factory?url=https://github.com/sunix/
     var devfiles = getDevfileHistory();
     for(var i=0; i<devfiles.length; i++) {
         devfile = devfiles[i];
-        document.write("<li><a href='"+ window.location.href + "/factory?url=" + devfile + "' >"+ unescape(devfile) + "</li>");
+        document.write("<li><a href='"+ window.location.href + "?url=" + devfile + "' >"+ unescape(devfile) + "</li>");
     }
 </script>
 </ol>
