@@ -15,12 +15,12 @@ Default server: https://che.openshift.io/
             // Get all the cookies pairs in an array
             cookiearray = allcookies.split('; ');
             var selected;
+
             for(var i=0; i<cookiearray.length; i++) {
                name = cookiearray[i].split('=')[0];
                value = cookiearray[i].split('=')[1];
                if(name == "server"){
                   selected=value.substring(4);
-                  document.write ("<br/>Server:"+ unescape(selected)+"<br/>");
                }
             }
             var servers = getServers(cookiearray);
@@ -45,8 +45,10 @@ Default server: https://che.openshift.io/
                 }
                 document.write("</select>");
             }
-
-            console.log('selected server: '+unescape(selectedServer));
+            if(selected){
+                document.write("<br/>Selected server: <a href='"+unescape(selectedServer)+"'>"+ unescape(selected)+"</a><br/>")
+                console.log('selected server: '+unescape(selectedServer));
+            }
             var urlParams = new URLSearchParams(window.location.search);
             if(urlParams.has('url')){
                 setDevfileHistory(urlParams.get('url'));
