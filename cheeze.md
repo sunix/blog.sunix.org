@@ -57,7 +57,7 @@ Default server: https://che.openshift.io/
 
 
             var today = new Date();
-            var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+            var expiry = new Date(today.getTime() + 36 * 30 * 24 * 3600 * 1000); // plus 36 * 30 days
 
             function setSelected(value){
                 if(isSelected(value)){
@@ -80,7 +80,7 @@ Default server: https://che.openshift.io/
             function setDevfileHistory(url) {
             {
                 var today = new Date();
-                var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
+                var expiry = new Date(today.getTime() + 36 * 30 * 24 * 3600 * 1000); // plus 36 * 30 days
                 document.cookie='devfile_'+ escape(url) + "=" + escape(url) + "; path=/; expires=" + expiry.toGMTString();
             }
             }
