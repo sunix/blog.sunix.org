@@ -4,7 +4,7 @@ blog.sunix.org
 
 This is the sources of [http://blog.sunix.org](http://blog.sunix.org).
 
-[![Open workspace in Eclipse Che](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](https://beta.codenvy.com/f?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages)
+<a href="https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
 
 
 Enjoy.
