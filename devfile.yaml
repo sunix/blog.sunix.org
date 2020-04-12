@@ -29,6 +29,12 @@ components:
     image: 'eclipse/che-docs:latest'
     alias: jekyll-dev
 
+  - alias: git
+    type: dockerimage
+    image: sunix/git-devtools
+    mountSources: true
+    memoryLimit: 64M
+
 commands:
   - name: build
     actions:
