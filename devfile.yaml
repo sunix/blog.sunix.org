@@ -35,6 +35,9 @@ components:
     mountSources: true
     memoryLimit: 64M
 
+  - id: ms-vscode/vscode-github-pullrequest/latest
+    type: chePlugin
+
 commands:
   - name: build
     actions:
