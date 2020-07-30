@@ -9,7 +9,7 @@ tags:
   - docker
   - ide
 comments: true
-contribute: https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
 ---
 
 This year I am participating to the Google Summer of Code as a mentor for the Eclipse umbrella organisation. I have submitted few ideas about Eclipse Che and Eclipse Flux and some of them have been selected. As far as I’m concerned, I am going to mentor the subject “Pair Programming with Eclipse Che” which will consist in improving an existing prototype I have demo-ed in various developer conferences [Github pair programming che extension](https://github.com/sunix/che-plugin-flux-live-edit)

@@ -10,7 +10,7 @@ tags:
   - mini display port
   - ubuntu
 comments: true
-contribute: https://blog.sunix.org/cheeze?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
 ---
 
 Just got back from an amazing [Jug Summercamp](http://www.jugsummercamp.org/edition/6) at La Rochelle. I was ready for the presentation of the [Live Pair Programing with Eclipse Cloud Development](http://www.jugsummercamp.org/edition/6/presentation/1121) and ...
