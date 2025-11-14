@@ -12,7 +12,7 @@ tags:
 comments: true
 ---
 
-Like many developers, my life is littered with unfinished side projects. But this time was different. This time, I had GitHub Copilot as my coding companion, and I actually finished. Let me tell you how AI-assisted development helped me build a [gift card management application](https://sunix.github.io/gift-card/) that I actually use every day.
+Like many developers, my life is littered with unfinished side projects. But this time was different. This time, I had GitHub Copilot as my coding companion, and I actually finished. Let me tell you how AI-assisted development helped me build a [gift card management application](https://sunix.github.io/gift-card/) that I actually use every day — and I did it almost entirely without opening an IDE.
 
 <!-- more -->
 
@@ -20,7 +20,7 @@ Like many developers, my life is littered with unfinished side projects. But thi
 
 My wife works at Red Hat, and like many companies, they offer a CSE (Comité Social et Économique) benefit program. One of the perks is getting gift cards with discounts — including a nice 5% discount at a major supermarket chain. Sounds great, right?
 
-Here's the catch: I was using a mobile wallet app to track these cards, but I could never keep the balance updated. After each shopping trip, I'd forget to update it. Then I'd be at the checkout, unsure if I had enough on the card or not. It was frustrating enough that I decided to build something better — a simple app where I could scan the barcode, use the card, and manually update the balance right there.
+Here's the catch: I was using Google Wallet on my mobile to track these cards, but I could never keep the balance updated. After each shopping trip, I'd forget to update it. Then I'd be at the checkout, unsure if I had enough on the card or not. It was frustrating enough that I decided to build something better — a simple app where I could display the barcode to be scanned at the store and manually update the balance right there.
 
 ## Another Side Project... Or Is It?
 
@@ -37,8 +37,8 @@ Then I stumbled upon something that changed everything: the ability to assign en
 I decided to give it a shot. I created an issue with my requirements and assigned it to Copilot. My first prompt was straightforward:
 
 > "Create a Progressive Web App for managing gift cards. The app should allow users to:
-> - Store gift card information (name, barcode)
-> - Scan barcodes using the device camera
+> - Store gift card information (name, barcode number)
+> - Generate and display barcodes to be scanned at stores
 > - Track and update card balances
 > - Work offline
 > - Install as a mobile app"
@@ -47,9 +47,9 @@ And then... I waited. Copilot started working. It created a project structure, s
 
 ## The Reality Check: When AI Needs Direction
 
-Of course, it wasn't perfect. The barcode scanning system Copilot generated wasn't great. The camera integration was clunky, and the barcode recognition was unreliable. I created an issue to fix it, but the improvements weren't quite right either.
+Of course, it wasn't perfect. The barcode generation system Copilot created was problematic. Instead of using an existing library, Copilot tried to reimplement Code128 barcode generation from scratch. While the generated barcodes looked right visually, they weren't compatible with the actual barcode readers at stores. There are nuances to barcode standards — Code128, Code39, EAN-13, and others — each with specific encoding rules that need to be precise down to the pixel.
 
-I got frustrated and did what any developer would do: I asked ChatGPT for help separately, opened up my IDE, started debugging manually, and eventually got it working. It took way more time than it should have.
+I created an issue to fix it, but the improvements weren't quite right either. I got frustrated and did what any developer would do: I asked ChatGPT for help separately, opened up my IDE, started debugging manually. Eventually, I discovered [bwip-js](https://github.com/metafloor/bwip-js), a reliable barcode generation library that handles all the complexity correctly. I manually amended [Copilot's PR](https://github.com/sunix/gift-card/pull/3) to integrate bwip-js, and finally, the barcodes worked perfectly at the store.
 
 Only later did I discover what I should have done from the start: just mention `@copilot` in the issue comments! When you need Copilot to adjust something, iterate on a feature, or fix a problem, you don't need to spin up a whole new workflow. Just comment on the issue or PR, mention @copilot, and it will respond and make the necessary changes. This was a game-changer for me.
 
@@ -73,7 +73,7 @@ The workflow became almost meditative. I'd create issues during my coffee break,
 After several iterations over a few weeks, I had a working app. Not just a proof of concept, but something I actually deployed and use regularly:
 
 - 📱 **Progressive Web App** that installs on my phone
-- 📷 **Barcode scanning** that actually works reliably
+- 📊 **Barcode generation** using bwip-js that works reliably with store scanners
 - 💰 **Balance tracking** that I can update on the go
 - 🔒 **Offline support** so it works everywhere
 - 🎨 **Clean UI** that's simple and functional
