@@ -26,6 +26,9 @@ Here's the catch: I was using Google Wallet on my mobile to track these cards, b
 
 "Alright, here we go again," I thought. Another side project that I'd start enthusiastically and abandon halfway through. My digital graveyard of unfinished projects was already pretty crowded.
 
+![Side projects comic strip](https://github.com/user-attachments/assets/081cf041-1ac2-4714-bfbc-fdfb664c3c0c)
+*[Source: CommitStrip.com](https://www.commitstrip.com/en/2014/11/25/west-side-project-story/?setLocale=1) - A story we all know too well.*
+
 But this time felt different. I had been experimenting with AI tools. I had recently used ChatGPT to build a sample website for a tennis club in just a few days. The speed was incredible. Before starting this gift card app, I even consulted ChatGPT about the technology stack — should I build a PWA (Progressive Web App) or go native with Kotlin? Based on the advice, I decided on a PWA for its cross-platform benefits and easier maintenance.
 
 Still, I was skeptical. Would I actually finish this one?
@@ -42,6 +45,9 @@ I decided to give it a shot. I created an issue with my requirements and assigne
 > - Track and update card balances
 > - Work offline
 > - Install as a mobile app"
+
+![Assigning an issue to Copilot](https://github.com/user-attachments/assets/b5369083-0e0f-4075-b6bf-0e2812175f26)
+*When you assign an issue to Copilot, it immediately creates a "[WIP]" Pull Request and starts working.*
 
 And then... I waited. Copilot started working. It created a project structure, set up the PWA infrastructure, implemented the basic features, and even opened a Pull Request. It was like having a junior developer who worked incredibly fast but needed guidance.
 
@@ -65,6 +71,12 @@ Once I understood how to work with Copilot effectively, I developed a rhythm tha
 6. **Merge and move on** - Deploy and create the next issue
 
 What I loved most was the visibility into Copilot's "thinking" process. I could see the session logs, watch it reason through problems, and even see screenshots it took when testing with Playwright. It was like pair programming with someone who documents everything they do.
+
+![Copilot's checklist of steps](https://github.com/user-attachments/assets/5f224715-dc86-42fb-a1ca-eb8e35f0460e)
+*Copilot shows you exactly what steps it's taking, with checkboxes showing progress. You can see the original prompt and watch it work through each task.*
+
+![Code changes by Copilot](https://github.com/user-attachments/assets/0ee9e585-fa89-4713-b447-0714a3295385)
+*The Pull Request shows all the changes Copilot made, just like any other PR. You can review the diff and request changes.*
 
 The workflow became almost meditative. I'd create issues during my coffee break, assign them to Copilot, and come back later to review and comment. No pressure to sit down for a long coding session. No context-switching overhead. Just incremental progress, issue by issue.
 
