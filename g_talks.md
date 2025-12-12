@@ -60,7 +60,7 @@ This presentation may also explore how AI agents could further enhance GitHub Co
 
 Vous vous dites peut-être, encore une présentation sur le "vibe coding" et l'IA, vous avez peut-être raison mais c'est un peu différent ici. Comme beaucoup de développeurs, ma vie est remplie de side projects inachevés. Mais cette fois, c'était différent—j'ai enfin terminé un side project, et je l'ai fait presque entièrement sans ouvrir un IDE. Cette présentation explore une approche nouvelle que j'appelle "GitHub Issue Driven Development" (GI DD), où GitHub Copilot couplé à Github Issue m'a permis de coder une application complète ... pendant mes pauses café ;)
 
-Dans cette session, je partagerai mon parcours de construction d'une Progressive Web App pour gérer des cartes-cadeaux en utilisant la fonctionnalité workspace de GitHub Copilot. Au lieu de sessions de codage traditionnelles, j'ai créé des issues, les ai assignées à @copilot, et j'ai regardé le code se générer, les pull requests s'ouvrir, et les itérations se faire en fonction de mes retours. Le workflow était simple : écrire des descriptions d'issues claires, laisser Copilot gérer l'implémentation, réviser la PR, fournir des retours via des commentaires, et merger.
+Dans cette session, je partagerai mon expérience dans le développement d'une Progressive Web App pour gérer des cartes-cadeaux. Au lieu de sessions de codage traditionnelles, j'ai créé des issues, les ai assignées à @copilot, et j'ai regardé le code se générer, les pull requests s'ouvrir, et les itérations se faire en fonction de mes retours. Et enfin merger lorsque j'étais satisfait !
 
 **Ce que vous apprendrez :**
 - Comment déléguer efficacement des fonctionnalités entières à GitHub Copilot via les GitHub Issues
