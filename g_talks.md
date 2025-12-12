@@ -11,7 +11,21 @@ This page contains abstracts for my talks and my speaker bio.
 
 ## Bio
 
-Sun Seng David TAN (a.k.a Sunix) is an experienced software engineer and tech lead with over 15 years of expertise in developing Java applications and cloud-native solutions. He has contributed extensively to open-source projects like Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che, and Eclipse Theia. As a passionate advocate for the Java community, Sun served as the ParisJUG Leader from 2019 to 2023 and has been an active crew member since 2015. He has presented at over 15 conferences, sharing his knowledge on cloud-native Java development and developer tools.
+### English
+
+Sun Seng David TAN (a.k.a Sunix) is an experienced software engineer and tech lead with over 15 years of expertise in developing Java applications and cloud-native solutions. Formerly at Red Hat, he has contributed extensively to major open-source projects such as Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che, and Eclipse Theia. As a passionate advocate for the Java community, Sun served as the ParisJUG Leader from 2019 to 2023 and has been an active crew member since 2015. He also supported Devoxx France as part of the "gilets rouges" team, playing a key role in organizing one of Europe's largest developer events.
+
+In 2024, Sun joined Sciam as a tech lead consultant, bringing his expertise in guiding companies toward innovative and high-performing solutions. Passionate about continuous learning and knowledge sharing, Sun regularly speaks at conferences and remains involved in numerous open-source projects.
+
+In his spare time, Sun brews his own beer in his kitchen, combining his passion for technology and artisanal creation.
+
+### Français
+
+Sun est un ingénieur logiciel et tech lead expérimenté avec plus de 15 ans d'expertise dans le développement d'applications Java et de solutions cloud-native. Anciennement chez Red Hat, il a contribué à des projets open-source majeurs tels que Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che et Eclipse Theia. Actif dans la communauté Java, Sun fait partie de l'équipe ParisJUG depuis 2015 et a occupé le poste de JUG Leader de 2019 à 2023. Il a également soutenu Devoxx France en tant que membre de l'équipe des "gilets rouges", jouant un rôle clé dans l'organisation de l'un des plus grands événements développeurs en Europe.
+
+En 2024, Sun rejoint Sciam en tant que consultant tech lead, apportant son expertise dans l'accompagnement des entreprises vers des solutions innovantes et performantes. Passionné par l'apprentissage continu et le partage de connaissances, Sun intervient régulièrement lors de conférences et reste impliqué dans de nombreux projets open-source.
+
+Pendant son temps libre, Sun brasse sa propre bière dans sa cuisine, combinant sa passion pour la technologie et la création artisanale.
 
 ## Talk Abstracts
 
@@ -37,4 +51,29 @@ The barrier to finishing side projects isn't just time or skill—it's about hav
 This presentation may also explore how AI agents could further enhance GitHub Copilot's capabilities, making the development process even more seamless and efficient.
 
 **Based on:** [Building a Gift Card Management App with GitHub Copilot](/articles/howto/2025/11/14/building-gift-card-app-with-github-copilot.html)
+
+---
+
+### GI DD: GitHub Issue Driven Development (Version Française)
+
+**Titre:** Comment j'ai terminé mon premier side project sans coder grâce à GitHub Copilot
+
+Vous vous dites peut-être, encore une présentation sur le "vibe coding" et l'IA, vous avez peut-être raison mais c'est légèrement différent ici. Comme beaucoup de développeurs, ma vie est jonchée de side projects inachevés. Mais cette fois, c'était différent—j'ai réellement terminé, et je l'ai fait presque entièrement sans ouvrir un IDE. Cette présentation explore une approche révolutionnaire que j'appelle "GitHub Issue Driven Development" (GI DD), où GitHub Copilot devient votre compagnon de code au sens le plus littéral.
+
+Dans cette session, je partagerai mon parcours de construction d'une Progressive Web App pour gérer des cartes-cadeaux en utilisant la fonctionnalité workspace de GitHub Copilot. Au lieu de sessions de codage traditionnelles, j'ai créé des issues, les ai assignées à @copilot, et j'ai regardé le code se générer, les pull requests s'ouvrir, et les itérations se faire en fonction de mes retours. Le workflow était simple : écrire des descriptions d'issues claires, laisser Copilot gérer l'implémentation, réviser la PR, fournir des retours via des commentaires, et merger.
+
+**Ce que vous apprendrez :**
+- Comment déléguer efficacement des fonctionnalités entières à GitHub Copilot via les GitHub Issues
+- Le workflow itératif de création d'issues, révision de PRs, et retours via les mentions @copilot
+- Des exemples concrets où l'IA excelle et où l'orientation humaine est cruciale (spoiler : les bibliothèques de génération de codes-barres !)
+- Comment décomposer des projets en issues gérables que l'IA peut traiter
+- Les avantages de visibilité et de transparence en voyant le processus de "réflexion" de Copilot via les logs de session et captures d'écran
+- Conseils pratiques pour écrire des prompts efficaces et gérer le processus de collaboration avec l'IA
+
+**Points clés à retenir :**
+La barrière pour terminer des side projects n'est pas seulement une question de temps ou de compétences—c'est une question d'avoir le bon modèle de collaboration. Cette présentation démontre comment le binômage avec l'IA peut transformer votre approche de "j'ai besoin d'un week-end pour coder ça" à "je peux progresser pendant mes pauses café". Que vous soyez sceptique vis-à-vis du développement assisté par IA ou désireux d'optimiser votre workflow, vous repartirez avec des stratégies pratiques pour enfin livrer votre prochain side project.
+
+Cette présentation pourrait également explorer comment les agents IA pourraient améliorer davantage les capacités de GitHub Copilot, rendant le processus de développement encore plus fluide et efficace.
+
+**Basé sur :** [Building a Gift Card Management App with GitHub Copilot](/articles/howto/2025/11/14/building-gift-card-app-with-github-copilot.html)
 
