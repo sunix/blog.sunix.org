@@ -18,7 +18,7 @@ Sun Seng David TAN (a.k.a Sunix) is an experienced software engineer and tech le
 ### GI DD: GitHub Issue Driven Development
 **How I Finished My First Side Project Without Coding Thanks to GitHub Copilot**
 
-Like many developers, my life is littered with unfinished side projects. But this time was different—I actually finished, and I did it almost entirely without opening an IDE. This talk explores a revolutionary approach I call "GitHub Issue Driven Development" (GI DD), where GitHub Copilot becomes your coding companion in the most literal sense.
+You might say, yet again another talk about vibe coding and AI, you may be right but it is slightly different here. Like many developers, my life is littered with unfinished side projects. But this time was different—I actually finished, and I did it almost entirely without opening an IDE. This talk explores a revolutionary approach I call "GitHub Issue Driven Development" (GI DD), where GitHub Copilot becomes your coding companion in the most literal sense.
 
 In this session, I'll share my journey of building a Progressive Web App for managing gift cards using GitHub Copilot's workspace feature. Instead of traditional coding sessions, I created issues, assigned them to @copilot, and watched as it generated code, opened pull requests, and iterated based on my feedback. The workflow was simple: write clear issue descriptions, let Copilot handle the implementation, review the PR, provide feedback through comments, and merge.
 
