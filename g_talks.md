@@ -71,7 +71,7 @@ Dans cette session, je partagerai mon parcours de construction d'une Progressive
 - Conseils pratiques pour écrire des prompts efficaces et gérer le processus de collaboration avec l'IA
 
 **Points clés à retenir :**
-La barrière pour terminer des side projects n'est pas seulement une question de temps ou de compétences—c'est une question d'avoir le bon modèle de collaboration. Cette présentation démontre comment le binômage avec l'IA peut transformer votre approche de "j'ai besoin d'un week-end pour coder ça" à "je peux progresser pendant mes pauses café". Que vous soyez sceptique vis-à-vis du développement assisté par IA ou désireux d'optimiser votre workflow, vous repartirez avec des stratégies pratiques pour enfin livrer votre prochain side project.
+La barrière pour terminer des side projects n'est pas seulement une question de temps ou de compétences—c'est une question d'avoir le bon modèle de collaboration. Cette présentation démontre comment le binômage avec l'IA peut transformer votre approche de "j'ai besoin d'un week-end pour coder ça" à "je peux l'améliorer pendant mes pauses café". Que vous soyez sceptique vis-à-vis du développement assisté par IA ou désireux d'optimiser votre workflow, vous repartirez avec des stratégies pratiques pour enfin livrer votre prochain side project.
 
 Cette présentation pourrait également explorer comment les agents IA pourraient améliorer davantage les capacités de GitHub Copilot, rendant le processus de développement encore plus fluide et efficace.
 
