@@ -16,6 +16,43 @@ sunix@sunix.org
 
 ## Experience
 
+### Senior Software Engineer / Platform Engineering Consultant at Sciam (2024 - 2025)
+
+#### FDJ United (Oct 2024 – Apr 2025)
+**Role**: Squad Lead – DevOps / Platform Engineering (Centre de compétences Platform Engineering)
+
+- **Context**: Takeover and industrialization of an existing draft for providing JFrog Artifactory as a managed platform service, replacing Nexus.
+- **Key Contributions**:
+  - Led a DevOps squad responsible for making the Artifactory platform **production-ready**.
+  - Redesigned the platform to align with **current enterprise standards** and security requirements.
+  - Implemented **fully automated deployments** using:
+    - Terraform
+    - Kubernetes
+    - AWS
+  - Integrated **IGA (Identity Governance & Administration)** and fine-grained access rights management.
+  - Defined operational standards (availability, security, scalability, observability).
+  - Collaborated closely with platform, security, and governance teams.
+- **Technologies Used**: Kubernetes, AWS, Terraform, JFrog Artifactory, GitOps, IAM / IGA, CI/CD.
+
+#### FLOA (Apr 2025 – Aug 2025)
+**Role**: Platform Engineering / Cloud Native Consultant
+
+- **Context**: Support for the migration of the Core Banking System towards an internally developed solution.
+- **Key Contributions**:
+  - Conducted a **technical and organizational diagnostic**:
+    - Identified pain points through interviews with multiple teams (Dev, Ops, Architecture).
+  - Defined **target Kubernetes architecture** and development environments.
+  - Built a **PoC development environment**:
+    - Minikube
+    - Helm
+    - End-to-end testing with Playwright
+  - Delivered **architecture and tooling recommendations** to support:
+    - Developer experience
+    - Scalability
+    - Reliability
+  - Promoted **Shift-Left practices** (testing, automation, developer ownership).
+- **Technologies Used**: Kubernetes, Helm, Minikube, Playwright, Cloud Native Architecture, DevEx, CI/CD.
+
 ### Senior Software Engineer at Red Hat (2022 - 2024)
 #### Eclipse JKube Project
 - **Project Description**: Facilitated the integration of Java applications with Kubernetes and OpenShift. Extended traditional Java build tools like Maven and Gradle for cloud-native deployments.
@@ -116,6 +153,20 @@ sunix@sunix.org
   - Provided on-site support during the event, resolving issues and facilitating communication between organizers and attendees.
 
 
+## Conferences & Speaking
+
+### Devoxx Belgium 2024 – Keynote
+- Presented a keynote showcasing **Devoxx Genie**, an IntelliJ plugin focused on AI-assisted development, with ongoing work to port it to **Visual Studio Code**.
+
+### KubeCon India 2024
+- Speaker on *Developing Kubernetes Applications Beyond Go*.
+- Focus on building Kubernetes-native applications using **Java and other non-Go languages**.
+
+### RivieraDev 2025
+- Speaker on *Developing Kubernetes Applications Beyond Go*.
+- Demonstrated how to design and operate Kubernetes applications with a strong **Java focus**.
+
+
 ## Education
 - **Master in Engineering - Computer Science and Networks** (2001 - 2004) - Université de Marne-la-Vallée
 - **Diplôme Universitaire de Technologie in Computer Science** (1999 - 2001) - Université Paris 8
@@ -127,10 +178,13 @@ sunix@sunix.org
 - **Software Development**: Java, TypeScript, C++, GoLang, .NET
 - **Frameworks & Platforms**: Quarkus, Eclipse RCP, Nuxeo, Spring, Struts
 - **Web Development**: ReactJS, AngularJS, JavaScript, HTML, CSS
-- **Testing Tools**: Selenium Webdriver
+- **Testing Tools**: Selenium Webdriver, Playwright
 - **Containers & Cloud**: Docker, Kubernetes, OpenShift
 - **CI/CD Tools**: Jenkins, GitHub Actions
 - **Cloud Platforms**: AWS, Google Cloud, OpenShift
+- **Infrastructure as Code**: Terraform
+- **Package & Artifact Management**: JFrog Artifactory, Helm, Minikube
 - **Version Control & Configuration Management**: Git, SVN, Apache Maven, Gradle
+- **Security & Identity Management**: IAM, IGA (Identity Governance & Administration)
 - **Collaboration**: Agile methodologies, Scrum Master, Kanban, team management
 - **Development Environments & Tools**: Eclipse, Visual Studio Code
