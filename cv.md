@@ -153,18 +153,106 @@ sunix@sunix.org
   - Provided on-site support during the event, resolving issues and facilitating communication between organizers and attendees.
 
 
-## Conferences & Speaking
+## Conferences & Talks
 
-### Devoxx Belgium 2024 – Keynote
-- Presented a keynote showcasing **Devoxx Genie**, an IntelliJ plugin focused on AI-assisted development, with ongoing work to port it to **Visual Studio Code**.
+### Keynote
+- **Devoxx Belgium 2024 – Keynote**
+  - *Devoxx Genie*  
+  - Devoxx Genie is an IntelliJ plugin for AI-powered development.  
+    Demo of ongoing work to port it to Visual Studio Code.
 
-### KubeCon India 2024
-- Speaker on *Developing Kubernetes Applications Beyond Go*.
-- Focus on building Kubernetes-native applications using **Java and other non-Go languages**.
+### Java, Cloud IDE & Developer Experience (2014 – 2021)
+- **JavaOne**
+  - Pair Programming with Eclipse Cloud Development Top Projects
+- **EclipseCon (Europe, France, North America)**
+  - Introduction to Eclipse Che
+  - Live Pair Programming in the Cloud with Eclipse Che
+  - Simplified Open Source Contributions with Eclipse Che
+  - Coding Kubernetes for Kids with Scratch and Eclipse Che
+- **Devoxx France**
+  - Développement Java avec un IDE Cloud : YES WE CAN
+- **DevFest Nantes, SnowCamp, BreizhCamp**
+  - Cloud IDEs, pair programming & developer tooling
+- **JUG Summer Camp**
+  - Live editing, pair programming & open-source contribution workflows
+- **CheConf**
+  - The Path to Pair Programming in Eclipse Che
+  - Pair Programming with Che and Atom Teletype
+- **Oracle Code Paris**
+  - Eclipse Che & Cloud Development showcase
 
-### RivieraDev 2025
-- Speaker on *Developing Kubernetes Applications Beyond Go*.
-- Demonstrated how to design and operate Kubernetes applications with a strong **Java focus**.
+### Java to Kubernetes for Dummies (2022 – 2024)
+
+Conference track delivered across major international conferences and JUGs,
+focused on demystifying Kubernetes for Java developers.
+
+- **Java2Days 2022**
+- **OpenSource XP 2022**
+- **DevNexus 2023 (USA)**
+- **DevFest Mons**
+- **Very Tech Trip**
+- **Nantes JUG, Alpes JUG**
+- **RivieraDev 2023**
+- **Devoxx France 2023**
+- **Devoxx Belgium 2023**
+
+Talks under this track:
+- *Java to Kubernetes for Dummies*
+- *Simplifiez le déploiement de vos applications Java sur Kubernetes avec JKube*
+- *Kubernetes, dépassionné et pour les ultra débutants*  
+  *(with Sébastien Blanc & Horacio Gonzalez)*
+
+### JKube, Kubernetes Tooling & Remote Development (2023 – 2025)
+- **RivieraDev 2023**
+  - JKube Remote Dev: Code with Your Cloud Services Locally
+- **Devoxx France 2023**
+  - JKube Remote Dev: Coder avec vos micro-services cloud… en local
+- **Devoxx Belgium 2023**
+  - Debugging in the Cloud, Mastered Locally with JKube Remote Dev
+- **RivieraJUG, MarsJUG, Poitou JUG**
+  - Advanced Java & Kubernetes workflows with JKube
+- **JavaLand**
+  - Kubernetes CRDs in Action with Java
+
+### Kubernetes Beyond Go & Platform Engineering (2024 – 2025)
+- **KubeCon India 2024**
+  - Developing Kubernetes Applications Beyond Go
+- **RivieraDev 2025**
+  - Developing Kubernetes Applications Beyond Go  
+  - Focus on Java, JVM ecosystems and Kubernetes APIs
+
+### Soft Skills & Non-Technical Talks
+- **Sunny Tech 2022**
+  - Le voyage du héros de l'IT 2 : Storytelling pour vos conférences
+- **RivieraDev 2023**
+  - Je brasse ma bière dans ma cuisine
+
+
+## Publications, Podcasts & Media
+
+### Magazine Articles
+
+- **Programmez! – Hors-série Special Red Hat Developer Edition**
+  - *CodeReady Workspaces*  
+  - Magazine article introducing cloud-based developer workspaces and Kubernetes-native
+    development environments.  
+  - https://www.programmez.com/magazine/programmez-hors-serie-5-pdf
+
+- **Programmez! – Magazine #248**
+  - *Y'a pas d'IDE plus simple que VS Code pour débuter en Java*  
+  - Magazine article focused on getting started with Java using Visual Studio Code,
+    emphasizing simplicity and modern developer tooling.  
+  - https://www.programmez.com/magazine/programmez-248-pdf
+
+### Podcasts
+
+- **Les Cast Codeurs – Episode 241**
+  - Interview on Cloud IDEs, Kubernetes and Developer Experience.
+
+- **Sons Of IT – Episode 27 (2023)**
+  - *Java, JKube et Quarkus : l'interview de Sun Tan*  
+  - Discussion on Java cloud-native development, Kubernetes tooling with JKube,
+    and modern Java frameworks such as Quarkus.
 
 
 ## Education
