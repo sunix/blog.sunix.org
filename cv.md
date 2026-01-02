@@ -26,7 +26,7 @@ Encadrement d'une équipe de 3 ingénieurs dans la conception, le déploiement e
 - **Technologies Used**: Kubernetes, AWS, Terraform, JFrog Artifactory, GitOps, IAM / IGA, CI/CD.
 
 #### FLOA (Apr 2025 – Aug 2025)
-**Role**: Consultant DevOps /Architecte en Transformation CI/CD
+**Role**: Consultant DevOps / Architecte en Transformation CI/CD
 
 Accompagnement des équipes dans la refonte des méthodologies de travail, préconisation et implémentation de bonnes pratiques pour la gestion des branches, des releases et des environnements, promotion de la stratégie "shift left" en matière de tests (PoC avec Helm, Minikube, Playwright).
 
