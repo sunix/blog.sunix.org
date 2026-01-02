@@ -19,38 +19,17 @@ sunix@sunix.org
 ### Senior Software Engineer / Platform Engineering Consultant at Sciam (2024 - 2025)
 
 #### FDJ United (Oct 2024 – Apr 2025)
-**Role**: Squad Lead – DevOps / Platform Engineering (Centre de compétences Platform Engineering)
+**Role**: Lead Ingénieur DevOps FdJ
 
-- **Context**: Takeover and industrialization of an existing draft for providing JFrog Artifactory as a managed platform service, replacing Nexus.
-- **Key Contributions**:
-  - Led a DevOps squad responsible for making the Artifactory platform **production-ready**.
-  - Redesigned the platform to align with **current enterprise standards** and security requirements.
-  - Implemented **fully automated deployments** using:
-    - Terraform
-    - Kubernetes
-    - AWS
-  - Integrated **IGA (Identity Governance & Administration)** and fine-grained access rights management.
-  - Defined operational standards (availability, security, scalability, observability).
-  - Collaborated closely with platform, security, and governance teams.
+Encadrement d'une équipe de 3 ingénieurs dans la conception, le déploiement et l'optimisation d'infrastructures et de pipelines CI/CD pour Artifactory
+
 - **Technologies Used**: Kubernetes, AWS, Terraform, JFrog Artifactory, GitOps, IAM / IGA, CI/CD.
 
 #### FLOA (Apr 2025 – Aug 2025)
-**Role**: Platform Engineering / Cloud Native Consultant
+**Role**: Consultant DevOps /Architecte en Transformation CI/CD
 
-- **Context**: Support for the migration of the Core Banking System towards an internally developed solution.
-- **Key Contributions**:
-  - Conducted a **technical and organizational diagnostic**:
-    - Identified pain points through interviews with multiple teams (Dev, Ops, Architecture).
-  - Defined **target Kubernetes architecture** and development environments.
-  - Built a **PoC development environment**:
-    - Minikube
-    - Helm
-    - End-to-end testing with Playwright
-  - Delivered **architecture and tooling recommendations** to support:
-    - Developer experience
-    - Scalability
-    - Reliability
-  - Promoted **Shift-Left practices** (testing, automation, developer ownership).
+Accompagnement des équipes dans la refonte des méthodologies de travail, préconisation et implémentation de bonnes pratiques pour la gestion des branches, des releases et des environnements, promotion de la stratégie "shift left" en matière de tests (PoC avec Helm, Minikube, Playwright).
+
 - **Technologies Used**: Kubernetes, Helm, Minikube, Playwright, Cloud Native Architecture, DevEx, CI/CD.
 
 ### Senior Software Engineer at Red Hat (2022 - 2024)
