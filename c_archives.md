@@ -12,10 +12,10 @@ permalink: /archives/
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
 {% unless year == this_year %}
 {% assign year = this_year %}
-{% unless post == site.posts.first %}
+{% if post != site.posts.first %}
 </ul>
 </section>
-{% endunless %}
+{% endif %}
 <section class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 shadow-sm">
   <h3 id="{{ year }}" class="text-xl font-extrabold mb-4 flex items-center gap-2">
     <span class="inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-emerald-500 to-violet-500"></span>
