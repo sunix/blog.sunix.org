@@ -1,41 +1,76 @@
 ---
 layout: default
 ---
-<div class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post mt-10" itemscope itemtype="http://schema.org/BlogPosting">
 
-  <header class="post-header">
-    <h1 itemprop="name" class="post-title">{{ page.title }}</h1>
+  <header class="mb-8">
+    <!-- Tags/Categories -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      {% for cat in page.categories %}
+      <a href="{{site.baseurl}}/categories/#{{ cat }}" class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20 hover:bg-cyan-300/90 transition">
+        {{ cat }}
+      </a>
+      {% endfor %}
+      {% for tag in page.tags %}
+      <a href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
+        {{ tag }}
+      </a>
+      {% endfor %}
+    </div>
+
+    <!-- Title -->
+    <h1 itemprop="name" class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">{{ page.title }}</h1>
+    
+    <!-- Meta -->
     <meta itemprop="keywords" content="{{ page.tags | join: ',' }}" />
-    <p class="post-meta">
-    {{ site.locales[site.default_locale].PostedInCategories }}
-    {% for cat in page.categories %}
-    <a href="{{site.baseurl}}/categories/#{{ cat }}">{{ cat }}</a>&nbsp;
-    {% endfor %} 
-    {% if page.tags != empty %}
-    {{ site.locales[site.default_locale].Taggedwith }}
-    {% for tag in page.tags %}
-    <a href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }} </a>{% unless page.tags.last == tag %}, {% endunless %}
-    {% endfor %}
-    {% endif %}
-    <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}">
-    {{ site.locales[site.default_locale].PostDate }}{{ page.date | date: "%b %-d, %Y" }}
-    </time>
-    </p>
-      <a href="https://twitter.com/share" class="twitter-share-button" data-via="__sunix_">Tweet</a>
+    <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 mb-4">
+      <time itemprop="datePublished" datetime="{{ page.date | date: '%Y-%m-%d' }}" class="font-semibold text-slate-800 dark:text-slate-200">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </time>
+    </div>
 
+    <!-- Share button -->
+    <a href="https://twitter.com/share" class="twitter-share-button inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition" data-via="__sunix_">
+      Share on X/Twitter
+    </a>
   </header>
 
-  <article class="post-content" itemprop="articleBody">
+  <!-- Content -->
+  <div class="post-content prose prose-slate dark:prose-invert max-w-none
+              prose-headings:font-extrabold prose-headings:tracking-tight
+              prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline
+              prose-code:text-fuchsia-600 dark:prose-code:text-fuchsia-400 prose-code:font-mono
+              prose-pre:bg-slate-950 prose-pre:text-slate-100 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-2xl
+              prose-img:rounded-2xl prose-img:shadow-glow" 
+       itemprop="articleBody">
     {{ content }}
-  </article>
-  <hr />
-       <a href="https://twitter.com/share" class="twitter-share-button" data-via="__sunix_">Tweet</a>
+  </div>
+
+  <hr class="my-8 border-white/30 dark:border-white/10" />
+
+  <!-- Share button bottom -->
+  <a href="https://twitter.com/share" class="twitter-share-button inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition" data-via="__sunix_">
+    Share on X/Twitter
+  </a>
   <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-</div>
+</article>
 
+<!-- Navigation -->
+<nav class="mt-10 flex items-center justify-between gap-4">
+  {% if page.previous.url %}
+  <a href="{{page.previous.url}}" class="flex-1 rounded-2xl border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 p-5 hover:shadow-glow transition">
+    <div class="text-xs text-slate-600 dark:text-slate-400 mb-1">← Previous</div>
+    <div class="font-semibold">{{page.previous.title}}</div>
+  </a>
+  {% endif %}
 
+  {% if page.next.url %}
+  <a href="{{page.next.url}}" class="flex-1 rounded-2xl border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 p-5 hover:shadow-glow transition text-right">
+    <div class="text-xs text-slate-600 dark:text-slate-400 mb-1">Next →</div>
+    <div class="font-semibold">{{page.next.title}}</div>
+  </a>
+  {% endif %}
+</nav>
 
-
-{% include page_pagination.html%}
 {% include comments.html %}
 

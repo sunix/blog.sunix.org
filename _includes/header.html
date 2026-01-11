@@ -1,27 +1,53 @@
-<header class="site-header">
+<header class="sticky top-0 z-50">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+    <div class="mt-4 rounded-2xl border border-white/30 dark:border-white/10 bg-white/70 dark:bg-slate-950/60 backdrop-blur shadow-sm">
+      <div class="flex items-center justify-between px-4 sm:px-6 py-3">
+        <a href="{{ site.baseurl }}/" class="flex items-center gap-3">
+          <span class="inline-flex h-9 w-9 items-center justify-center rounded-xl
+                       bg-gradient-to-br from-fuchsia-500 via-cyan-400 to-amber-300 text-white shadow">
+            <span class="font-extrabold">S</span>
+          </span>
+          <span class="font-extrabold tracking-tight text-lg">Sunix</span>
+          <span class="hidden sm:inline text-xs font-medium text-slate-600 dark:text-slate-400">
+            {{ site.tagline }}
+          </span>
+        </a>
 
-  <div class="wrapper">
+        <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700 dark:text-slate-300">
+          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ site.baseurl }}/">Home</a>
+          {% for page in site.pages %}
+          {% if page.title %}
+          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+          {% endfor %}
+        </nav>
 
-    <h1 class="site-title"><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>
-    <h3 class="site-meta">{{ site.tagline }}</h3>
+        <div class="flex items-center gap-2">
+          <a
+            href="{{ "/feed.xml" | prepend: site.baseurl }}"
+            class="hidden sm:inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold
+                   bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition"
+          >
+            RSS
+            <span class="inline-flex h-1.5 w-1.5 rounded-full bg-amber-300"></span>
+          </a>
 
-    <nav class="site-nav">
-      <a href="#" class="menu-icon">
-        <svg viewBox="0 0 18 15">
-          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
-          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
-          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
-        </svg>
-      </a>
-      <div class="trigger">
-        {% for page in site.pages %}
-        {% if page.title %}
-        <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        {% endif %}
-        {% endfor %}
+          <button
+            id="themeToggle"
+            class="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-white/10
+                   bg-white/80 dark:bg-white/5 px-3 py-2 text-sm font-semibold hover:bg-white transition"
+            aria-label="Toggle dark mode"
+            type="button"
+          >
+            <span class="dark:hidden">🌙</span>
+            <span class="hidden dark:inline">☀️</span>
+          </button>
+
+          <button class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5">
+            ☰
+          </button>
+        </div>
       </div>
-    </nav>
-
+    </div>
   </div>
-
 </header>

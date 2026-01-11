@@ -2,44 +2,163 @@
 layout: default
 ---
 
-<div class="home">
-  <div class="post" itemscope itemtype="http://schema.org/BlogPosting" >
+<!-- Hero Section -->
+<section class="pt-6 sm:pt-10">
+  <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <!-- Left -->
+    <div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-sm font-semibold shadow-sm">
+        <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span class="text-slate-700 dark:text-slate-200">Build • Learn • Share</span>
+        <span class="text-slate-500 dark:text-slate-400">— dev notes & hacks</span>
+      </div>
 
-    {% for post in paginator.posts %}
-
-    <header class="post-header">
-      <h1 itemprop="name" class="post-title">
-        <a itemprop="url" class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        Du <span class="highlight">code</span> qui devient
+        <span class="bg-gradient-to-r from-fuchsia-600 via-cyan-500 to-amber-500 bg-clip-text text-transparent">
+          créativité
+        </span>.
       </h1>
-      <meta itemprop="keywords" content="{{ post.tags | join: ',' }}" />
-      <p class="post-meta">
-      {{ site.locales[site.default_locale].PostedInCategories }}
-      {% for cat in post.categories %}
-      <a href="{{site.baseurl}}/categories/#{{ cat }}">{{ cat }}</a>&nbsp;
-      {% endfor %}
-      {% if post.tags != empty %}
-      {{ site.locales[site.default_locale].Taggedwith }}
-      {% for tag in post.tags %}
-      <a href="{{ site.baseurl }}/tags/#{{ tag }}" title="{{ tag }}">{{ tag }} </a>{% unless post.tags.last == tag %}, {% endunless %}
-      {% endfor %}
-      {% endif %}
-      <time itemprop="datePublished" datetime="{{ post.date | date: '%Y-%m-%d' }}">
-        {{ site.locales[site.default_locale].PostDate }}{{ post.date | date: "%b %-d, %Y" }}
-      </time>
+
+      <p class="mt-4 text-lg sm:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+        {{ site.description }}
       </p>
-    </header>
 
-    <article class="post-content" itemprop="articleBody">
-      {% if post.content contains site.excerpt_separator %}
-      {{ post.excerpt }}
-      <p style="text-align: right"><a href="{{ post.url | prepend: site.baseurl }}">Read more</a></p>
-      {% else %}
-      {{ post.content }}
-      {% endif %}
-    </article>
-    <hr />
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a
+          href="#articles"
+          class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white
+                 bg-gradient-to-r from-fuchsia-600 via-cyan-500 to-amber-400 shadow-glow hover:opacity-95 transition"
+        >
+          Explorer les articles →
+        </a>
+        {% if paginator.posts.first %}
+        <a
+          href="{{ paginator.posts.first.url | prepend: site.baseurl }}"
+          class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
+                 border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5
+                 text-slate-900 dark:text-white hover:bg-white transition"
+        >
+          Dernier post
+        </a>
+        {% endif %}
+      </div>
 
-    {% endfor %}
+      <!-- Small stats -->
+      <div class="mt-8 grid grid-cols-3 gap-3 max-w-xl">
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Focus</div>
+          <div class="mt-1 font-extrabold">Dev + Ops</div>
+        </div>
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Ton</div>
+          <div class="mt-1 font-extrabold">Pragmatique</div>
+        </div>
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Vibe</div>
+          <div class="mt-1 font-extrabold">Joy + Tech</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Right illustration card -->
+    <div class="relative">
+      <div class="absolute -inset-4 rounded-[28px] blur-2xl opacity-70 dark:opacity-40
+                  bg-gradient-to-br from-fuchsia-500/30 via-cyan-400/25 to-amber-300/25"></div>
+
+      <div class="relative rounded-[28px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur shadow-glowDark overflow-hidden">
+        <img
+          src="{{ "/assets/hero-illustration.webp" | prepend: site.baseurl }}"
+          alt="Developer coding with creative ideas"
+          class="w-full h-auto block"
+          loading="eager"
+        />
+
+        <div class="absolute bottom-4 left-4">
+          <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/90 text-white px-4 py-2 text-xs font-semibold shadow">
+            <span class="font-mono">git push</span>
+            <span class="inline-flex h-2 w-2 rounded-full bg-amber-300"></span>
+            <span>make it fun</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
+
+<!-- Articles list -->
+<section id="articles" class="mt-14 sm:mt-18">
+  <div class="flex items-end justify-between gap-6">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Recent Articles</h2>
+      <p class="mt-2 text-slate-700 dark:text-slate-300">Latest posts from the blog</p>
+    </div>
+  </div>
+
+  <div class="mt-6 space-y-8">
+    {% for post in paginator.posts %}
+    <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-glow transition">
+      <div class="flex flex-wrap items-center gap-3 mb-4">
+        {% for cat in post.categories %}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
+          {{ cat }}
+        </span>
+        {% endfor %}
+        {% for tag in post.tags limit:2 %}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20">
+          {{ tag }}
+        </span>
+        {% endfor %}
+      </div>
+
+      <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight leading-tight">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="hover:text-fuchsia-600 dark:hover:text-cyan-400">
+          {{ post.title }}
+        </a>
+      </h3>
+
+      <div class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+        {% if post.content contains site.excerpt_separator %}
+        {{ post.excerpt | strip_html | truncate: 280 }}
+        {% else %}
+        {{ post.content | strip_html | truncate: 280 }}
+        {% endif %}
+      </div>
+
+      <div class="mt-5 flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400">
+        <span class="font-semibold text-slate-800 dark:text-slate-200">{{ post.date | date: "%b %-d, %Y" }}</span>
+      </div>
+
+      <div class="mt-5">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white
+                              bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 dark:text-slate-900 hover:opacity-95 transition">
+          Read more →
+        </a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+  <div class="mt-10 flex items-center justify-center gap-3">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
+                          border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
+      ← {{ site.locales[site.default_locale].Next }}
+    </a>
+    {% endif %}
+
+    <span class="text-sm text-slate-600 dark:text-slate-400">
+      Page {{ paginator.page }} of {{ paginator.total_pages }}
+    </span>
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
+                          border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
+      {{ site.locales[site.default_locale].Previous }} →
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
+</section>
