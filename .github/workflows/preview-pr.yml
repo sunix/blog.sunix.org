@@ -19,7 +19,7 @@ jobs:
     if: >
       github.event_name == 'issue_comment' &&
       github.event.issue.pull_request &&
-      contains(github.event.comment.body, '/preview')
+      (startsWith(github.event.comment.body, '/preview') || contains(github.event.comment.body, '\n/preview'))
 
     steps:
       - name: Resolve PR number
@@ -54,14 +54,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: false
-
-      - name: Install Jekyll and dependencies
-        run: |
-          gem install jekyll bundler
-          if [ -f Gemfile ]; then
-            bundle install
-          fi
+          bundler-cache: true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -73,7 +66,7 @@ jobs:
 
       - name: Build with Jekyll
         run: |
-          jekyll build
+          bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
