@@ -13,7 +13,7 @@ permalink: /cv/
   </p>
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Experience
 
@@ -136,7 +136,7 @@ permalink: /cv/
 
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Community Involvement
 ### ParisJUG Crew Member (2015 - Present)
@@ -160,7 +160,7 @@ permalink: /cv/
 
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Conferences & Talks
 
@@ -239,7 +239,7 @@ Talks under this track:
 
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Publications, Podcasts & Media
 
@@ -270,7 +270,7 @@ Talks under this track:
 
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Education
 - **Master in Engineering - Computer Science and Networks** (2001 - 2004) - Université de Marne-la-Vallée
@@ -281,7 +281,7 @@ Talks under this track:
 
 </div>
 
-<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8" markdown="1">
 
 ## Skills
 - **Software Development**: Java, TypeScript, C++, GoLang, .NET
