@@ -23,7 +23,8 @@
 {% else %}
 <meta property="og:type" content="website">
 {% endif %}
-<meta property="og:image" content="{{ site.aboutme_photo }}">
+<meta property="og:image" content="{{ "/assets/hero-illustration.webp" | prepend: site.url }}">
+<meta name="twitter:image" content="{{ "/assets/hero-illustration.webp" | prepend: site.url }}">
 
 <meta name="keywords" content="{{ site.keywords }}">
 
