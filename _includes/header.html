@@ -39,10 +39,33 @@
             <span class="hidden dark:inline">☀️</span>
           </button>
 
-          <button class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5">
+          <button
+            id="mobileMenuToggle"
+            class="md:hidden inline-flex items-center justify-center rounded-xl px-3 py-2 border border-slate-200 dark:border-white/10 bg-white/80 dark:bg-white/5 hover:bg-white transition"
+            aria-label="Toggle mobile menu"
+            aria-expanded="false"
+            type="button"
+          >
             ☰
           </button>
         </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobileMenu" class="hidden md:hidden px-4 sm:px-6 pb-4">
+        <nav class="flex flex-col gap-3 text-sm font-semibold text-slate-700 dark:text-slate-300">
+          {% for page in site.pages %}
+          {% if page.title == "Archives" %}
+          <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="{{ page.url | prepend: site.baseurl }}">Articles</a>
+          {% elsif page.title == "About me" %}
+          <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="{{ page.url | prepend: site.baseurl }}">About</a>
+          {% elsif page.title == "Curriculum Vitae" %}
+          <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="{{ page.url | prepend: site.baseurl }}">CV</a>
+          {% elsif page.title != "Home" and page.title != "Categories" and page.title != "Tags" and page.title != "Talks" %}
+          <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+          {% endfor %}
+        </nav>
       </div>
     </div>
   </div>
