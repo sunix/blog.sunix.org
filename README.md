@@ -50,13 +50,7 @@ This blog is built with the following technologies:
    
    The site will be available at `http://localhost:4000`
 
-### Development with Eclipse Che
 
-You can also develop this blog using Eclipse Che with the included `devfile.yaml`:
-
-1. Use the factory link above or open the repository in an Eclipse Che workspace
-2. Run the `serve` command to start the Jekyll development server
-3. Access the site via the exposed endpoint on port 4000
 
 ## Deployment
 
