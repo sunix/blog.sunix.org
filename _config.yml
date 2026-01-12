@@ -1,6 +1,6 @@
 ### Site info:
 title: "{ blog.sunix.org }"
-tagline: "Java Cloud"
+tagline: "Java Devops AI and FOSS"
 author: Sun Seng David TAN (a.k.a Sunix)
 email: sunix@sunix.org
 description: "Sunix's personal blog site about Java, Cloud, and Open Source Software Development."
@@ -14,7 +14,7 @@ twitter_username: __sunix_
 github_username:  sunix
 disqus_shortname: sunix
 favicon:     "/images/favicon.ico"
-aboutme: I am an experienced software engineer and tech lead with over 15 years of expertise in developing, maintaining, and enhancing Java applications and cloud-native solutions. I have a proven track record of contributing to open-source projects like Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che, and Eclipse Theia. As a passionate advocate for the Java community, I have been an active member of the ParisJUG crew since 2015, serving as JUG Leader from 2019 to 2023. Additionally, I have supported Devoxx France as part of the "gilets rouges" team. My technical skills span across various programming languages, frameworks, and cloud technologies, and I am dedicated to continuous learning and sharing knowledge through conferences and community involvement.
+aboutme: Sun Seng David TAN (a.k.a Sunix) is an experienced software engineer and tech lead with over 15 years of expertise in developing Java applications and cloud-native solutions. Formerly at Red Hat, he has contributed extensively to major open-source projects such as Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che, and Eclipse Theia. As a passionate advocate for the Java community, Sun served as the ParisJUG Leader from 2019 to 2023 and has been an active crew member since 2015. He also supported Devoxx France as part of the "gilets rouges" team, playing a key role in organizing one of Europe's largest developer events. In 2024, Sun joined Sciam as a tech lead consultant, bringing his expertise in guiding companies toward innovative and high-performing solutions. Passionate about continuous learning and knowledge sharing, Sun regularly speaks at conferences and remains involved in numerous open-source projects. In his spare time, Sun brews his own beer in his kitchen, combining his passion for technology and artisanal creation.
 aboutme_photo: https://secure.gravatar.com/avatar/b1f5e51435209676f03b1332e7fcf405?&s=200 # your photo.
 
 
