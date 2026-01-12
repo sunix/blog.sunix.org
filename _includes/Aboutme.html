@@ -17,6 +17,12 @@
   {% if site.twitter_username != empty %}
   <a href="https://twitter.com/{{site.twitter_username}}" title="TwitterID: {{site.twitter_username}}"><i class="fa fa-twitter-square fa-3x"></i></a>
   {% endif %}
+  {% if site.bluesky_username != empty %}
+  <a href="https://bsky.app/profile/{{site.bluesky_username}}" title="Bluesky: {{site.bluesky_username}}"><i class="fa fa-comments fa-3x"></i></a>
+  {% endif %}
+  {% if site.linkedin_username != empty %}
+  <a href="https://www.linkedin.com/in/{{site.linkedin_username}}" title="LinkedIn: {{site.linkedin_username}}"><i class="fa fa-linkedin-square fa-3x"></i></a>
+  {% endif %}
 
   {% endif %}
 

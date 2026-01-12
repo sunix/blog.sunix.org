@@ -9,7 +9,7 @@ permalink: /cv/
   <h1 class="text-4xl sm:text-5xl font-extrabold mb-3">Java Software Engineer</h1>
   <p class="text-lg text-slate-700 dark:text-slate-300 font-semibold">Sun S. D. Tan</p>
   <p class="mt-2 text-slate-600 dark:text-slate-400">
-    +33 621 024 173 • sunix@sunix.org • <a href="https://x.com/__sunix_" class="text-cyan-600 dark:text-cyan-400 hover:underline">@__sunix_</a>
+    +33 621 024 173 • sunix@sunix.org • <a href="https://x.com/__sunix_" class="text-cyan-600 dark:text-cyan-400 hover:underline">X: @__sunix_</a> • <a href="https://bsky.app/profile/sunix.org" class="text-cyan-600 dark:text-cyan-400 hover:underline">Bluesky: sunix.org</a> • <a href="https://www.linkedin.com/in/sun-seng-david-tan-b05a684/" class="text-cyan-600 dark:text-cyan-400 hover:underline">LinkedIn</a>
   </p>
 </div>
 

@@ -17,6 +17,14 @@
 <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
+<!-- LinkedIn Open Graph tags -->
+{% if page.layout == 'post' %}
+<meta property="og:type" content="article">
+{% else %}
+<meta property="og:type" content="website">
+{% endif %}
+<meta property="og:image" content="{{ site.aboutme_photo }}">
+
 <meta name="keywords" content="{{ site.keywords }}">
 
 <link rel="icon" type="image/svg+xml" href="{{"/images/favicon.svg"| prepend:site.baseurl}}">
