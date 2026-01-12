@@ -34,6 +34,16 @@ permalink: /about/
       🐦 Twitter/X
     </a>
     {% endif %}
+    {% if site.bluesky_username != empty %}
+    <a href="https://bsky.app/profile/{{site.bluesky_username}}" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
+      🦋 Bluesky
+    </a>
+    {% endif %}
+    {% if site.linkedin_username != empty %}
+    <a href="https://www.linkedin.com/in/{{site.linkedin_username}}" class="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
+      💼 LinkedIn
+    </a>
+    {% endif %}
   </div>
 </div>
 {% endif %}

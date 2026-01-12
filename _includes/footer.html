@@ -15,6 +15,12 @@
         {% if site.twitter_username %}
         <a class="hover:text-slate-900 dark:hover:text-white" href="https://twitter.com/{{ site.twitter_username }}">Twitter/X</a>
         {% endif %}
+        {% if site.bluesky_username %}
+        <a class="hover:text-slate-900 dark:hover:text-white" href="https://bsky.app/profile/{{ site.bluesky_username }}">Bluesky</a>
+        {% endif %}
+        {% if site.linkedin_username %}
+        <a class="hover:text-slate-900 dark:hover:text-white" href="https://www.linkedin.com/in/{{ site.linkedin_username }}">LinkedIn</a>
+        {% endif %}
       </div>
     </div>
   </div>

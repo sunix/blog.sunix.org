@@ -11,6 +11,8 @@ locale: en_US
 
 ### Personal info and site tools info:
 twitter_username: __sunix_
+bluesky_username: sunix.org
+linkedin_username: sun-seng-david-tan-b05a684
 github_username:  sunix
 disqus_shortname: sunix
 favicon:     "/images/favicon.ico"
@@ -19,7 +21,7 @@ aboutme_photo: https://secure.gravatar.com/avatar/b1f5e51435209676f03b1332e7fcf4
 
 
 ### Site setting:
-ShowContactInfo: "True" # Personal Info (twitter,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
+ShowContactInfo: "True" # Personal Info (twitter,bluesky,linkedin,github,email) can be seen on aboutme-sidebar, those info only shown where ShowContactInfo == True
 default_column: "one" # blog style: two columns, if default_column != "two", you will see a one column blog.
 default_locale: "en" # blog sidebar language set, only include: English(en) and Chinese (cn)
 
