@@ -5,14 +5,27 @@ comments: no
 permalink: /cv/
 ---
 
-# Java Software Engineer
+<style>
+.cv-section {
+  @apply rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8;
+}
+.cv-section h2 {
+  @apply text-2xl font-extrabold mb-4 pb-2 border-b border-slate-200 dark:border-slate-700;
+}
+.cv-section ul {
+  @apply list-disc list-inside space-y-2 ml-4;
+}
+</style>
 
-Sun S. D. Tan
+<div class="text-center mb-10">
+  <h1 class="text-4xl sm:text-5xl font-extrabold mb-3">Java Software Engineer</h1>
+  <p class="text-lg text-slate-700 dark:text-slate-300 font-semibold">Sun S. D. Tan</p>
+  <p class="mt-2 text-slate-600 dark:text-slate-400">
+    +33 621 024 173 • sunix@sunix.org • <a href="https://x.com/__sunix_" class="text-cyan-600 dark:text-cyan-400 hover:underline">@__sunix_</a>
+  </p>
+</div>
 
-+33 621 024 173
-sunix@sunix.org
-[@__sunix_](https://x.com/__sunix_)
-
+<div class="cv-section">
 
 ## Experience
 
@@ -133,6 +146,10 @@ sunix@sunix.org
 - **Thales Communication (Colombes, France) (2004)**: Developed military software in C++.
 - **Netpepper (Paris, France) (2003)**: Developed a web application for sharing bookmarks and files using Java and .NET.
 
+</div>
+
+<div class="cv-section">
+
 ## Community Involvement
 ### ParisJUG Crew Member (2015 - Present)
 #### JUG Leader (2019 - 2023)
@@ -152,6 +169,10 @@ sunix@sunix.org
   - Helped set up and manage the venue, ensuring a smooth experience for speakers and participants.
   - Provided on-site support during the event, resolving issues and facilitating communication between organizers and attendees.
 
+
+</div>
+
+<div class="cv-section">
 
 ## Conferences & Talks
 
@@ -228,6 +249,10 @@ Talks under this track:
   - Je brasse ma bière dans ma cuisine
 
 
+</div>
+
+<div class="cv-section">
+
 ## Publications, Podcasts & Media
 
 ### Magazine Articles
@@ -255,12 +280,20 @@ Talks under this track:
     and modern Java frameworks such as Quarkus.
 
 
+</div>
+
+<div class="cv-section">
+
 ## Education
 - **Master in Engineering - Computer Science and Networks** (2001 - 2004) - Université de Marne-la-Vallée
 - **Diplôme Universitaire de Technologie in Computer Science** (1999 - 2001) - Université Paris 8
 - **First Cambridge in English, Level B** (2005) - St. Mark’s International College, Sydney, Australia
 - **Professional Knowledge Certificate in Software Qualification** (2005) - Fitec, Paris, France
 - **Scientific Baccalaureate, Mathematics Specialty** (1999) - Lycée Charlemagne Paris, France
+
+</div>
+
+<div class="cv-section">
 
 ## Skills
 - **Software Development**: Java, TypeScript, C++, GoLang, .NET
@@ -276,3 +309,5 @@ Talks under this track:
 - **Security & Identity Management**: IAM, IGA (Identity Governance & Administration)
 - **Collaboration**: Agile methodologies, Scrum Master, Kanban, team management
 - **Development Environments & Tools**: Eclipse, Visual Studio Code
+
+</div>
