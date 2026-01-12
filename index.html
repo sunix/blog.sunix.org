@@ -15,7 +15,7 @@ layout: default
 
       <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
         From <span class="highlight">code</span> to
-        <span class="bg-gradient-to-r from-fuchsia-600 via-cyan-500 to-amber-500 bg-clip-text text-transparent">
+        <span class="bg-gradient-to-r from-fuchsia-600 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
           innovation
         </span>.
       </h1>
@@ -28,7 +28,7 @@ layout: default
         <a
           href="#articles"
           class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white
-                 bg-gradient-to-r from-fuchsia-600 via-cyan-500 to-amber-400 shadow-glow hover:opacity-95 transition"
+                 bg-gradient-to-r from-fuchsia-600 via-pink-500 to-purple-600 shadow-glow hover:shadow-[0_0_30px_rgba(217,70,239,0.5)] hover:scale-105 transition-all duration-300"
         >
           Explore Articles →
         </a>
@@ -63,10 +63,10 @@ layout: default
 
     <!-- Right illustration card -->
     <div class="relative">
-      <div class="absolute -inset-4 rounded-[28px] blur-2xl opacity-70 dark:opacity-40
-                  bg-gradient-to-br from-fuchsia-500/30 via-cyan-400/25 to-amber-300/25"></div>
+      <div class="absolute -inset-4 rounded-[28px] blur-2xl opacity-80 dark:opacity-50 animate-pulse
+                  bg-gradient-to-br from-fuchsia-500/50 via-pink-500/45 to-purple-600/40" style="animation-duration: 3s;"></div>
 
-      <div class="relative rounded-[28px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur shadow-glowDark overflow-hidden">
+      <div class="relative rounded-[28px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur shadow-glowDark overflow-hidden hover:shadow-[0_0_60px_rgba(217,70,239,0.4)] transition-all duration-500">
         <img
           src="{{ "/assets/hero-illustration.webp" | prepend: site.baseurl }}"
           alt="Developer coding with creative ideas"
@@ -75,9 +75,9 @@ layout: default
         />
 
         <div class="absolute bottom-4 left-4">
-          <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/90 text-white px-4 py-2 text-xs font-semibold shadow">
+          <div class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-slate-900/90 to-purple-900/90 text-white px-4 py-2 text-xs font-semibold shadow-lg">
             <span class="font-mono">git push</span>
-            <span class="inline-flex h-2 w-2 rounded-full bg-amber-300"></span>
+            <span class="inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-amber-300 to-yellow-400 animate-pulse"></span>
             <span>make it fun</span>
           </div>
         </div>
@@ -97,7 +97,7 @@ layout: default
 
   <div class="mt-6 space-y-8">
     {% for post in paginator.posts %}
-    <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-glow transition">
+    <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-[0_0_40px_rgba(139,92,246,0.3),0_0_20px_rgba(34,211,238,0.2)] hover:border-fuchsia-400/50 dark:hover:border-fuchsia-500/30 transition-all duration-300">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         {% for cat in post.categories %}
         <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
@@ -131,7 +131,7 @@ layout: default
 
       <div class="mt-5">
         <a href="{{ post.url | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white
-                              bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-200 dark:text-slate-900 hover:opacity-95 transition">
+                              bg-gradient-to-r from-fuchsia-600 via-purple-600 to-pink-600 hover:shadow-[0_0_30px_rgba(217,70,239,0.5)] hover:scale-105 transition-all duration-300">
           Read more →
         </a>
       </div>

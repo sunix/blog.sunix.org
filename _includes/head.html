@@ -56,9 +56,30 @@
   }
   /* Highlighter effect */
   .highlight {
-    background: linear-gradient(90deg, rgba(250,204,21,.35), rgba(34,211,238,.25), rgba(236,72,153,.22));
+    background: linear-gradient(90deg, rgba(250,204,21,0.5), rgba(34,211,238,0.4), rgba(236,72,153,0.35));
     border-radius: 999px;
     padding: 0.05em 0.45em;
+    box-shadow: 0 0 20px rgba(250,204,21,0.3);
+  }
+  /* Enhanced glow animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  /* Enhanced box shadow for cards */
+  .card-glow {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 
+                0 20px 60px rgba(139,92,246,0.25),
+                0 0 40px rgba(34,211,238,0.15);
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 
+                0 25px 70px rgba(139,92,246,0.35),
+                0 0 50px rgba(34,211,238,0.25);
   }
   /* Prose styles for article content */
   .prose {
