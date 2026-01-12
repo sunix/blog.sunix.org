@@ -106,11 +106,32 @@
     font-size: 1.25em;
     font-weight: 800;
   }
+  /* Enhanced code block styles */
   .prose pre {
     margin-top: 1.7em;
     margin-bottom: 1.7em;
-    padding: 1em 1.25em;
+    padding: 1.25em 1.5em;
     overflow-x: auto;
+    background: #1e293b !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+  }
+  .dark .prose pre {
+    background: #0f172a !important;
+    border-color: rgba(148, 163, 184, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+  .prose pre code {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875em;
+    line-height: 1.7;
   }
   .prose code {
     font-size: 0.875em;
