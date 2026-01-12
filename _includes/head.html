@@ -154,9 +154,19 @@
   .prose ul, .prose ol {
     padding-left: 1.625em;
   }
+  .prose ul {
+    list-style-type: disc;
+  }
+  .prose ol {
+    list-style-type: decimal;
+  }
+  .prose ul ul {
+    list-style-type: circle;
+  }
   .prose li {
     margin-top: 0.5em;
     margin-bottom: 0.5em;
+    display: list-item;
   }
   .prose blockquote {
     font-style: italic;
