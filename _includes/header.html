@@ -7,31 +7,27 @@
                        bg-gradient-to-br from-fuchsia-500 via-cyan-400 to-amber-300 text-white shadow">
             <span class="font-extrabold">S</span>
           </span>
-          <span class="font-extrabold tracking-tight text-lg">Sunix</span>
+          <span class="font-extrabold tracking-tight text-lg">{{ site.title }}</span>
           <span class="hidden sm:inline text-xs font-medium text-slate-600 dark:text-slate-400">
             {{ site.tagline }}
           </span>
         </a>
 
         <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-slate-700 dark:text-slate-300">
-          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ site.baseurl }}/">Home</a>
           {% for page in site.pages %}
-          {% if page.title %}
+          {% if page.title == "Archives" %}
+          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ page.url | prepend: site.baseurl }}">Articles</a>
+          {% elsif page.title == "About me" %}
+          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ page.url | prepend: site.baseurl }}">About</a>
+          {% elsif page.title == "Curriculum Vitae" %}
+          <a class="hover:text-slate-900 dark:hover:text-white" href="{{ page.url | prepend: site.baseurl }}">CV</a>
+          {% elsif page.title != "Home" and page.title != "Categories" and page.title != "Tags" and page.title != "Talks" %}
           <a class="hover:text-slate-900 dark:hover:text-white" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
           {% endfor %}
         </nav>
 
         <div class="flex items-center gap-2">
-          <a
-            href="{{ "/feed.xml" | prepend: site.baseurl }}"
-            class="hidden sm:inline-flex items-center gap-2 rounded-xl px-3 py-2 text-sm font-semibold
-                   bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition"
-          >
-            RSS
-            <span class="inline-flex h-1.5 w-1.5 rounded-full bg-amber-300"></span>
-          </a>
-
           <button
             id="themeToggle"
             class="inline-flex items-center justify-center rounded-xl border border-slate-200 dark:border-white/10
