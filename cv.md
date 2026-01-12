@@ -5,18 +5,6 @@ comments: no
 permalink: /cv/
 ---
 
-<style>
-.cv-section {
-  @apply rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8;
-}
-.cv-section h2 {
-  @apply text-2xl font-extrabold mb-4 pb-2 border-b border-slate-200 dark:border-slate-700;
-}
-.cv-section ul {
-  @apply list-disc list-inside space-y-2 ml-4;
-}
-</style>
-
 <div class="text-center mb-10">
   <h1 class="text-4xl sm:text-5xl font-extrabold mb-3">Java Software Engineer</h1>
   <p class="text-lg text-slate-700 dark:text-slate-300 font-semibold">Sun S. D. Tan</p>
@@ -25,7 +13,7 @@ permalink: /cv/
   </p>
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Experience
 
@@ -148,7 +136,7 @@ permalink: /cv/
 
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Community Involvement
 ### ParisJUG Crew Member (2015 - Present)
@@ -172,7 +160,7 @@ permalink: /cv/
 
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Conferences & Talks
 
@@ -251,7 +239,7 @@ Talks under this track:
 
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Publications, Podcasts & Media
 
@@ -282,7 +270,7 @@ Talks under this track:
 
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Education
 - **Master in Engineering - Computer Science and Networks** (2001 - 2004) - Université de Marne-la-Vallée
@@ -293,7 +281,7 @@ Talks under this track:
 
 </div>
 
-<div class="cv-section">
+<div class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm mb-8">
 
 ## Skills
 - **Software Development**: Java, TypeScript, C++, GoLang, .NET

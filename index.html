@@ -32,14 +32,14 @@ layout: default
         >
           Explore Articles →
         </a>
-        {% if paginator.posts.first %}
+        {% if site.posts.first %}
         <a
-          href="{{ paginator.posts.first.url | prepend: site.baseurl }}"
+          href="{{ site.posts.first.url | prepend: site.baseurl }}"
           class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
                  border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5
                  text-slate-900 dark:text-white hover:bg-white transition"
         >
-          Dernier post
+          Latest post
         </a>
         {% endif %}
       </div>
@@ -96,7 +96,7 @@ layout: default
   </div>
 
   <div class="mt-6 space-y-8">
-    {% for post in paginator.posts %}
+    {% for post in site.posts limit:5 %}
     <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-[0_0_40px_rgba(139,92,246,0.3),0_0_20px_rgba(34,211,238,0.2)] hover:border-fuchsia-400/50 dark:hover:border-fuchsia-500/30 transition-all duration-300">
       <div class="flex flex-wrap items-center gap-3 mb-4">
         {% for cat in post.categories %}
@@ -139,26 +139,13 @@ layout: default
     {% endfor %}
   </div>
 
-  <!-- Pagination -->
-  {% if paginator.total_pages > 1 %}
-  <div class="mt-10 flex items-center justify-center gap-3">
-    {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
+  <!-- View all link -->
+  {% if site.posts.size > 5 %}
+  <div class="mt-10 text-center">
+    <a href="{{ "/c_archives/" | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
                           border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
-      ← {{ site.locales[site.default_locale].Next }}
+      View all {{ site.posts.size }} articles →
     </a>
-    {% endif %}
-
-    <span class="text-sm text-slate-600 dark:text-slate-400">
-      Page {{ paginator.page }} of {{ paginator.total_pages }}
-    </span>
-
-    {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
-                          border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5 hover:bg-white transition">
-      {{ site.locales[site.default_locale].Previous }} →
-    </a>
-    {% endif %}
   </div>
   {% endif %}
 </section>
