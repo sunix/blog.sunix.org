@@ -1,7 +1,7 @@
 blog.sunix.org
 ==========
 
-This is the source code for [http://blog.sunix.org](http://blog.sunix.org) - Sun Seng David TAN's (a.k.a Sunix) personal blog about Java, Cloud, and Open Source Software Development.
+This is the source code for [https://blog.sunix.org](https://blog.sunix.org) - Sun Seng David TAN's (a.k.a Sunix) personal blog about Java, Cloud, and Open Source Software Development.
 
 <a href="https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages"><img src="https://che.openshift.io/factory/resources/factory-contribute.svg" /></a>
 
