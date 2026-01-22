@@ -9,7 +9,7 @@ title: Archives - All Articles
 </div>
 
 <div class="space-y-6">
-  {#for post in roq:posts}
+  {#for post in site.collections.posts}
   <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 shadow-sm hover:shadow-glow transition">
     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
       <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
