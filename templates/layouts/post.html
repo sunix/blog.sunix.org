@@ -73,23 +73,6 @@ layout: main
   </div>
 </article>
 
-<!-- Navigation -->
-<nav class="mt-10 flex items-center justify-between gap-4">
-  {#if page.previousPost}
-  <a href="{page.previousPost.url}" class="flex-1 rounded-2xl border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 p-5 hover:shadow-glow transition">
-    <div class="text-xs text-slate-600 dark:text-slate-400 mb-1">← Previous</div>
-    <div class="font-semibold">{page.previousPost.title}</div>
-  </a>
-  {/if}
-
-  {#if page.nextPost}
-  <a href="{page.nextPost.url}" class="flex-1 rounded-2xl border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 p-5 hover:shadow-glow transition text-right">
-    <div class="text-xs text-slate-600 dark:text-slate-400 mb-1">Next →</div>
-    <div class="font-semibold">{page.nextPost.title}</div>
-  </a>
-  {/if}
-</nav>
-
 <!-- Comments section placeholder -->
 <div id="disqus_thread" class="mt-10"></div>
 <script>

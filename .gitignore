@@ -9,6 +9,10 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 *.class
 
+# Node / Web Bundler
+node_modules/
+package-lock.json
+
 # IDE
 .codenvy
 .vscode/

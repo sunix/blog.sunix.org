@@ -50,11 +50,12 @@ jobs:
         with:
           ref: refs/pull/${{ env.PR_NUMBER }}/merge
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
         with:
-          ruby-version: '3.3'
-          bundler-cache: true
+          distribution: 'temurin'
+          java-version: '21'
+          cache: 'maven'
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -64,11 +65,10 @@ jobs:
       - name: Install Surge
         run: npm install -g surge
 
-      - name: Build with Jekyll
-        run: |
-          bundle exec jekyll build
-        env:
-          JEKYLL_ENV: production
+      - name: Generate Roq Site
+        uses: quarkiverse/quarkus-roq@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check SURGE_TOKEN
         env:
@@ -99,7 +99,7 @@ jobs:
         run: |
           set -euo pipefail
           export DEPLOY_DOMAIN="pr-${{ env.PR_NUMBER }}-sunix-blog-preview.surge.sh"
-          surge ./_site --domain "$DEPLOY_DOMAIN" --token "$SURGE_TOKEN"
+          surge ./target/roq --domain "$DEPLOY_DOMAIN" --token "$SURGE_TOKEN"
           echo "DEPLOY_URL=https://$DEPLOY_DOMAIN" >> $GITHUB_ENV
 
       - name: Update PR comment with preview link
