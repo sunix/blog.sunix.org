@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta property="og:title" content="{title ?: site.title}">
+<title>{title ?: site.title}</title>
+<meta property="og:description" content="{description ?: site.description}">
+<meta property="og:url" content="{site.url}{page.url}">
+<meta property="og:site_name" content="{site.title}">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@__sunix_">
+<meta name="twitter:creator" content="@__sunix_">
+<meta name="twitter:title" content="{title ?: site.title}">
+<meta name="twitter:description" content="{description ?: site.description}">
+<meta name="twitter:url" content="{site.url}{page.url}">
+
+<meta property="og:type" content="{#if page.layout == 'layouts/post.html'}article{#else}website{/if}">
+<meta property="og:image" content="{site.url}/assets/hero-illustration.webp">
+<meta name="twitter:image" content="{site.url}/assets/hero-illustration.webp">
+
+<meta name="keywords" content="sunix, Java, Cloud, Software Development, FOSS, Open Source, Eclipse JKube, Fabric8 Kubernetes Java Client, Eclipse Che, Eclipse Theia, ParisJUG, Devoxx France, Java Community, Java Champion">
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="alternate icon" href="/images/favicon.ico">
+<link rel="canonical" href="{site.url}{page.url}">
+<link rel="alternate" type="application/atom+xml" title="{site.title}" href="{site.url}/feed.xml" />
+
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+          mono: ["JetBrains Mono", "ui-monospace", "SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"],
+        },
+        boxShadow: {
+          glow: "0 0 0 1px rgba(255,255,255,0.06), 0 18px 60px rgba(139,92,246,0.18)",
+          glowDark: "0 0 0 1px rgba(255,255,255,0.08), 0 18px 60px rgba(34,211,238,0.14)",
+        },
+      },
+    },
+  };
+</script>
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Grain effect */
+  .noise {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+    background-size: 220px 220px;
+  }
+  /* Highlighter effect - pastel rainbow */
+  .highlight {
+    background: linear-gradient(90deg, rgba(34,211,238,0.35), rgba(250,204,21,0.4), rgba(251,146,60,0.35), rgba(236,72,153,0.3));
+    border-radius: 999px;
+    padding: 0.05em 0.45em;
+    box-shadow: 0 0 15px rgba(250,204,21,0.2);
+  }
+  /* Enhanced glow animations */
+  @keyframes gradient-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient-shift 3s ease infinite;
+  }
+  /* Enhanced box shadow for cards */
+  .card-glow {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 
+                0 20px 60px rgba(139,92,246,0.25),
+                0 0 40px rgba(34,211,238,0.15);
+  }
+  .card-glow:hover {
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 
+                0 25px 70px rgba(139,92,246,0.35),
+                0 0 50px rgba(34,211,238,0.25);
+  }
+  /* Prose styles for article content */
+  .prose {
+    color: rgb(51 65 85);
+    max-width: 65ch;
+    line-height: 1.75;
+  }
+  .dark .prose {
+    color: rgb(226 232 240);
+  }
+  .prose p, .prose ul, .prose ol {
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+  .prose h2 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 800;
+  }
+  .prose h3 {
+    margin-top: 1.6em;
+    margin-bottom: 0.6em;
+    font-size: 1.25em;
+    font-weight: 800;
+  }
+  /* Enhanced code block styles */
+  .prose pre {
+    margin-top: 1.7em;
+    margin-bottom: 1.7em;
+    padding: 1.25em 1.5em;
+    overflow-x: auto;
+    background: #1e293b !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    position: relative;
+  }
+  .dark .prose pre {
+    background: #0f172a !important;
+    border-color: rgba(148, 163, 184, 0.1) !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+  .prose pre code {
+    background: transparent !important;
+    color: #e2e8f0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 0.875em;
+    line-height: 1.7;
+  }
+  .prose code {
+    font-size: 0.875em;
+    font-weight: 600;
+  }
+  .prose pre code {
+    font-weight: 400;
+  }
+  .prose img {
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  .prose a {
+    font-weight: 500;
+  }
+  .prose strong {
+    font-weight: 700;
+  }
+  .prose ul, .prose ol {
+    padding-left: 1.625em;
+  }
+  .prose ul {
+    list-style-type: disc;
+  }
+  .prose ol {
+    list-style-type: decimal;
+  }
+  .prose ul ul {
+    list-style-type: circle;
+  }
+  .prose li {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    display: list-item;
+  }
+  .prose blockquote {
+    font-style: italic;
+    border-left: 4px solid rgb(148 163 184);
+    padding-left: 1em;
+    margin-top: 1.6em;
+    margin-bottom: 1.6em;
+  }
+  .dark .prose blockquote {
+    border-left-color: rgb(71 85 105);
+  }
+</style>
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+
+<body class="font-sans text-slate-900 dark:text-slate-100 bg-slate-50 dark:bg-slate-950">
+
+<!-- Background decor -->
+<div class="pointer-events-none fixed inset-0 -z-10">
+  <div class="absolute inset-0 opacity-70 dark:opacity-50 noise"></div>
+  <div class="absolute -top-40 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full blur-3xl
+              bg-gradient-to-br from-fuchsia-400/30 via-cyan-300/25 to-amber-300/25 dark:from-fuchsia-500/18 dark:via-cyan-400/14 dark:to-amber-300/12"></div>
+  <div class="absolute -bottom-48 right-[-120px] h-[420px] w-[420px] rounded-full blur-3xl
+              bg-gradient-to-br from-emerald-400/25 via-violet-400/20 to-sky-300/20 dark:from-emerald-400/12 dark:via-violet-400/12 dark:to-sky-300/10"></div>
+</div>
+
+{#include partials/header.html /}
+
+<main class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 min-h-screen">
+  <div class="py-10">
+    {#insert /}
+  </div>
+</main>
+
+{#include partials/footer.html /}
+
+</body>
+
+</html>
