@@ -90,30 +90,35 @@ description: Sunix's personal blog site about Java, Cloud, and Open Source Softw
   <div class="mt-6 space-y-8">
     {#for post in site.collections.posts.take(5)}
     <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-[0_0_40px_rgba(139,92,246,0.3),0_0_20px_rgba(34,211,238,0.2)] hover:border-fuchsia-400/50 dark:hover:border-fuchsia-500/30 transition-all duration-300">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+      <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight leading-snug mb-3">
+        <a href="{post.url}" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-500 transition">{post.title}</a>
+      </h3>
+
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4">
         <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
           {post.date.format('MMM dd, yyyy')}
         </time>
-        <div class="flex flex-wrap gap-2">
-          {#if post.data.category}
-          <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
-            {post.data.category}
-          </span>
-          {/if}
-        </div>
-      </div>
-
-      <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight leading-snug hover:text-cyan-600 dark:hover:text-cyan-400 transition">
-        <a href="{post.url}">{post.title}</a>
-      </h3>
-
-      <div class="mt-4">
         <a
           href="{post.url}"
-          class="inline-flex items-center gap-1 text-sm font-semibold text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition"
+          class="inline-flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white hover:from-cyan-600 hover:to-purple-700 shadow-md hover:shadow-lg transition-all"
         >
           Read more <span>→</span>
         </a>
+      </div>
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        {#if post.data.category}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
+          {post.data.category}
+        </span>
+        {/if}
+        {#if post.data.tags}
+        {#for tag in post.data.tags}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-purple-200/70 text-purple-900 dark:bg-purple-300/20 dark:text-purple-200 border border-purple-300/40 dark:border-purple-300/20">
+          {tag}
+        </span>
+        {/for}
+        {/if}
       </div>
     </article>
     {/for}
