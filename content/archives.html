@@ -28,10 +28,6 @@ title: Archives - All Articles
       <a href="{post.url}">{post.title}</a>
     </h3>
 
-    {#if post.data.description}
-    <p class="mt-2 text-slate-700 dark:text-slate-300">{post.data.description}</p>
-    {/if}
-
     {#if post.data.tags}
     <div class="flex flex-wrap gap-2 mt-3">
       {#for tag in post.data.tags}
