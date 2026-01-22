@@ -38,7 +38,7 @@ This blog is built with the following technologies:
    ./mvnw quarkus:dev
    ```
    
-   The site will be available at `http://localhost:4000`
+   The site will be available at `http://localhost:8080`
    
    Dev mode features live reload - any changes to content or templates will be instantly reflected.
 
