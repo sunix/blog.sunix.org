@@ -99,9 +99,9 @@ description: Sunix's personal blog site about Java, Cloud, and Open Source Softw
         {/if}
         {#if post.data.tags}
         {#for tag in post.data.tags}
-        <span class="text-xs font-bold rounded-full px-3 py-1 bg-purple-200/70 text-purple-900 dark:bg-purple-300/20 dark:text-purple-200 border border-purple-300/40 dark:border-purple-300/20">
+        <a href="/tags#{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-purple-200/70 text-purple-900 dark:bg-purple-300/20 dark:text-purple-200 border border-purple-300/40 dark:border-purple-300/20 hover:bg-purple-300/90 transition">
           {tag}
-        </span>
+        </a>
         {/for}
         {/if}
       </div>

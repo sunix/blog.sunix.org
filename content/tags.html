@@ -1,0 +1,158 @@
+---
+layout: main
+title: Tags - Browse by Topic
+description: Browse blog posts by tag
+---
+
+<div class="mb-8">
+  <h1 class="text-4xl font-extrabold tracking-tight mb-3">Browse by Tag</h1>
+  <p class="text-slate-700 dark:text-slate-300">Filter articles by topic</p>
+</div>
+
+<!-- Tag Filter Display -->
+<div id="active-tag-filter" class="mb-6 hidden">
+  <div class="inline-flex items-center gap-2 rounded-full border border-amber-300/40 dark:border-amber-300/20 bg-amber-200/70 dark:bg-amber-300/20 px-4 py-2">
+    <span class="text-sm font-semibold text-amber-900 dark:text-amber-200">Filtering by:</span>
+    <span id="current-tag" class="text-sm font-bold text-amber-900 dark:text-amber-200"></span>
+    <a href="/tags" class="ml-2 text-amber-900 dark:text-amber-200 hover:text-amber-700 dark:hover:text-amber-100 transition">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- All Available Tags -->
+<div class="mb-8">
+  <h2 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-200">All Tags</h2>
+  <div id="all-tags" class="flex flex-wrap gap-2">
+    <!-- Tags will be populated by JavaScript -->
+  </div>
+</div>
+
+<!-- Posts List -->
+<div id="posts-container" class="space-y-6">
+  {#for post in site.collections.posts}
+  <article class="post-item rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 shadow-sm hover:shadow-glow transition" data-tags="{#if post.data.tags}{#for tag in post.data.tags}{tag}{#if tag_hasNext},{/if}{/for}{/if}">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
+      <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
+        {post.date.format('MMM dd, yyyy')}
+      </time>
+      <div class="flex flex-wrap gap-2">
+        {#if post.data.category}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
+          {post.data.category}
+        </span>
+        {/if}
+      </div>
+    </div>
+
+    <h3 class="text-xl font-extrabold tracking-tight hover:text-cyan-600 dark:hover:text-cyan-400 transition">
+      <a href="{post.url}">{post.title}</a>
+    </h3>
+
+    {#if post.data.tags}
+    <div class="flex flex-wrap gap-2 mt-3">
+      {#for tag in post.data.tags}
+      <a href="/tags#{tag}" class="tag-link text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
+        {tag}
+      </a>
+      {/for}
+    </div>
+    {/if}
+  </article>
+  {/for}
+</div>
+
+<!-- No results message -->
+<div id="no-results" class="hidden text-center py-12">
+  <div class="text-slate-600 dark:text-slate-400">
+    <svg class="w-16 h-16 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+    </svg>
+    <p class="text-lg font-semibold">No posts found with this tag</p>
+    <a href="/tags" class="mt-4 inline-block text-cyan-600 dark:text-cyan-400 hover:underline">View all tags</a>
+  </div>
+</div>
+
+<script>
+  (function() {
+    // Get all posts
+    const posts = document.querySelectorAll('.post-item');
+    const noResults = document.getElementById('no-results');
+    const activeTagFilter = document.getElementById('active-tag-filter');
+    const currentTagSpan = document.getElementById('current-tag');
+    const allTagsContainer = document.getElementById('all-tags');
+    
+    // Collect all unique tags from posts
+    const allTags = new Set();
+    posts.forEach(post => {
+      const tagsAttr = post.getAttribute('data-tags');
+      if (tagsAttr) {
+        tagsAttr.split(',').forEach(tag => {
+          if (tag.trim()) {
+            allTags.add(tag.trim());
+          }
+        });
+      }
+    });
+    
+    // Display all tags
+    const sortedTags = Array.from(allTags).sort((a, b) => a.localeCompare(b));
+    sortedTags.forEach(tag => {
+      const tagLink = document.createElement('a');
+      tagLink.href = '/tags#' + encodeURIComponent(tag);
+      tagLink.className = 'text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition';
+      tagLink.textContent = tag;
+      allTagsContainer.appendChild(tagLink);
+    });
+    
+    // Filter posts by tag
+    function filterByTag() {
+      const hash = window.location.hash.substring(1); // Remove the #
+      const selectedTag = decodeURIComponent(hash);
+      
+      if (!selectedTag) {
+        // Show all posts
+        posts.forEach(post => post.style.display = '');
+        noResults.classList.add('hidden');
+        activeTagFilter.classList.add('hidden');
+        return;
+      }
+      
+      // Show active filter
+      currentTagSpan.textContent = selectedTag;
+      activeTagFilter.classList.remove('hidden');
+      
+      // Filter posts
+      let visibleCount = 0;
+      posts.forEach(post => {
+        const tagsAttr = post.getAttribute('data-tags');
+        if (tagsAttr) {
+          const tags = tagsAttr.split(',').map(t => t.trim());
+          if (tags.includes(selectedTag)) {
+            post.style.display = '';
+            visibleCount++;
+          } else {
+            post.style.display = 'none';
+          }
+        } else {
+          post.style.display = 'none';
+        }
+      });
+      
+      // Show/hide no results message
+      if (visibleCount === 0) {
+        noResults.classList.remove('hidden');
+      } else {
+        noResults.classList.add('hidden');
+      }
+    }
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', filterByTag);
+    
+    // Initial filter on page load
+    filterByTag();
+  })();
+</script>
