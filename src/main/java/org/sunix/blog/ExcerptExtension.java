@@ -25,6 +25,16 @@ public class ExcerptExtension {
     private static final Pattern MORE_MARKER = Pattern.compile("<!--\\s*more\\s*-->", Pattern.CASE_INSENSITIVE);
     private static final Pattern HTML_TAG_PATTERN = Pattern.compile("<[^>]+>");
     private static final int MAX_EXCERPT_LENGTH = 500;
+    private static final int MIN_MATCHING_WORDS = 3;
+    
+    // Common stop words to exclude from matching
+    private static final java.util.Set<String> STOP_WORDS = java.util.Set.of(
+        "the", "and", "with", "for", "from", "are", "was", "were", "been",
+        "have", "has", "had", "but", "not", "you", "all", "can", "her",
+        "him", "his", "how", "its", "our", "out", "she", "who", "boy",
+        "did", "get", "may", "now", "old", "run", "too", "any", "day",
+        "guy", "kid", "let", "say", "use", "why"
+    );
 
     /**
      * Extracts the excerpt from a blog post.
@@ -134,11 +144,11 @@ public class ExcerptExtension {
                         // Remove date prefix and .md suffix
                         dirName = dirName.replaceAll("^\\d{4}-\\d{2}-\\d{2}-", "").replace(".md", "");
                         
-                        // Count matching words (must have at least 3 significant matching words)
+                        // Count matching words (must have at least MIN_MATCHING_WORDS)
                         int matchCount = 0;
                         for (String word : slugWords) {
-                            // Skip short or common words
-                            if (word.length() <= 2 || word.matches("the|and|with|for|from|are|was|were|been|have|has|had|but|not|you|all|can|her|him|his|how|its|our|out|she|was|who|boy|did|get|may|now|old|run|too|any|day|get|guy|kid|let|now|run|say|she|too|use|was|who|why|you")) {
+                            // Skip short or stop words
+                            if (word.length() <= 2 || STOP_WORDS.contains(word)) {
                                 continue;
                             }
                             if (dirName.contains(word)) {
@@ -146,7 +156,7 @@ public class ExcerptExtension {
                             }
                         }
                         
-                        return matchCount >= Math.min(3, slugWords.length / 2);
+                        return matchCount >= Math.min(MIN_MATCHING_WORDS, slugWords.length / 2);
                     })
                     .findFirst();
                 
