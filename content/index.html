@@ -111,6 +111,13 @@ description: Sunix's personal blog site about Java, Cloud, and Open Source Softw
         <a href="{post.url}" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-500 transition">{post.title}</a>
       </h3>
 
+      <!-- Excerpt -->
+      {#if post.excerpt()}
+      <p class="mt-3 text-slate-700 dark:text-slate-300 leading-relaxed">
+        {post.excerpt()}
+      </p>
+      {/if}
+
       <!-- Date -->
       <div class="mt-4">
         <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
