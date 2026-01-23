@@ -14,7 +14,7 @@ layout: main
       {/if}
       {#if page.data.tags}
       {#for tag in page.data.tags}
-      <a href="/tags#{tag}" title="{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
+      <a href="/tags#{tag|urlencode}" title="{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
         {tag}
       </a>
       {/for}
