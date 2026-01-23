@@ -13,6 +13,8 @@ tags:
 comments: true
 ---
 
+> **Note:** A French version of this post is available on [Sciam's blog](https://blog.sciam.fr/2026/01/22/github-issue-driven-development.html) (my employer).
+
 Like many developers, my life is littered with unfinished side projects. But this time was different. This time, I had GitHub Copilot as my coding companion, and I actually finished. Let me tell you how AI-assisted development helped me build a [gift card management application](https://sunix.github.io/gift-card/) that I actually use every day — and I did it almost entirely without opening an IDE.
 
 <!-- more -->
