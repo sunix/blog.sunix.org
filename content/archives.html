@@ -31,9 +31,9 @@ title: Archives - All Articles
     {#if post.data.tags}
     <div class="flex flex-wrap gap-2 mt-3">
       {#for tag in post.data.tags}
-      <span class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20">
+      <a href="/tags#{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
         {tag}
-      </span>
+      </a>
       {/for}
     </div>
     {/if}
