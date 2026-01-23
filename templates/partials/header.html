@@ -56,11 +56,11 @@
           <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="/archives">Articles</a>
           <a class="hover:text-slate-900 dark:hover:text-white py-2 border-b border-slate-200 dark:border-white/10" href="/about">About</a>
           <div class="py-2 border-b border-slate-200 dark:border-white/10">
-            <div class="cv-mobile-menu-toggle hover:text-slate-900 dark:hover:text-white cursor-pointer flex justify-between items-center">
+            <div class="cv-mobile-menu-toggle hover:text-slate-900 dark:hover:text-white cursor-pointer flex justify-between items-center" role="button" aria-expanded="false" aria-controls="cv-mobile-submenu" aria-label="Toggle CV submenu" tabindex="0">
               <span>CV</span>
               <span class="cv-mobile-arrow text-xs">▼</span>
             </div>
-            <div class="cv-mobile-submenu hidden mt-2 ml-4 space-y-2">
+            <div id="cv-mobile-submenu" class="cv-mobile-submenu hidden mt-2 ml-4 space-y-2">
               <a class="block hover:text-slate-900 dark:hover:text-white text-xs py-1" href="/cv#experience">Experience</a>
               <a class="block hover:text-slate-900 dark:hover:text-white text-xs py-1" href="/cv#community-involvement">Community Involvement</a>
               <a class="block hover:text-slate-900 dark:hover:text-white text-xs py-1" href="/cv#conferences-talks">Conferences &amp; Talks</a>
