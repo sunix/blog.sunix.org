@@ -24,7 +24,7 @@ public class ExcerptExtension {
     private static final Pattern MORE_MARKER = Pattern.compile("<!--\\s*more\\s*-->", Pattern.CASE_INSENSITIVE);
     private static final Pattern HTML_TAG_PATTERN = Pattern.compile("<[^>]+>");
     private static final int MAX_EXCERPT_LENGTH = 500;
-    private static final int MIN_MATCHING_WORDS = 3;
+    private static final int MIN_MATCHING_WORDS = 2;  // Reduced from 3 to 2 to handle cases like "why-we-estimate"
     
     // Common stop words to exclude from matching
     private static final java.util.Set<String> STOP_WORDS = java.util.Set.of(
@@ -32,7 +32,7 @@ public class ExcerptExtension {
         "have", "has", "had", "but", "not", "you", "all", "can", "her",
         "him", "his", "how", "its", "our", "out", "she", "who", "boy",
         "did", "get", "may", "now", "old", "run", "too", "any", "day",
-        "guy", "kid", "let", "say", "use", "why"
+        "guy", "kid", "let", "say", "use"
     );
 
     /**
@@ -109,6 +109,7 @@ public class ExcerptExtension {
         try {
             // Remove leading and trailing slashes
             url = url.replaceAll("^/+|/+$", "");
+            final String finalUrl = url; // Make final for use in lambda
             
             // Try to find the file in content/posts
             Path contentDir = Paths.get("content/posts");
@@ -118,7 +119,7 @@ public class ExcerptExtension {
 
             // URL format is typically: posts/long-slug-name
             // Directory format is: YYYY-MM-DD-shorter-slug.md
-            String[] parts = url.split("/");
+            String[] parts = finalUrl.split("/");
             if (parts.length < 2) {
                 return null;
             }
@@ -150,8 +151,19 @@ public class ExcerptExtension {
                             if (word.length() <= 2 || STOP_WORDS.contains(word)) {
                                 continue;
                             }
+                            // Check if word is in directory name OR if directory contains a word that starts with this word
+                            // (e.g., "estimate" in dir matches "estimation" in slug via prefix matching)
                             if (dirName.contains(word)) {
                                 matchCount++;
+                            } else if (word.length() >= 4) {
+                                // Check if any word in the directory starts with this slug word or vice versa
+                                String[] dirWords = dirName.split("-");
+                                for (String dirWord : dirWords) {
+                                    if (dirWord.length() >= 4 && (dirWord.startsWith(word) || word.startsWith(dirWord))) {
+                                        matchCount++;
+                                        break;
+                                    }
+                                }
                             }
                         }
                         
