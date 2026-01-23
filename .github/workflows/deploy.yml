@@ -32,18 +32,6 @@ jobs:
         uses: quarkiverse/quarkus-roq@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}   # Used to automatically get the GitHub Pages url
-      
-      - name: Preserve CNAME file for GitHub Pages
-        run: |
-          mkdir -p target/roq
-          if [ -f CNAME ]; then
-            cp CNAME target/roq/CNAME
-          fi
-      
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: target/roq
 
   deploy:
     environment:
