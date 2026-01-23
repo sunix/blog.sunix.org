@@ -26,13 +26,13 @@ Earlier this year, Florent and I submitted a few ideas to the Google Summer of C
 In Che, Java unit test execution is possible out of the box thanks to Maven. To execute a test class opened in the editor, you can simply create a Maven command in Che:
 
 ```
-clean test -Dtest=${current.class.fqn}
+clean test -Dtest=$\{current.class.fqn}
 ```
 
 You can even connect the debugger to it:
 
 ```
-clean test -Dtest=${current.class.fqn} -Dmaven.surefire.debug
+clean test -Dtest=$\{current.class.fqn} -Dmaven.surefire.debug
 ```
 
 However, this is not as good as the unit test UI we have in the classic Eclipse IDE.
