@@ -1,0 +1,144 @@
+---
+layout: main
+title: { blog.sunix.org }
+description: Sunix's personal blog site about Java, Cloud, and Open Source Software Development.
+---
+
+<!-- Hero Section -->
+<section class="pt-6 sm:pt-10">
+  <div class="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+    <!-- Left -->
+    <div>
+      <div class="inline-flex items-center gap-2 rounded-full border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 px-4 py-2 text-sm font-semibold shadow-sm">
+        <span class="inline-flex h-2 w-2 rounded-full bg-emerald-400"></span>
+        <span class="text-slate-700 dark:text-slate-200">Build • Learn • Share</span>
+        <span class="text-slate-500 dark:text-slate-400">— dev notes & hacks</span>
+      </div>
+
+      <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.05]">
+        From <span class="highlight">code</span> to
+        <span class="bg-gradient-to-r from-cyan-400 via-yellow-400 to-pink-400 bg-clip-text text-transparent animate-gradient">
+          innovation
+        </span>.
+      </h1>
+
+      <p class="mt-4 text-lg sm:text-xl text-slate-700 dark:text-slate-300 leading-relaxed">
+        Sunix's personal blog site about Java, Cloud, and Open Source Software Development.
+      </p>
+
+      <div class="mt-6 flex flex-col sm:flex-row gap-3">
+        <a
+          href="#articles"
+          class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold text-white
+                 bg-gradient-to-r from-cyan-400 via-yellow-400 to-pink-400 shadow-glow hover:shadow-[0_0_30px_rgba(236,72,153,0.5)] hover:scale-105 transition-all duration-300"
+        >
+          Explore Articles →
+        </a>
+      </div>
+
+      <!-- Small stats -->
+      <div class="mt-8 grid grid-cols-3 gap-3 max-w-xl">
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Focus</div>
+          <div class="mt-1 font-extrabold">Dev + Ops</div>
+        </div>
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Ton</div>
+          <div class="mt-1 font-extrabold">Pragmatique</div>
+        </div>
+        <div class="rounded-2xl border border-white/40 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4">
+          <div class="text-sm text-slate-600 dark:text-slate-400">Vibe</div>
+          <div class="mt-1 font-extrabold">Joy + Tech</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right illustration card -->
+    <div class="relative">
+      <div class="absolute -inset-4 rounded-[28px] blur-2xl opacity-70 dark:opacity-40
+                  bg-gradient-to-br from-cyan-400/35 via-yellow-300/30 to-pink-400/35"></div>
+
+      <div class="relative rounded-[28px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur shadow-glowDark overflow-hidden hover:shadow-[0_0_50px_rgba(34,211,238,0.3)] transition-all duration-500">
+        <img
+          src="/assets/hero-illustration.webp"
+          alt="Developer coding with creative ideas"
+          class="w-full h-auto block"
+          loading="eager"
+        />
+
+        <div class="absolute bottom-4 left-4">
+          <div class="inline-flex items-center gap-2 rounded-full bg-slate-900/90 text-white px-4 py-2 text-xs font-semibold shadow-lg">
+            <span class="font-mono">git push</span>
+            <span class="inline-flex h-2 w-2 rounded-full bg-gradient-to-r from-yellow-300 to-orange-400 animate-pulse"></span>
+            <span>make it fun</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Articles list -->
+<section id="articles" class="mt-14 sm:mt-18">
+  <div class="flex items-end justify-between gap-6">
+    <div>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Recent Articles</h2>
+      <p class="mt-2 text-slate-700 dark:text-slate-300">Latest posts from the blog</p>
+    </div>
+  </div>
+
+  <div class="mt-6 space-y-8">
+    {#for post in site.collections.posts.take(5)}
+    <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 sm:p-8 shadow-sm hover:shadow-[0_0_40px_rgba(139,92,246,0.3),0_0_20px_rgba(34,211,238,0.2)] hover:border-fuchsia-400/50 dark:hover:border-fuchsia-500/30 transition-all duration-300">
+      <!-- Tags at the top -->
+      <div class="flex flex-wrap gap-2 mb-4">
+        {#if post.data.category}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
+          {post.data.category}
+        </span>
+        {/if}
+        {#if post.data.tags}
+        {#for tag in post.data.tags}
+        <span class="text-xs font-bold rounded-full px-3 py-1 bg-purple-200/70 text-purple-900 dark:bg-purple-300/20 dark:text-purple-200 border border-purple-300/40 dark:border-purple-300/20">
+          {tag}
+        </span>
+        {/for}
+        {/if}
+      </div>
+
+      <!-- Title -->
+      <h3 class="text-xl sm:text-2xl font-extrabold tracking-tight leading-snug mb-3">
+        <a href="{post.url}" class="hover:text-transparent hover:bg-clip-text hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-500 transition">{post.title}</a>
+      </h3>
+
+      <!-- Date -->
+      <div class="mt-4">
+        <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
+          {post.date.format('MMM dd, yyyy')}
+        </time>
+      </div>
+
+      <!-- Read More button -->
+      <div class="mt-3">
+        <a
+          href="{post.url}"
+          class="inline-flex items-center gap-1 px-4 py-2 text-sm font-semibold rounded-xl bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 text-white hover:from-purple-500 hover:via-pink-500 hover:to-orange-500 shadow-md hover:shadow-lg transition-all"
+        >
+          Read more <span>→</span>
+        </a>
+      </div>
+    </article>
+    {/for}
+  </div>
+
+  <div class="mt-10 text-center">
+    <a
+      href="/archives"
+      class="inline-flex items-center justify-center rounded-2xl px-5 py-3 font-semibold
+             border border-slate-200 dark:border-white/10 bg-white/70 dark:bg-white/5
+             text-slate-900 dark:text-white hover:bg-white transition"
+    >
+      View all articles
+    </a>
+  </div>
+</section>

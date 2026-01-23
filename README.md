@@ -9,21 +9,21 @@ This is the source code for [https://blog.sunix.org](https://blog.sunix.org) - S
 
 This blog is built with the following technologies:
 
-- **[Jekyll](https://jekyllrb.com/)** 4.3 - Static site generator
-- **[Ruby](https://www.ruby-lang.org/)** 3.3 - Programming language
-- **[Kramdown](https://kramdown.gettalong.org/)** - Markdown parser
-- **[Rouge](https://github.com/rouge-ruby/rouge)** - Syntax highlighter
-- **[Jekyll Paginate](https://github.com/jekyll/jekyll-paginate)** - Pagination plugin
+- **[Quarkus](https://quarkus.io/)** 3.25 - Supersonic Subatomic Java Framework
+- **[Roq](https://quarkiverse.github.io/quarkiverse-docs/quarkus-roq/dev/)** 1.8 - Static site generator for Quarkus
+- **[Java](https://www.java.com/)** 21 - Programming language
+- **[Maven](https://maven.apache.org/)** - Build tool
+- **[Tailwind CSS](https://tailwindcss.com/)** - CSS framework (via CDN)
+- **[Qute](https://quarkus.io/guides/qute)** - Templating engine
 - **[GitHub Pages](https://pages.github.com/)** - Hosting platform
 - **[Surge.sh](https://surge.sh)** - PR preview deployments
-- **[Eclipse Che](https://www.eclipse.org/che/)** - Cloud development environment (via devfile)
 
 ## Quick Start
 
 ### Prerequisites
 
-- Ruby 3.3 or higher
-- Bundler gem
+- Java 21 or higher
+- Maven 3.9+ (or use the included Maven wrapper `./mvnw`)
 
 ### Local Development
 
@@ -33,29 +33,73 @@ This blog is built with the following technologies:
    cd blog.sunix.org
    ```
 
-2. Install dependencies:
+2. Run the development server:
    ```bash
-   bundle install
+   ./mvnw quarkus:dev
    ```
+   
+   The site will be available at `http://localhost:8080`
+   
+   Dev mode features live reload - any changes to content or templates will be instantly reflected.
 
 3. Build the site:
    ```bash
-   bundle exec jekyll build
-   ```
-
-4. Serve locally:
-   ```bash
-   bundle exec jekyll serve
+   ./mvnw clean package
    ```
    
-   The site will be available at `http://localhost:4000`
+   The built application will be in `target/quarkus-app/`
 
+### Adding Content
 
+#### Blog Posts
+
+Create a new directory under `content/posts/` with the format `YYYY-MM-DD-post-slug/`:
+
+```bash
+mkdir -p content/posts/2026-01-22-my-new-post
+```
+
+Create an `index.md` file inside with frontmatter:
+
+```markdown
+---
+layout: layouts/post.html
+title: "My New Post Title"
+date: "2026-01-22"
+category: "articles"
+tags:
+  - Java
+  - Quarkus
+  - Cloud
+---
+
+Your content here...
+```
+
+#### Static Pages
+
+Create HTML or Markdown files in the `content/` directory:
+
+```bash
+touch content/my-page.html
+```
+
+With frontmatter:
+
+```html
+---
+layout: main
+title: My Page Title
+---
+
+<div>
+  Your page content here...
+</div>
+```
 
 ## Deployment
 
 The blog is automatically deployed to GitHub Pages when changes are pushed to the `gh-pages` branch.
-
 
 ## PR Preview
 
@@ -81,5 +125,3 @@ On any pull request, comment `/preview` to trigger a preview build. The bot will
 - Update the comment with the preview URL when ready
 
 Enjoy.
-
-

@@ -1,0 +1,90 @@
+---
+layout: main
+---
+
+<article class="post mt-10" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="mb-8">
+    <!-- Tags/Categories -->
+    <div class="flex flex-wrap gap-2 mb-4">
+      {#if page.data.category}
+      <a href="/categories#{page.data.category}" class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20 hover:bg-cyan-300/90 transition">
+        {page.data.category}
+      </a>
+      {/if}
+      {#if page.data.tags}
+      {#for tag in page.data.tags}
+      <a href="/tags#{tag}" title="{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
+        {tag}
+      </a>
+      {/for}
+      {/if}
+    </div>
+
+    <!-- Title -->
+    <h1 itemprop="name" class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-4">{page.title}</h1>
+    
+    <!-- Meta -->
+    <meta itemprop="keywords" content="{#if page.data.tags}{page.data.tags}{/if}" />
+    <div class="flex items-center gap-4 text-sm text-slate-600 dark:text-slate-400 mb-4">
+      <time itemprop="datePublished" datetime="{page.date}" class="font-semibold text-slate-800 dark:text-slate-200">
+        {page.date.format('MMM dd, yyyy')}
+      </time>
+    </div>
+
+    <!-- Share buttons -->
+    <div class="flex flex-wrap gap-3">
+      <a href="https://twitter.com/intent/tweet?text={page.title}&url={site.url}{page.url}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
+        Share on X/Twitter
+      </a>
+      <a href="https://bsky.app/intent/compose?text={page.title}%20{site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
+        Share on Bluesky
+      </a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
+        Share on LinkedIn
+      </a>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="post-content prose prose-slate dark:prose-invert max-w-none
+              prose-headings:font-extrabold prose-headings:tracking-tight
+              prose-a:text-cyan-600 dark:prose-a:text-cyan-400 prose-a:no-underline hover:prose-a:underline
+              prose-code:text-fuchsia-600 dark:prose-code:text-fuchsia-400 prose-code:font-mono prose-code:text-sm
+              prose-code:bg-slate-100 dark:prose-code:bg-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+              prose-img:rounded-2xl prose-img:shadow-glow" 
+       itemprop="articleBody">
+    {#insert /}
+  </div>
+
+  <hr class="my-8 border-white/30 dark:border-white/10" />
+
+  <!-- Share buttons bottom -->
+  <div class="flex flex-wrap gap-3">
+    <a href="https://twitter.com/intent/tweet?text={page.title}&url={site.url}{page.url}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
+      Share on X/Twitter
+    </a>
+    <a href="https://bsky.app/intent/compose?text={page.title}%20{site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
+      Share on Bluesky
+    </a>
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
+      Share on LinkedIn
+    </a>
+  </div>
+</article>
+
+<!-- Comments section placeholder -->
+<div id="disqus_thread" class="mt-10"></div>
+<script>
+  var disqus_config = function () {
+    this.page.url = '{site.url}{page.url}';
+    this.page.identifier = '{page.url}';
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://sunix.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
