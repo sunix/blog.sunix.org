@@ -41,8 +41,6 @@ public class ExcerptExtension {
             }
 
             // Convert URL to file path
-            // URLs are like "/2024/07/09/email-migration/" 
-            // Files are in content/posts/YYYY-MM-DD-slug/index.md
             Path sourcePath = urlToFilePath(url);
             if (sourcePath == null || !Files.exists(sourcePath)) {
                 return "";
@@ -77,8 +75,7 @@ public class ExcerptExtension {
             
             return plainText;
         } catch (Exception e) {
-            // Log error and return empty string
-            System.err.println("Error reading excerpt: " + e.getMessage());
+            // Silently fail and return empty string
             return "";
         }
     }
@@ -92,7 +89,6 @@ public class ExcerptExtension {
             Object result = method.invoke(post);
             return result != null ? result.toString() : "";
         } catch (Exception e) {
-            System.err.println("Error getting URL from post: " + e.getMessage());
             return "";
         }
     }
@@ -111,26 +107,47 @@ public class ExcerptExtension {
                 return null;
             }
 
-            // Look for directories that match the URL pattern
-            // The directory name format is YYYY-MM-DD-slug
+            // URL format is typically: posts/long-slug-name
+            // Directory format is: YYYY-MM-DD-shorter-slug.md
             String[] parts = url.split("/");
-            if (parts.length < 4) {
+            if (parts.length < 2) {
                 return null;
             }
             
-            // URL format: year/month/day/slug
-            String year = parts[0];
-            String month = parts[1];
-            String day = parts[2];
-            String slug = parts[3];
+            // Get the slug (last part of URL)
+            String slug = parts[parts.length - 1];
             
-            // Directory format: YYYY-MM-DD-slug
-            String dirPrefix = year + "-" + month + "-" + day + "-" + slug;
+            // Find matching directory - use fuzzy matching
+            // Extract key words from slug (remove common words)
+            String[] slugWords = slug.toLowerCase()
+                .replaceAll("[^a-z0-9-]", "")
+                .split("-");
             
-            // Find matching directory
             try (var stream = Files.list(contentDir)) {
                 var matchingPath = stream
-                    .filter(p -> Files.isDirectory(p) && p.getFileName().toString().startsWith(dirPrefix))
+                    .filter(p -> {
+                        String dirName = p.getFileName().toString().toLowerCase();
+                        if (!Files.isDirectory(p) || !dirName.endsWith(".md")) {
+                            return false;
+                        }
+                        
+                        // Remove date prefix and .md suffix
+                        dirName = dirName.replaceAll("^\\d{4}-\\d{2}-\\d{2}-", "").replace(".md", "");
+                        
+                        // Count matching words (must have at least 3 significant matching words)
+                        int matchCount = 0;
+                        for (String word : slugWords) {
+                            // Skip short or common words
+                            if (word.length() <= 2 || word.matches("the|and|with|for|from|are|was|were|been|have|has|had|but|not|you|all|can|her|him|his|how|its|our|out|she|was|who|boy|did|get|may|now|old|run|too|any|day|get|guy|kid|let|now|run|say|she|too|use|was|who|why|you")) {
+                                continue;
+                            }
+                            if (dirName.contains(word)) {
+                                matchCount++;
+                            }
+                        }
+                        
+                        return matchCount >= Math.min(3, slugWords.length / 2);
+                    })
                     .findFirst();
                 
                 if (matchingPath.isPresent()) {
@@ -143,7 +160,6 @@ public class ExcerptExtension {
             
             return null;
         } catch (Exception e) {
-            System.err.println("Error converting URL to file path: " + e.getMessage());
             return null;
         }
     }
