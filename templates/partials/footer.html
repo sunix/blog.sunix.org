@@ -51,6 +51,39 @@
     });
   }
 
+  // Desktop CV submenu hover
+  const cvMenuContainers = document.querySelectorAll(".cv-menu-container");
+  cvMenuContainers.forEach(container => {
+    const submenu = container.querySelector(".cv-submenu");
+    if (submenu) {
+      container.addEventListener("mouseenter", () => {
+        submenu.classList.remove("hidden");
+      });
+      container.addEventListener("mouseleave", () => {
+        submenu.classList.add("hidden");
+      });
+    }
+  });
+
+  // Mobile CV submenu toggle
+  const cvMobileToggle = document.querySelector(".cv-mobile-menu-toggle");
+  const cvMobileSubmenu = document.querySelector(".cv-mobile-submenu");
+  const cvMobileArrow = document.querySelector(".cv-mobile-arrow");
+
+  if (cvMobileToggle && cvMobileSubmenu) {
+    cvMobileToggle.addEventListener("click", (e) => {
+      e.preventDefault();
+      const isHidden = cvMobileSubmenu.classList.contains("hidden");
+      if (isHidden) {
+        cvMobileSubmenu.classList.remove("hidden");
+        if (cvMobileArrow) cvMobileArrow.textContent = "▲";
+      } else {
+        cvMobileSubmenu.classList.add("hidden");
+        if (cvMobileArrow) cvMobileArrow.textContent = "▼";
+      }
+    });
+  }
+
   // Update year
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
