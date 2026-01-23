@@ -9,10 +9,9 @@ import java.nio.file.Paths;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import com.vladsch.flexmark.html.HtmlRenderer;
-import com.vladsch.flexmark.parser.Parser;
-import com.vladsch.flexmark.util.ast.Node;
-import com.vladsch.flexmark.util.data.MutableDataSet;
+import org.commonmark.parser.Parser;
+import org.commonmark.renderer.html.HtmlRenderer;
+import org.commonmark.node.Node;
 
 /**
  * Qute Template Extension to extract excerpt from blog posts.
@@ -202,12 +201,11 @@ public class ExcerptExtension {
     }
 
     /**
-     * Converts markdown to HTML using Flexmark.
+     * Converts markdown to HTML using CommonMark.
      */
     private static String markdownToHtml(String markdown) {
-        MutableDataSet options = new MutableDataSet();
-        Parser parser = Parser.builder(options).build();
-        HtmlRenderer renderer = HtmlRenderer.builder(options).build();
+        Parser parser = Parser.builder().build();
+        HtmlRenderer renderer = HtmlRenderer.builder().build();
         
         Node document = parser.parse(markdown);
         return renderer.render(document);
