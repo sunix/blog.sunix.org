@@ -1,6 +1,8 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@source "../../templates/**/*.html";
+@source "../../content/**/*.html";
+@source "../../content/**/*.md";
 
 /* Scroll offset for sticky header - prevents content from being hidden behind the header when using anchor links */
 html {

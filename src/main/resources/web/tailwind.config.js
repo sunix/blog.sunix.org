@@ -1,10 +1,5 @@
 module.exports = {
   darkMode: "class",
-  content: [
-    "./src/main/resources/**/*.{html,qute}",
-    "./templates/**/*.{html,qute}",
-    "./content/**/*.{html,md}"
-  ],
   theme: {
     extend: {
       fontFamily: {
