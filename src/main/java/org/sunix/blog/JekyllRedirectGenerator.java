@@ -19,6 +19,11 @@ import java.util.stream.Stream;
  */
 public class JekyllRedirectGenerator {
 
+    // Configuration constants
+    private static final String POSTS_DIR = "content/posts";
+    private static final String OUTPUT_DIR = "target/roq";
+    private static final int MAX_SIGNIFICANT_WORDS_IN_SLUG = 6;
+
     private static final String REDIRECT_HTML_TEMPLATE = """
         <!DOCTYPE html>
         <html lang="en">
@@ -74,13 +79,13 @@ public class JekyllRedirectGenerator {
     public void generateRedirects() throws IOException {
         System.out.println("🔄 Generating Jekyll→Roq redirects...");
         
-        Path postsDir = Paths.get("content/posts");
+        Path postsDir = Paths.get(POSTS_DIR);
         if (!Files.exists(postsDir)) {
             System.out.println("⚠️  Posts directory not found, skipping redirect generation");
             return;
         }
 
-        Path outputDir = Paths.get("target/roq");
+        Path outputDir = Paths.get(OUTPUT_DIR);
         if (!Files.exists(outputDir)) {
             System.out.println("⚠️  Roq output directory not found, skipping redirect generation");
             return;
@@ -164,16 +169,15 @@ public class JekyllRedirectGenerator {
 
     /**
      * Extracts a shortened slug matching Jekyll's typical URL patterns.
-     * Takes the first 6 significant words from the full slug.
+     * Takes the first MAX_SIGNIFICANT_WORDS_IN_SLUG significant words from the full slug.
      */
     private String extractShortSlug(String fullSlug) {
         String[] words = fullSlug.split("-");
         StringBuilder result = new StringBuilder();
         int significantWords = 0;
-        int maxWords = 6;
         
         for (String word : words) {
-            if (significantWords >= maxWords) {
+            if (significantWords >= MAX_SIGNIFICANT_WORDS_IN_SLUG) {
                 break;
             }
             
