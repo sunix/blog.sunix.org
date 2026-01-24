@@ -13,7 +13,7 @@ This blog is built with the following technologies:
 - **[Roq](https://quarkiverse.github.io/quarkiverse-docs/quarkus-roq/dev/)** 1.8 - Static site generator for Quarkus
 - **[Java](https://www.java.com/)** 21 - Programming language
 - **[Maven](https://maven.apache.org/)** - Build tool
-- **[Tailwind CSS](https://tailwindcss.com/)** - CSS framework (via CDN)
+- **[Tailwind CSS](https://tailwindcss.com/)** - CSS framework (via Quarkus Web Bundler)
 - **[Qute](https://quarkus.io/guides/qute)** - Templating engine
 - **[GitHub Pages](https://pages.github.com/)** - Hosting platform
 - **[Surge.sh](https://surge.sh)** - PR preview deployments
