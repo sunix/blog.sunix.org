@@ -51,6 +51,50 @@
     });
   }
 
+  // Desktop CV submenu hover
+  const cvMenuContainers = document.querySelectorAll(".cv-menu-container");
+  cvMenuContainers.forEach(container => {
+    const submenu = container.querySelector(".cv-submenu");
+    if (submenu) {
+      container.addEventListener("mouseenter", () => {
+        submenu.classList.remove("hidden");
+      });
+      container.addEventListener("mouseleave", () => {
+        submenu.classList.add("hidden");
+      });
+    }
+  });
+
+  // Mobile CV submenu toggle
+  const cvMobileToggle = document.querySelector(".cv-mobile-menu-toggle");
+  const cvMobileSubmenu = document.getElementById("cv-mobile-submenu");
+  const cvMobileArrow = document.querySelector(".cv-mobile-arrow");
+
+  if (cvMobileToggle && cvMobileSubmenu) {
+    const toggleSubmenu = () => {
+      const isHidden = cvMobileSubmenu.classList.contains("hidden");
+      if (isHidden) {
+        cvMobileSubmenu.classList.remove("hidden");
+        cvMobileToggle.setAttribute("aria-expanded", "true");
+        if (cvMobileArrow) cvMobileArrow.textContent = "▲";
+      } else {
+        cvMobileSubmenu.classList.add("hidden");
+        cvMobileToggle.setAttribute("aria-expanded", "false");
+        if (cvMobileArrow) cvMobileArrow.textContent = "▼";
+      }
+    };
+
+    cvMobileToggle.addEventListener("click", toggleSubmenu);
+    // Handle keyboard events for accessibility (Enter and Space keys)
+    // Prevent default for Space to avoid page scrolling
+    cvMobileToggle.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        toggleSubmenu();
+      }
+    });
+  }
+
   // Update year
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
