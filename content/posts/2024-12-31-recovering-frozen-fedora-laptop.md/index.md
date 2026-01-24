@@ -8,6 +8,12 @@ tags:
   - fedora
   - linux
 comments: true
+aliases:
+  - /articles/howto/2024/12/31/recovering-frozen-fedora-laptop.html
+  - /articles/articles/2024/12/31/recovering-frozen-fedora-laptop.html
+  - /articles/tutorial/2024/12/31/recovering-frozen-fedora-laptop.html
+  - /articles/blog/2024/12/31/recovering-frozen-fedora-laptop.html
+  - /articles/tech/2024/12/31/recovering-frozen-fedora-laptop.html
 ---
 
 I left Red Hat a few months ago and joined Sciam, but I had to return my corporate laptop. To maintain my workstation setup, I decided to reuse my old Dell XPS and migrate my data from one laptop to another. After installing a fresh Fedora system on the XPS, everything seemed fine initially, but some unexpected issues arose afterward.

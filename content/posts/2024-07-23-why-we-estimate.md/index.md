@@ -10,6 +10,12 @@ tags:
   - Task Estimation
   - Sprint Planning
 comments: true
+aliases:
+  - /articles/howto/2024/07/23/why-we-estimate.html
+  - /articles/articles/2024/07/23/why-we-estimate.html
+  - /articles/tutorial/2024/07/23/why-we-estimate.html
+  - /articles/blog/2024/07/23/why-we-estimate.html
+  - /articles/tech/2024/07/23/why-we-estimate.html
 ---
 
 Reading the article [“4 Fallacious Reasons Why We Estimate”](https://web.archive.org/web/20200419145539/https://tech.transferwise.com/4-fallacious-reasons-why-we-estimate/), I felt it missed the most important part of why we estimate. The article seemed to suggest that estimation is only fraught with drawbacks and is ultimately useless. However, from my experience working with various teams at Red Hat, I believe that estimation holds significant value, albeit for reasons that might not be immediately apparent. In this blog post, I will delve into why we estimate, addressing misconceptions and highlighting the true value of this practice.

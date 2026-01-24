@@ -9,6 +9,12 @@ tags:
   - migration
   - imap
 comments: true
+aliases:
+  - /articles/howto/2024/07/09/email-migration.html
+  - /articles/articles/2024/07/09/email-migration.html
+  - /articles/tutorial/2024/07/09/email-migration.html
+  - /articles/blog/2024/07/09/email-migration.html
+  - /articles/tech/2024/07/09/email-migration.html
 ---
 
 Migrating emails from one Gmail account to another can be a daunting task, especially when you need to ensure that no emails are lost, and all tags (labels) are accurately transferred. This guide will walk you through the process, highlighting the common challenges and the tools you can use to make the migration smoother.

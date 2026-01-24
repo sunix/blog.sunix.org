@@ -12,6 +12,12 @@ tags:
   - Software Development
   - DevOps
 comments: true
+aliases:
+  - /articles/howto/2025/11/07/git-flow-doesnt-fit-anymore.html
+  - /articles/articles/2025/11/07/git-flow-doesnt-fit-anymore.html
+  - /articles/tutorial/2025/11/07/git-flow-doesnt-fit-anymore.html
+  - /articles/blog/2025/11/07/git-flow-doesnt-fit-anymore.html
+  - /articles/tech/2025/11/07/git-flow-doesnt-fit-anymore.html
 ---
 
 I've used **Git Flow** on quite a few projects over the years — and honestly, I've reached a point where I don't think it's the right choice for most modern teams anymore.
