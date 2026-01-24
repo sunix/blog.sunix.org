@@ -32,9 +32,6 @@ jobs:
         uses: quarkiverse/quarkus-roq@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}   # Used to automatically get the GitHub Pages url
-      
-      - name: Generate redirects for old Jekyll URLs
-        run: ./generate-redirects.sh
 
   deploy:
     environment:

@@ -69,9 +69,6 @@ jobs:
         uses: quarkiverse/quarkus-roq@v1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: Generate redirects for old Jekyll URLs
-        run: ./generate-redirects.sh
 
       - name: Check SURGE_TOKEN
         env:
