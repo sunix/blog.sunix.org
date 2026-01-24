@@ -8,35 +8,8 @@ title: Archives - All Articles
   <p class="text-slate-700 dark:text-slate-300">Browse all blog posts chronologically</p>
 </div>
 
-<div class="space-y-6">
+<div class="space-y-8">
   {#for post in site.collections.posts}
-  <article class="rounded-[24px] border border-white/40 dark:border-white/10 bg-white/70 dark:bg-white/5 backdrop-blur p-6 shadow-sm hover:shadow-glow transition">
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-3">
-      <time class="text-sm font-semibold text-slate-600 dark:text-slate-400" datetime="{post.date}">
-        {post.date.format('MMM dd, yyyy')}
-      </time>
-      <div class="flex flex-wrap gap-2">
-        {#if post.data.category}
-        <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
-          {post.data.category}
-        </span>
-        {/if}
-      </div>
-    </div>
-
-    <h3 class="text-xl font-extrabold tracking-tight hover:text-cyan-600 dark:hover:text-cyan-400 transition">
-      <a href="{post.url}">{post.title}</a>
-    </h3>
-
-    {#if post.data.tags}
-    <div class="flex flex-wrap gap-2 mt-3">
-      {#for tag in post.data.tags}
-      <a href="/tags#{tag}" class="text-xs font-bold rounded-full px-3 py-1 bg-amber-200/70 text-amber-900 dark:bg-amber-300/20 dark:text-amber-200 border border-amber-300/40 dark:border-amber-300/20 hover:bg-amber-300/90 transition">
-        {tag}
-      </a>
-      {/for}
-    </div>
-    {/if}
-  </article>
+  {#include partials/article-card.html /}
   {/for}
 </div>
