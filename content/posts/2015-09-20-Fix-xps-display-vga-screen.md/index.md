@@ -12,6 +12,12 @@ tags:
   - ubuntu
 comments: true
 contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+aliases:
+  - /articles/howto/2015/09/20/Fix-xps-display-vga-screen.html
+  - /articles/articles/2015/09/20/Fix-xps-display-vga-screen.html
+  - /articles/tutorial/2015/09/20/Fix-xps-display-vga-screen.html
+  - /articles/blog/2015/09/20/Fix-xps-display-vga-screen.html
+  - /articles/tech/2015/09/20/Fix-xps-display-vga-screen.html
 ---
 
 Just got back from an amazing [Jug Summercamp](http://www.jugsummercamp.org/edition/6) at La Rochelle. I was ready for the presentation of the [Live Pair Programming with Eclipse Cloud Development](http://www.jugsummercamp.org/edition/6/presentation/1121) and ... AGAIN! I faced display issues with the external VGA projector not being detected on my computer, the same issue I encountered a few months ago at Eclipse Con France. Here’s how I managed to resolve it.

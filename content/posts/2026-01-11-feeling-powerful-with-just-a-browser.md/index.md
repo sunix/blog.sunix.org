@@ -11,6 +11,12 @@ tags:
   - Problem Solving
   - Tennis
 comments: true
+aliases:
+  - /articles/howto/2026/01/11/feeling-powerful-with-just-a-browser.html
+  - /articles/articles/2026/01/11/feeling-powerful-with-just-a-browser.html
+  - /articles/tutorial/2026/01/11/feeling-powerful-with-just-a-browser.html
+  - /articles/blog/2026/01/11/feeling-powerful-with-just-a-browser.html
+  - /articles/tech/2026/01/11/feeling-powerful-with-just-a-browser.html
 ---
 
 I don't get many chances to play tennis.

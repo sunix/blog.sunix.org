@@ -12,6 +12,12 @@ tags:
   - github pages
 comments: true
 contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+aliases:
+  - /articles/howto/2015/07/31/blog-site-with-jekyll-ghpages-codenvy.html
+  - /articles/articles/2015/07/31/blog-site-with-jekyll-ghpages-codenvy.html
+  - /articles/tutorial/2015/07/31/blog-site-with-jekyll-ghpages-codenvy.html
+  - /articles/blog/2015/07/31/blog-site-with-jekyll-ghpages-codenvy.html
+  - /articles/tech/2015/07/31/blog-site-with-jekyll-ghpages-codenvy.html
 ---
 
 Hello everyone! I'm starting my new blog site. This blog site is hosted by Github Pages and uses Jekyll as the blog engine. For this first blog post, let's see how to create such a blog post: I'm going to detail all the steps to create a blog site with Jekyll, Github Pages, Docker, Eclipse Che cloud IDE, and Codenvy.

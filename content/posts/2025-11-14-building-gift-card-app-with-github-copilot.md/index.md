@@ -11,6 +11,12 @@ tags:
   - Side Projects
   - Developer Productivity
 comments: true
+aliases:
+  - /articles/howto/2025/11/14/building-gift-card-app-with-github-copilot.html
+  - /articles/articles/2025/11/14/building-gift-card-app-with-github-copilot.html
+  - /articles/tutorial/2025/11/14/building-gift-card-app-with-github-copilot.html
+  - /articles/blog/2025/11/14/building-gift-card-app-with-github-copilot.html
+  - /articles/tech/2025/11/14/building-gift-card-app-with-github-copilot.html
 ---
 
 > **Note:** A 🇫🇷 French version of this post is available on [Sciam's blog](https://blog.sciam.fr/2026/01/22/github-issue-driven-development.html) (my employer).

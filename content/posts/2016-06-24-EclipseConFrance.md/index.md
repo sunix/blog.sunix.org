@@ -13,6 +13,12 @@ tags:
   - languageserverprotocol
 comments: true
 contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+aliases:
+  - /articles/howto/2016/06/24/EclipseConFrance.html
+  - /articles/articles/2016/06/24/EclipseConFrance.html
+  - /articles/tutorial/2016/06/24/EclipseConFrance.html
+  - /articles/blog/2016/06/24/EclipseConFrance.html
+  - /articles/tech/2016/06/24/EclipseConFrance.html
 ---
 
 This blog post will soon be available in French on the [Serli blog site](http://www.serli.com/blog/articles).

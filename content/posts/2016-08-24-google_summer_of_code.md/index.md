@@ -11,6 +11,12 @@ tags:
   - unittest
 comments: true
 contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+aliases:
+  - /articles/howto/2016/08/24/google_summer_of_code.html
+  - /articles/articles/2016/08/24/google_summer_of_code.html
+  - /articles/tutorial/2016/08/24/google_summer_of_code.html
+  - /articles/blog/2016/08/24/google_summer_of_code.html
+  - /articles/tech/2016/08/24/google_summer_of_code.html
 ---
 
 Summer is heating up in the Eclipse Che ecosystem. More contributors, including Red Hat and SAP, are joining the Che adventure. Everyone is working hard on Che improvements, such as implementing the Language Server Protocol and multi-container workspaces.

@@ -11,6 +11,12 @@ tags:
   - ide
 comments: true
 contribute: https://blog.sunix.org/factory?url=https://github.com/sunix/blog.sunix.org/tree/gh-pages
+aliases:
+  - /articles/howto/2016/05/16/Universal-IDE.html
+  - /articles/articles/2016/05/16/Universal-IDE.html
+  - /articles/tutorial/2016/05/16/Universal-IDE.html
+  - /articles/blog/2016/05/16/Universal-IDE.html
+  - /articles/tech/2016/05/16/Universal-IDE.html
 ---
 
 This year, I am participating in Google Summer of Code as a mentor for the Eclipse umbrella organization. I've submitted a few ideas about Eclipse Che and Eclipse Flux, and some of them have been selected. I am mentoring the project "Pair Programming with Eclipse Che," which involves improving an existing prototype I demonstrated at various developer conferences. You can check out the [GitHub pair programming Che extension](https://github.com/sunix/che-plugin-flux-live-edit).
