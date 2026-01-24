@@ -6,16 +6,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta property="og:title" content="{title ?: site.title}">
-<title>{title ?: site.title}</title>
+<meta property="og:title" content="\{ {title ?: site.title} }">
+<title>\{ {title ?: site.title} }</title>
 <meta property="og:description" content="{description ?: site.description}">
 <meta property="og:url" content="{site.url}{page.url}">
-<meta property="og:site_name" content="{site.title}">
+<meta property="og:site_name" content="\{ {site.title} }">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@__sunix_">
 <meta name="twitter:creator" content="@__sunix_">
-<meta name="twitter:title" content="{title ?: site.title}">
+<meta name="twitter:title" content="\{ {title ?: site.title} }">
 <meta name="twitter:description" content="{description ?: site.description}">
 <meta name="twitter:url" content="{site.url}{page.url}">
 
@@ -28,7 +28,7 @@
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="alternate icon" href="/images/favicon.ico">
 <link rel="canonical" href="{site.url}{page.url}">
-<link rel="alternate" type="application/atom+xml" title="{site.title}" href="{site.url}/feed.xml" />
+<link rel="alternate" type="application/atom+xml" title="\{ {site.title} }" href="{site.url}/feed.xml" />
 
 <!-- Tailwind CSS CDN -->
 <script src="https://cdn.tailwindcss.com"></script>
