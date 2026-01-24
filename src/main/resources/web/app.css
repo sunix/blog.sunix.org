@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll offset for sticky header - prevents content from being hidden behind the header when using anchor links */
+html {
+  scroll-padding-top: 120px; /* Adjust based on header height + margin */
+}
+
+/* Grain effect */
+.noise {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+  background-size: 220px 220px;
+}
+/* Highlighter effect - pastel rainbow */
+.highlight {
+  background: linear-gradient(90deg, rgba(34,211,238,0.35), rgba(250,204,21,0.4), rgba(251,146,60,0.35), rgba(236,72,153,0.3));
+  border-radius: 999px;
+  padding: 0.05em 0.45em;
+  box-shadow: 0 0 15px rgba(250,204,21,0.2);
+}
+/* Enhanced glow animations */
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+/* Enhanced box shadow for cards */
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.1), 
+              0 20px 60px rgba(139,92,246,0.25),
+              0 0 40px rgba(34,211,238,0.15);
+}
+.card-glow:hover {
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.15), 
+              0 25px 70px rgba(139,92,246,0.35),
+              0 0 50px rgba(34,211,238,0.25);
+}
+/* Prose styles for article content */
+.prose {
+  color: rgb(51 65 85);
+  max-width: 65ch;
+  line-height: 1.75;
+}
+.dark .prose {
+  color: rgb(226 232 240);
+}
+.prose p, .prose ul, .prose ol {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.prose h2 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 800;
+}
+.prose h3 {
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.25em;
+  font-weight: 800;
+}
+/* Enhanced code block styles */
+.prose pre {
+  margin-top: 1.7em;
+  margin-bottom: 1.7em;
+  padding: 1.25em 1.5em;
+  overflow-x: auto;
+  background: #1e293b !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  position: relative;
+}
+.dark .prose pre {
+  background: #0f172a !important;
+  border-color: rgba(148, 163, 184, 0.1) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+.prose pre code {
+  background: transparent !important;
+  color: #e2e8f0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.875em;
+  line-height: 1.7;
+}
+.prose code {
+  font-size: 0.875em;
+  font-weight: 600;
+}
+.prose pre code {
+  font-weight: 400;
+}
+.prose img {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.prose a {
+  font-weight: 500;
+}
+.prose strong {
+  font-weight: 700;
+}
+.prose ul, .prose ol {
+  padding-left: 1.625em;
+}
+.prose ul {
+  list-style-type: disc;
+}
+.prose ol {
+  list-style-type: decimal;
+}
+.prose ul ul {
+  list-style-type: circle;
+}
+.prose li {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  display: list-item;
+}
+.prose blockquote {
+  font-style: italic;
+  border-left: 4px solid rgb(148 163 184);
+  padding-left: 1em;
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+}
+.dark .prose blockquote {
+  border-left-color: rgb(71 85 105);
+}
