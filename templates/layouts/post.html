@@ -34,13 +34,13 @@ layout: main
 
     <!-- Share buttons -->
     <div class="flex flex-wrap gap-3">
-      <a href="https://twitter.com/intent/tweet?text={page.title}&url={site.url}{page.url}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
+      <a href="https://twitter.com/intent/tweet?text={page.title}&url={page.url.encoded}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
         Share on X/Twitter
       </a>
-      <a href="https://bsky.app/intent/compose?text={page.title}%20{site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
+      <a href="https://bsky.app/intent/compose?text={page.title}%20{page.url.encoded}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
         Share on Bluesky
       </a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={page.url.encoded}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
         Share on LinkedIn
       </a>
     </div>
@@ -61,13 +61,13 @@ layout: main
 
   <!-- Share buttons bottom -->
   <div class="flex flex-wrap gap-3">
-    <a href="https://twitter.com/intent/tweet?text={page.title}&url={site.url}{page.url}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
+    <a href="https://twitter.com/intent/tweet?text={page.title}&url={page.url.encoded}&via=__sunix_" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90 transition">
       Share on X/Twitter
     </a>
-    <a href="https://bsky.app/intent/compose?text={page.title}%20{site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
+    <a href="https://bsky.app/intent/compose?text={page.title}%20{page.url.encoded}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-sky-500 text-white hover:bg-sky-600 transition">
       Share on Bluesky
     </a>
-    <a href="https://www.linkedin.com/sharing/share-offsite/?url={site.url}{page.url}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
+    <a href="https://www.linkedin.com/sharing/share-offsite/?url={page.url.encoded}" target="_blank" class="inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition">
       Share on LinkedIn
     </a>
   </div>
@@ -77,7 +77,7 @@ layout: main
 <div id="disqus_thread" class="mt-10"></div>
 <script>
   var disqus_config = function () {
-    this.page.url = '{site.url}{page.url}';
+    this.page.url = '{page.url.absolute}';
     this.page.identifier = '{page.url}';
   };
   (function() {
