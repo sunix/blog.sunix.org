@@ -23,6 +23,23 @@
   const toggle = document.getElementById("themeToggle");
   const root = document.documentElement;
 
+  // Function to update icon visibility
+  function updateThemeIcon() {
+    const isDark = root.classList.contains("dark");
+    const moonIcon = toggle?.querySelector(".dark\\:hidden");
+    const sunIcon = toggle?.querySelector(".hidden.dark\\:inline");
+    
+    if (moonIcon && sunIcon) {
+      if (isDark) {
+        moonIcon.style.display = "none";
+        sunIcon.style.display = "inline";
+      } else {
+        moonIcon.style.display = "inline";
+        sunIcon.style.display = "none";
+      }
+    }
+  }
+
   // Initialize theme
   const saved = localStorage.getItem("theme");
   if (saved === "dark" || (!saved && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
@@ -30,10 +47,14 @@
   } else {
     root.classList.remove("dark");
   }
+  
+  // Update icon on load
+  updateThemeIcon();
 
   toggle?.addEventListener("click", () => {
     root.classList.toggle("dark");
     localStorage.setItem("theme", root.classList.contains("dark") ? "dark" : "light");
+    updateThemeIcon();
   });
 
   // Mobile menu toggle
