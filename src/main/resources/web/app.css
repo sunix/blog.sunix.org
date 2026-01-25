@@ -44,7 +44,6 @@ html {
 /* Prose styles for article content */
 .prose {
   color: rgb(51 65 85);
-  max-width: 65ch;
   line-height: 1.75;
 }
 .dark .prose {
