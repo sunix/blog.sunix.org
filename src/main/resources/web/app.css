@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (.dark &);
+
 @source "../../templates/**/*.html";
 @source "../../content/**/*.html";
 @source "../../content/**/*.md";
