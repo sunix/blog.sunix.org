@@ -73,18 +73,22 @@ layout: main
   </div>
 </article>
 
-<!-- Comments section placeholder -->
-<div id="disqus_thread" class="mt-10"></div>
-<script>
-  var disqus_config = function () {
-    this.page.url = '{page.url.absolute}';
-    this.page.identifier = '{page.url}';
-  };
-  (function() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://sunix.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!-- Comments section with Giscus -->
+<div class="mt-10">
+  <script src="https://giscus.app/client.js"
+          data-repo="sunix/blog.sunix.org"
+          data-repo-id="R_kgDONfMVQQ"
+          data-category="General"
+          data-category-id="DIC_kwDONfMVQc4ClrOL"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="preferred_color_scheme"
+          data-lang="en"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+<noscript>Please enable JavaScript to view the comments powered by Giscus.</noscript>
