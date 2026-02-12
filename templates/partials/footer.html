@@ -123,7 +123,7 @@
     const previewBannerClose = document.getElementById("preview-banner-close");
     
     // Check if we're on a surge.sh preview domain
-    // Pattern: pr-{number}-sunix-blog-preview.surge.sh
+    // Pattern: pr-NUMBER-sunix-blog-preview.surge.sh
     const prMatch = hostname.match(/^pr-(\d+)-sunix-blog-preview\.surge\.sh$/);
     
     if (prMatch && previewBanner && previewPrLink) {
