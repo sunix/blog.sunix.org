@@ -138,3 +138,89 @@ html {
 .dark .prose blockquote {
   border-left-color: rgb(71 85 105);
 }
+
+/* Preview Banner Styles */
+.preview-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.preview-banner-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.preview-banner-text {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.preview-banner-link {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.preview-banner-link:hover {
+  opacity: 0.8;
+}
+
+.preview-banner-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-left: auto;
+  transition: background 0.2s;
+}
+
+.preview-banner-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Adjust body padding when preview banner is visible */
+body.preview-banner-visible {
+  padding-top: 3rem;
+}
+
+/* Responsive adjustments for preview banner */
+@media (max-width: 640px) {
+  .preview-banner-content {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  
+  .preview-banner-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    margin-left: 0;
+  }
+  
+  body.preview-banner-visible {
+    padding-top: 5rem;
+  }
+}
