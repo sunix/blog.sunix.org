@@ -114,4 +114,38 @@
         console.error("Failed to fetch star count:", error);
       });
   }
+
+  // Preview Banner Logic
+  (function() {
+    const hostname = window.location.hostname;
+    const previewBanner = document.getElementById("preview-banner");
+    const previewPrLink = document.getElementById("preview-pr-link");
+    const previewBannerClose = document.getElementById("preview-banner-close");
+    
+    // Check if we're on a surge.sh preview domain
+    // Pattern: pr-{number}-sunix-blog-preview.surge.sh
+    const prMatch = hostname.match(/^pr-(\d+)-sunix-blog-preview\.surge\.sh$/);
+    
+    if (prMatch && previewBanner && previewPrLink) {
+      const prNumber = prMatch[1];
+      
+      // Validate PR number is numeric
+      if (/^\d+$/.test(prNumber)) {
+        // Set the PR link
+        previewPrLink.href = "https://github.com/sunix/blog.sunix.org/pull/" + encodeURIComponent(prNumber);
+        
+        // Show the banner
+        previewBanner.classList.remove("hidden");
+        document.body.classList.add("preview-banner-visible");
+        
+        // Handle close button
+        if (previewBannerClose) {
+          previewBannerClose.addEventListener("click", function() {
+            previewBanner.classList.add("hidden");
+            document.body.classList.remove("preview-banner-visible");
+          });
+        }
+      }
+    }
+  })();
 </script>
