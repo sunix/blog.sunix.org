@@ -99,4 +99,19 @@
 
   // Update year
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Fetch GitHub star count
+  const starCountElement = document.getElementById("star-count");
+  if (starCountElement) \{
+    fetch("https://api.github.com/repos/sunix/blog.sunix.org")
+      .then(response => response.json())
+      .then(data => \{
+        if (data.stargazers_count !== undefined) \{
+          starCountElement.textContent = "(" + data.stargazers_count + ")";
+        }
+      })
+      .catch(error => \{
+        console.error("Failed to fetch star count:", error);
+      });
+  }
 </script>
