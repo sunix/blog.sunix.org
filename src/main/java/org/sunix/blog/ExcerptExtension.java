@@ -34,6 +34,12 @@ public class ExcerptExtension {
         "did", "get", "may", "now", "old", "run", "too", "any", "day",
         "guy", "kid", "let", "say", "use"
     );
+    
+    // Word similarity mappings for semantic matching
+    private static final java.util.Map<String, String> WORD_STEMS = java.util.Map.of(
+        "gmail", "email",
+        "email", "gmail"
+    );
 
     /**
      * Extracts the excerpt from a blog post.
@@ -151,17 +157,33 @@ public class ExcerptExtension {
                             if (word.length() <= 2 || STOP_WORDS.contains(word)) {
                                 continue;
                             }
-                            // Check if word is in directory name OR if directory contains a word that starts with this word
-                            // (e.g., "estimate" in dir matches "estimation" in slug via prefix matching)
-                            if (dirName.contains(word)) {
+                            
+                            // Check if word (or its stem) is in directory name
+                            String wordToMatch = WORD_STEMS.getOrDefault(word, word);
+                            if (dirName.contains(word) || (wordToMatch != word && dirName.contains(wordToMatch))) {
                                 matchCount++;
                             } else if (word.length() >= 4) {
                                 // Check if any word in the directory starts with this slug word or vice versa
                                 String[] dirWords = dirName.split("-");
                                 for (String dirWord : dirWords) {
-                                    if (dirWord.length() >= 4 && (dirWord.startsWith(word) || word.startsWith(dirWord))) {
-                                        matchCount++;
-                                        break;
+                                    if (dirWord.length() >= 4) {
+                                        // Check word stem matching
+                                        String dirWordStem = WORD_STEMS.getOrDefault(dirWord, dirWord);
+                                        if (word.equals(dirWordStem) || dirWord.equals(wordToMatch)) {
+                                            matchCount++;
+                                            break;
+                                        }
+                                        // Check prefix matching
+                                        if (dirWord.startsWith(word) || word.startsWith(dirWord)) {
+                                            matchCount++;
+                                            break;
+                                        }
+                                        // Check common prefix (e.g., "migrating" and "migration" share "migrat")
+                                        int commonPrefixLen = getCommonPrefixLength(word, dirWord);
+                                        if (commonPrefixLen >= 5) {
+                                            matchCount++;
+                                            break;
+                                        }
                                     }
                                 }
                             }
@@ -183,6 +205,18 @@ public class ExcerptExtension {
         } catch (Exception e) {
             return null;
         }
+    }
+
+    /**
+     * Gets the length of the common prefix between two strings.
+     */
+    private static int getCommonPrefixLength(String s1, String s2) {
+        int minLen = Math.min(s1.length(), s2.length());
+        int i = 0;
+        while (i < minLen && s1.charAt(i) == s2.charAt(i)) {
+            i++;
+        }
+        return i;
     }
 
     /**
