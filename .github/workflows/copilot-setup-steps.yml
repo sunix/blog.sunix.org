@@ -1,0 +1,14 @@
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  copilot-setup-steps:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install jdtls-mcp
+        run: |
+          bash <(curl -fsSL https://raw.githubusercontent.com/sunix/jdtls-mcp/main/scripts/install.sh)
