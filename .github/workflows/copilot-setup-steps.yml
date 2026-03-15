@@ -1,3 +1,9 @@
+# This workflow runs the setup steps that the GitHub Copilot coding agent
+# needs before it can start MCP servers.
+#
+# It downloads and installs the jdtls-mcp server to a stable cache location
+# (~/.cache/jdtls-mcp/current/) so that the MCP configuration can reference
+# a fixed path without needing to download anything at MCP startup time.
 on:
   workflow_dispatch:
 
@@ -9,6 +15,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set up Java 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
       - name: Install jdtls-mcp
         run: |
           bash <(curl -fsSL https://raw.githubusercontent.com/sunix/jdtls-mcp/main/scripts/install.sh)
