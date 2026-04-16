@@ -122,12 +122,12 @@ Releases are triggered from GitLab, not from a developer's laptop.
 ```mermaid
 flowchart LR
     A[Merge to main] --> B[Deploy + Validate automatically]
-    B --> C{Ready to release?}
+    B --> C\{Ready to release?\}
     C -- Yes --> D[Trigger RC in GitLab]
     D --> E[v1.4.0-rc.1\nfrozen · traceable · deployable]
     E --> F[Promote to val]
     F --> G[Promote to preprod]
-    G --> H{Validation OK?}
+    G --> H\{Validation OK?\}
     H -- Yes --> I[Release v1.4.0]
     I --> J[Deploy to production]
     H -- No --> D
@@ -304,7 +304,7 @@ flowchart TD
     MR --> EphEnv[Ephemeral env\nDeploy + Seed + Test]
     EphEnv --> Merge[Merge to main]
     Merge --> Deploy[Deploy to main env\n+ Run full tests]
-    Deploy --> Decision{Release?}
+    Deploy --> Decision\{Release?\}
     Decision -- Yes --> RC[Create RC tag\nv1.4.0-rc.1]
     RC --> Val[Promote to val]
     Val --> Preprod[Promote to preprod]
