@@ -323,48 +323,59 @@ flowchart TD
 Here is the full story in one diagram: feature development, a blocked MR, RC promotion across environments, and a patch release from a maintenance branch.
 
 ```mermaid
+%%\{init: \{"theme": "default", "themeVariables": \{"git1": "#ffbe28", "git2": "#ff0000"\}\}\}%%
 gitGraph TB:
-    commit id: "feat(INFRA-001): bootstrap"
+    commit id: "feat: bootstrap 🟢dev"
 
     branch feature/ABC-101
     checkout feature/ABC-101
-    commit id: "wip(ABC-101): auth service"
-    commit id: "wip(ABC-101): token refresh"
-    commit id: "test(ABC-101): unit tests"
+    commit id: "wip: auth service 🟢dev"
+    commit id: "wip: refresh .. 🟢dev"
+    commit id: "test: unit tests 🟢dev"
     checkout main
-    merge feature/ABC-101 id: "feat(AUTH-101): user auth (ABC-101) dev-OK" type: HIGHLIGHT
+    merge feature/ABC-101 id: "feat: user auth - 🟢dev"
+
+    checkout main
+    commit id: "feat: dashboard - 🟢dev"
 
     branch feature/ABC-102
     checkout feature/ABC-102
-    commit id: "wip(ABC-102): billing module"
-    commit id: "fix(ABC-102): tests - dev FAILED" type: REVERSE
+    commit id: "wip: billing module 🔴dev"
+    commit id: "fix: tests 🔴dev" type: REVERSE
 
     checkout main
-    commit id: "feat(DASH-103): dashboard (ABC-103) squash dev-OK"
-    commit id: "feat(CONF-104): settings (ABC-104) dev-OK"
+    commit id: "feat: settings 🟢dev"
 
-    commit id: "rc-1" tag: "v1.4.0-rc.1 dev-OK val-FAIL"
-    commit id: "fix(AUTH-105): token expiry"
-    commit id: "rc-2" tag: "v1.4.0-rc.2 dev-OK val-OK preprod-FAIL"
-    commit id: "fix(PERF-106): memory leak"
-    commit id: "rc-3" tag: "v1.4.0-rc.3 dev-OK val-OK preprod-OK"
-    commit id: "v1.4.0-release" tag: "v1.4.0"
+    commit id: "release: v1.4.0-rc.1 🟢dev" tag: "v1.4.0-rc.1 🔴val"
+    commit id: "fix: token expiry 🟢dev"
+    commit id: "release: v1.4.0-rc.2 🟢dev" tag: "v1.4.0-rc.2 🟢val 🔴preprod"
+    commit id: "fix: memory leak 🟢dev"
+    commit id: "release: v1.4.0-rc.3 🟢dev" tag: "v1.4.0-rc.3 🟢val 🟢preprod"
+    commit id: "release: v1.4.0 🟢dev" tag: "v1.4.0  🟢val 🟢preprod 🟢prod"
 
     branch release/v1.4.x
+
     checkout main
-    commit id: "fix(SEC-201): SQL injection"
+    commit id: "feat: admin backend 🟢dev"
+
+    commit id: "fix: SQL injection"
+
     checkout release/v1.4.x
-    cherry-pick id: "fix(SEC-201): SQL injection"
-    commit id: "patch-rc-1" tag: "v1.4.1-rc.1 preprod-OK"
-    commit id: "v1.4.1-release" tag: "v1.4.1"
+    cherry-pick id: "fix: SQL injection"
+    commit id: "patch-rc-1" tag: "v1.4.1-rc.1 🟢preprod"
+    commit id: "v1.4.1-release" tag: "v1.4.1 🟢preprod 🟢prod"
+
+    checkout main
+    commit id: "feat: billing 🟢dev"
+    commit id: "release: v1.5.0-rc.1 🟢dev" tag: "v1.5.0-rc.1 🔴val"
 ```
 
 **How to read this:**
 
-- 🟡 Highlighted merge commit → feature branch rebased, dev-validated, merged with conventional commit + Jira ref
-- 🔴 Red commit → dev test failure — MR blocked, never merged to `main`
-- `squash` commit → multi-commit MR squashed to a single clean conventional commit on `main`
-- RC tags annotated with per-environment validation result (`dev`, `val`, `preprod`)
+- 🟢 — validation passed in that environment
+- 🔴 — validation failed in that environment
+- `type: REVERSE` (red node) → dev test failure — MR blocked, never merged to `main`
+- RC tags show per-environment promotion results (`dev` → `val` → `preprod` → `prod`)
 - `release/v1.4.x` → maintenance branch: hotfix committed first to `main`, cherry-picked to the release branch, RC validated in preprod, then released as `v1.4.1`
 
 ---
