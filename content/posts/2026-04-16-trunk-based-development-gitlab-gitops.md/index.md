@@ -177,14 +177,15 @@ At some point, production needs a fix and you can't wait for the next regular re
 Instead of reviving Git Flow's hotfix branches, we keep it simple:
 
 ```mermaid
-gitGraph
+%%\{init: \{"theme": "default", "gitGraph": \{"parallelCommits": true\}\}\}%%
+gitGraph TB:
    commit id: "release: v1.4.0"
    branch release/v1.4.0
    checkout release/v1.4.0
-   commit id: "fix(ABC-789): critical bug"
+   commit id: "🍒 fix(ABC-789): critical bug"
    commit id: "release: v1.4.1"
    checkout main
-   commit id: "fix(ABC-789): critical bug (orig)"
+   commit id: "fix(ABC-789): critical bug"
    commit id: "feat(ABC-790): new feature"
 ```
 
