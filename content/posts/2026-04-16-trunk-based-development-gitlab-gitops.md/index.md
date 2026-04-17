@@ -58,15 +58,15 @@ gitGraph
    commit id: "initial"
    branch feature/ABC-123
    checkout feature/ABC-123
-   commit id: "feat: add payment validation (ABC-123)"
+   commit id: "feat(ABC-123): add payment validation"
    checkout main
-   merge feature/ABC-123 id: "merge ABC-123"
+   merge feature/ABC-123 id: "feat(ABC-123): merged"
    branch feature/ABC-456
    checkout feature/ABC-456
-   commit id: "fix: handle null pointer in login (ABC-456)"
+   commit id: "fix(ABC-456): handle null pointer in login"
    checkout main
-   merge feature/ABC-456 id: "merge ABC-456"
-   commit id: "chore: release v1.4.0"
+   merge feature/ABC-456 id: "fix(ABC-456): merged"
+   commit id: "release: v1.4.0"
 ```
 
 ---
@@ -178,14 +178,14 @@ Instead of reviving Git Flow's hotfix branches, we keep it simple:
 
 ```mermaid
 gitGraph
-   commit id: "v1.4.0"
+   commit id: "release: v1.4.0"
    branch release/v1.4.0
    checkout release/v1.4.0
-   commit id: "cherry-pick: fix critical bug"
-   commit id: "v1.4.1"
+   commit id: "fix(ABC-789): critical bug"
+   commit id: "release: v1.4.1"
    checkout main
-   commit id: "fix: critical bug (ABC-789)"
-   commit id: "feat: new feature"
+   commit id: "fix(ABC-789): critical bug (orig)"
+   commit id: "feat(ABC-790): new feature"
 ```
 
 1. Create a maintenance branch from the release tag:  `release/v1.4.0`
@@ -323,9 +323,9 @@ flowchart TD
 Here is the full story in one diagram: feature development, a blocked MR, RC promotion across environments, and a patch release from a maintenance branch.
 
 ```mermaid
-%%\{init: \{"theme": "default", "themeVariables": \{"git1": "#ffbe28", "git2": "#ff0000"\}\}\}%%
+%%\{init: \{"theme": "default", "themeVariables": \{"git1": "#ffbe28", "git2": "#ff0000"\}, "gitGraph": \{"parallelCommits": true\}\}\}%%
 gitGraph TB:
-    commit id: "feat: bootstrap 🟢dev"
+    commit id: "feat(ABC-100): bootstrap 🟢dev"
 
     branch feature/ABC-101
     checkout feature/ABC-101
@@ -333,10 +333,10 @@ gitGraph TB:
     commit id: "wip: refresh .. 🟢dev"
     commit id: "test: unit tests 🟢dev"
     checkout main
-    merge feature/ABC-101 id: "feat: user auth - 🟢dev"
+    merge feature/ABC-101 id: "feat(ABC-101): user auth 🟢dev"
 
     checkout main
-    commit id: "feat: dashboard - 🟢dev"
+    commit id: "feat(ABC-103): dashboard 🟢dev"
 
     branch feature/ABC-102
     checkout feature/ABC-102
@@ -344,29 +344,29 @@ gitGraph TB:
     commit id: "fix: tests 🔴dev" type: REVERSE
 
     checkout main
-    commit id: "feat: settings 🟢dev"
+    commit id: "feat(ABC-104): settings 🟢dev"
 
     commit id: "release: v1.4.0-rc.1 🟢dev" tag: "v1.4.0-rc.1 🔴val"
-    commit id: "fix: token expiry 🟢dev"
+    commit id: "fix(ABC-105): token expiry 🟢dev"
     commit id: "release: v1.4.0-rc.2 🟢dev" tag: "v1.4.0-rc.2 🟢val 🔴preprod"
-    commit id: "fix: memory leak 🟢dev"
+    commit id: "fix(ABC-106): memory leak 🟢dev"
     commit id: "release: v1.4.0-rc.3 🟢dev" tag: "v1.4.0-rc.3 🟢val 🟢preprod"
     commit id: "release: v1.4.0 🟢dev" tag: "v1.4.0  🟢val 🟢preprod 🟢prod"
 
     branch release/v1.4.x
 
     checkout main
-    commit id: "feat: admin backend 🟢dev"
+    commit id: "feat(ABC-107): admin backend 🟢dev"
 
-    commit id: "fix: SQL injection"
+    commit id: "fix(ABC-108): SQL injection 🟢dev"
 
     checkout release/v1.4.x
-    cherry-pick id: "fix: SQL injection"
-    commit id: "patch-rc-1" tag: "v1.4.1-rc.1 🟢preprod"
-    commit id: "v1.4.1-release" tag: "v1.4.1 🟢preprod 🟢prod"
+    cherry-pick id: "fix(ABC-108): SQL injection 🟢dev"
+    commit id: "release: v1.4.1-rc.1 " tag: "v1.4.1-rc.1 🟢preprod"
+    commit id: "release: v1.4.1 " tag: "v1.4.1 🟢preprod 🟢prod"
 
     checkout main
-    commit id: "feat: billing 🟢dev"
+    commit id: "feat(ABC-109): billing 🟢dev"
     commit id: "release: v1.5.0-rc.1 🟢dev" tag: "v1.5.0-rc.1 🔴val"
 ```
 
