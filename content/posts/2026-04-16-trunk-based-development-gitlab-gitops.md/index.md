@@ -69,8 +69,6 @@ gitGraph
    commit id: "release: v1.4.0"
 ```
 
----
-
 ## Dev Is Not an Environment — It's a Test Platform
 
 One of the biggest shifts in this model is how we think about environments.
