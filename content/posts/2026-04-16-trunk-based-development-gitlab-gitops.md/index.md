@@ -104,7 +104,6 @@ This gives you something most teams *think* they have, but actually don't:
 
 > **Production-like validation on every change**
 
----
 
 ## Releases Are Intentional (and Owned by GitLab)
 
@@ -139,7 +138,6 @@ The Release Candidate (`v1.4.0-rc.1`) is:
 * **Traceable** — linked to specific commits and Jira tickets
 * **Promotable** — same image, same config, just a different environment
 
----
 
 ## Kubernetes + GitOps: Deployment Becomes Boring (That's Good)
 
@@ -168,7 +166,7 @@ No SSH. No manual deployments. No "it works on my machine."
 
 The Git repository is the single source of truth for what runs in each environment.
 
----
+
 
 ## Maintenance Without Blocking the World
 
@@ -196,7 +194,7 @@ gitGraph TB:
 
 Meanwhile, `main` keeps moving forward. There's no freeze, no coordination overhead.
 
----
+
 
 ## The Missing Piece: Jira + Commits + Versions
 
@@ -249,7 +247,7 @@ Use Jira fields properly:
 
 This gives you clean release notes, accurate traceability, and better communication with QA and stakeholders.
 
----
+
 
 ## Git Hygiene Matters More Than You Think
 
@@ -274,7 +272,7 @@ This is the real secret of Trunk-Based Development:
 
 A change that lives in a branch for days accumulates risk. Merge frequently, merge small.
 
----
+
 
 ## Why This Works So Well
 
@@ -294,7 +292,7 @@ It removes entire categories of problems:
 * "Why does staging differ from prod?"
 * "What exactly is in this release?"
 
----
+
 
 ## The Full Picture
 
@@ -317,7 +315,7 @@ flowchart TD
     style Prod fill:#e3f2fd,stroke:#42a5f5
 ```
 
----
+
 
 ## The Complete Git Timeline
 
@@ -379,7 +377,7 @@ gitGraph TB:
 - RC tags show per-environment promotion results (`dev` → `val` → `preprod` → `prod`)
 - `release/v1.4.x` → maintenance branch: hotfix committed first to `main`, cherry-picked to the release branch, RC validated in preprod, then released as `v1.4.1`
 
----
+
 
 ## Final Thought
 
@@ -391,6 +389,6 @@ If you're running containers on Kubernetes and still using Git Flow, you're prob
 
 If I had to start a new project today, this is the workflow I would pick every time.
 
----
+
 
 *Have questions or a different experience? Share it in the comments below — I'm genuinely curious how others have handled this in practice.*
