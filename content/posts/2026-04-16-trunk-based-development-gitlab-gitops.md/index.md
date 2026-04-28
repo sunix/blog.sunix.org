@@ -311,13 +311,16 @@ flowchart TD
     ValDecision -- Yes --> Preprod[Promote to preprod]
     Preprod --> PreprodTests[e2e tests on preprod]
     PreprodTests --> PreprodDecision\{Preprod OK?\}
-    PreprodDecision -- Yes --> Prod[Release final version\nto production]
+    PreprodDecision -- Yes --> FinalRelease[Create final release tag]
     PreprodDecision -- No --> Restore[Restore prod version]
     Restore --> Dev
+    FinalRelease --> DeployPreprod[Deploy to preprod]
+    FinalRelease --> DeployProd[Deploy to prod]
 
     style EphEnv fill:#e8f5e9,stroke:#66bb6a
     style RC fill:#fff3e0,stroke:#ffa726
-    style Prod fill:#e3f2fd,stroke:#42a5f5
+    style DeployPreprod fill:#e3f2fd,stroke:#42a5f5
+    style DeployProd fill:#e3f2fd,stroke:#42a5f5
 ```
 
 
