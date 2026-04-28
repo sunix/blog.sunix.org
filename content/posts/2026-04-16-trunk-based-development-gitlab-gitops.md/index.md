@@ -302,11 +302,18 @@ flowchart TD
     EphEnv --> Merge[Merge to main]
     Merge --> Deploy[Deploy to main env\n+ Run full tests]
     Deploy --> Decision\{Release?\}
+    Decision -- No --> Dev
     Decision -- Yes --> RC[Create RC tag\nv1.4.0-rc.1]
     RC --> Val[Promote to val]
-    Val --> Preprod[Promote to preprod]
-    Preprod --> Prod[Release v1.4.0\nto production]
-    Decision -- No --> Dev
+    Val --> ValTests[Run tests on val]
+    ValTests --> ValDecision\{Val OK?\}
+    ValDecision -- No --> Dev
+    ValDecision -- Yes --> Preprod[Promote to preprod]
+    Preprod --> PreprodTests[e2e tests on preprod]
+    PreprodTests --> PreprodDecision\{Preprod OK?\}
+    PreprodDecision -- Yes --> Prod[Release final version\nto production]
+    PreprodDecision -- No --> Restore[Restore prod version]
+    Restore --> Dev
 
     style EphEnv fill:#e8f5e9,stroke:#66bb6a
     style RC fill:#fff3e0,stroke:#ffa726
