@@ -304,18 +304,18 @@ flowchart TD
     Deploy --> Decision\{Release?\}
     Decision -- No --> Dev
     Decision -- Yes --> RC[Create RC tag\nv1.4.0-rc.1]
-    RC --> Val[Promote to val]
+    RC --> Val[Promote v1.4.0-rc.1 to val]
     Val --> ValTests[Run tests on val]
     ValTests --> ValDecision\{Val OK?\}
     ValDecision -- No --> Dev
-    ValDecision -- Yes --> Preprod[Promote to preprod]
+    ValDecision -- Yes --> Preprod[Promote v1.4.0-rc.1 to preprod]
     Preprod --> PreprodTests[e2e tests on preprod]
     PreprodTests --> PreprodDecision\{Preprod OK?\}
-    PreprodDecision -- Yes --> FinalRelease[Create final release tag]
-    PreprodDecision -- No --> Restore[Restore prod version]
+    PreprodDecision -- Yes --> FinalRelease[Create final release tag\nv1.4.0]
+    PreprodDecision -- No --> Restore[Restore prod version\nv1.3.2]
     Restore --> Dev
-    FinalRelease --> DeployPreprod[Deploy to preprod]
-    FinalRelease --> DeployProd[Deploy to prod]
+    FinalRelease --> DeployPreprod[Deploy v1.4.0 to preprod]
+    FinalRelease --> DeployProd[Deploy v1.4.0 to prod]
 
     style EphEnv fill:#e8f5e9,stroke:#66bb6a
     style RC fill:#fff3e0,stroke:#ffa726
