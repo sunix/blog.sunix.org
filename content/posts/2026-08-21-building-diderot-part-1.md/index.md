@@ -153,7 +153,7 @@ if (!Files.isDirectory(repo)) {
 }
 ```
 
-Its siblings are one git invocation each: `resolveCommit()` turns `main` (or a tag, or a short SHA) into a full commit via `rev-parse <ref>^{commit}`; `blobExists()` is `cat-file -e` — the SKILL.md gate above; `treeSha()` asks `rev-parse <commit>:<path>` for the directory's tree SHA, which becomes the `digest: tree:…` line in the lockfile.
+Its siblings are one git invocation each: `resolveCommit()` turns `main` (or a tag, or a short SHA) into a full commit via `rev-parse <ref>^\{commit}`; `blobExists()` is `cat-file -e` — the SKILL.md gate above; `treeSha()` asks `rev-parse <commit>:<path>` for the directory's tree SHA, which becomes the `digest: tree:…` line in the lockfile.
 
 The lock written, `Workspace.install()` takes over — today, tomorrow, or on a colleague's machine. It reads `diderot.lock` back, and for each skill × target (`claude` → `.claude/skills`, `agents` → `.agents/skills`) it replaces the installed directory with exactly the locked bytes, and proves it before moving on:
 
