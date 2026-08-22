@@ -8,7 +8,7 @@ import java.nio.charset.StandardCharsets;
 @TemplateExtension
 public class UrlEncodingExtension {
 
-    public static String hashEncoded(String value) {
+    public static String encodeForHash(String value) {
         if (value == null || value.isEmpty()) {
             return "";
         }

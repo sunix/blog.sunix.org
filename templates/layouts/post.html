@@ -8,7 +8,7 @@ layout: main
     <!-- Tags/Categories -->
     <div class="flex flex-wrap gap-2 mb-4">
       {#if page.data.category}
-      <a href="/archives#{page.data.category.hashEncoded}" class="post-category-link text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20 hover:bg-cyan-300/90 transition">
+      <a href="/archives#{page.data.category.encodeForHash}" class="post-category-link text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20 hover:bg-cyan-300/90 transition">
         {page.data.category}
       </a>
       {/if}

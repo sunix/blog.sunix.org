@@ -45,9 +45,20 @@ title: Archives - All Articles
     const activeCategoryFilter = document.getElementById('active-category-filter');
     const currentCategorySpan = document.getElementById('current-category');
 
-    function filterByCategory() {
+    function readSelectedCategory() {
       const hash = window.location.hash.substring(1);
-      const selectedCategory = decodeURIComponent(hash);
+      if (!hash) {
+        return '';
+      }
+      try {
+        return decodeURIComponent(hash);
+      } catch (error) {
+        return hash;
+      }
+    }
+
+    function filterByCategory() {
+      const selectedCategory = readSelectedCategory();
 
       if (!selectedCategory) {
         posts.forEach(post => post.style.display = '');

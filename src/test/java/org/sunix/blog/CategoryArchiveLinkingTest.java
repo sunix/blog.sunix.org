@@ -13,7 +13,7 @@ class CategoryArchiveLinkingTest {
 
     @Test
     void categoryHashesAreUrlEncoded() {
-        assertEquals("Web%20Dev%20%26%20AI", UrlEncodingExtension.hashEncoded("Web Dev & AI"),
+        assertEquals("Web%20Dev%20%26%20AI", UrlEncodingExtension.encodeForHash("Web Dev & AI"),
             "Category hashes should be URL-encoded for safe archive links");
     }
 
@@ -21,7 +21,7 @@ class CategoryArchiveLinkingTest {
     void postLayoutCategoryBadgeLinksToFilteredArchives() throws IOException {
         String template = Files.readString(Path.of("templates/layouts/post.html"));
 
-        assertTrue(template.contains("href=\"/archives#{page.data.category.hashEncoded}\""),
+        assertTrue(template.contains("href=\"/archives#{page.data.category.encodeForHash}\""),
             "Post category badge should link to the archives page filtered by category");
         assertTrue(template.contains("class=\"post-category-link"),
             "Post category badge should expose a stable class for category-aware behavior");
@@ -31,7 +31,7 @@ class CategoryArchiveLinkingTest {
     void articleCardCategoryBadgeLinksToFilteredArchives() throws IOException {
         String template = Files.readString(Path.of("templates/partials/article-card.html"));
 
-        assertTrue(template.contains("href=\"/archives#{post.data.category.hashEncoded}\""),
+        assertTrue(template.contains("href=\"/archives#{post.data.category.encodeForHash}\""),
             "Article card category badge should link to the archives page filtered by category");
         assertTrue(template.contains("class=\"post-category-link"),
             "Article card category badge should expose a stable class for category-aware behavior");
@@ -43,6 +43,10 @@ class CategoryArchiveLinkingTest {
 
         assertTrue(archivesPage.contains("function filterByCategory()"),
             "Archives page should define category filtering logic");
+        assertTrue(archivesPage.contains("try {\n        return decodeURIComponent(hash);\n      } catch"),
+            "Archives page should safely decode category hashes with a try/catch fallback");
+        assertTrue(archivesPage.contains("return decodeURIComponent(hash);"),
+            "Archives page should decode valid category hashes");
         assertTrue(archivesPage.contains("post.querySelector('.post-category-link')"),
             "Archives page should read the rendered category badge when filtering posts");
         assertTrue(archivesPage.contains("window.addEventListener('hashchange', filterByCategory);"),
