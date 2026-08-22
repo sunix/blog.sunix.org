@@ -40,7 +40,7 @@ title: Archives - All Articles
 
 <script>
   (function() {
-    const posts = document.querySelectorAll('.post-item');
+  const postsContainer = document.getElementById('posts-container');
     const noResults = document.getElementById('no-results');
     const activeCategoryFilter = document.getElementById('active-category-filter');
     const currentCategorySpan = document.getElementById('current-category');
@@ -59,6 +59,7 @@ title: Archives - All Articles
 
     function filterByCategory() {
       const selectedCategory = readSelectedCategory();
+      const posts = postsContainer.querySelectorAll('.post-item');
 
       if (!selectedCategory) {
         posts.forEach(post => post.style.display = '');

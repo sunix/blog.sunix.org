@@ -50,10 +50,12 @@ class CategoryArchiveLinkingTest {
             "Archives page should define category filtering logic");
         assertTrue(archivesPage.contains("function readSelectedCategory()"),
             "Archives page should extract the selected category through a dedicated helper");
-        assertTrue(archivesPage.contains("try {") && archivesPage.contains("} catch (error) {"),
-            "Archives page should safely decode category hashes with a try/catch fallback");
         assertTrue(archivesPage.contains("return decodeURIComponent(hash);"),
             "Archives page should decode valid category hashes");
+        assertTrue(archivesPage.contains("catch (error)"),
+            "Archives page should fall back safely when category hash decoding fails");
+        assertTrue(archivesPage.contains("postsContainer.querySelectorAll('.post-item')"),
+            "Archives page should query the current post list when applying filters");
         assertTrue(archivesPage.contains("post.querySelector('.post-category-link')"),
             "Archives page should read the rendered category badge when filtering posts");
         assertTrue(archivesPage.contains("window.addEventListener('hashchange', filterByCategory);"),
