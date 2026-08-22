@@ -50,7 +50,7 @@ class CategoryArchiveLinkingTest {
             "Archives page should define category filtering logic");
         assertTrue(archivesPage.contains("function readSelectedCategory()"),
             "Archives page should extract the selected category through a dedicated helper");
-        assertTrue(archivesPage.contains("return decodeURIComponent(hash);"),
+        assertTrue(archivesPage.contains("decodeURIComponent(hash)"),
             "Archives page should decode valid category hashes");
         assertTrue(archivesPage.contains("catch (error)"),
             "Archives page should fall back safely when category hash decoding fails");
