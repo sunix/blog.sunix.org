@@ -22,7 +22,7 @@ title: Archives - All Articles
 
 <div id="posts-container" class="space-y-8">
   {#for post in site.collections.posts}
-  <div class="post-item" data-category="{post.data.category}">
+  <div class="post-item">
     {#include partials/article-card.html /}
   </div>
   {/for}
@@ -61,7 +61,9 @@ title: Archives - All Articles
 
       let visibleCount = 0;
       posts.forEach(post => {
-        if (post.getAttribute('data-category') === selectedCategory) {
+        const categoryLink = post.querySelector('.post-category-link');
+        const category = categoryLink ? categoryLink.textContent.trim() : '';
+        if (category === selectedCategory) {
           post.style.display = '';
           visibleCount++;
         } else {
