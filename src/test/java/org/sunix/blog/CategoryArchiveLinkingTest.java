@@ -11,6 +11,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class CategoryArchiveLinkingTest {
 
+    private String readProjectFile(String relativePath) throws IOException {
+        Path projectRoot = Path.of(System.getProperty("basedir", "."));
+        return Files.readString(projectRoot.resolve(relativePath));
+    }
+
     @Test
     void categoryHashesAreUrlEncoded() {
         assertEquals("Web%20Dev%20%26%20AI", UrlEncodingExtension.encodeForHash("Web Dev & AI"),
@@ -19,7 +24,7 @@ class CategoryArchiveLinkingTest {
 
     @Test
     void postLayoutCategoryBadgeLinksToFilteredArchives() throws IOException {
-        String template = Files.readString(Path.of("templates/layouts/post.html"));
+        String template = readProjectFile("templates/layouts/post.html");
 
         assertTrue(template.contains("href=\"/archives#{page.data.category.encodeForHash}\""),
             "Post category badge should link to the archives page filtered by category");
@@ -29,7 +34,7 @@ class CategoryArchiveLinkingTest {
 
     @Test
     void articleCardCategoryBadgeLinksToFilteredArchives() throws IOException {
-        String template = Files.readString(Path.of("templates/partials/article-card.html"));
+        String template = readProjectFile("templates/partials/article-card.html");
 
         assertTrue(template.contains("href=\"/archives#{post.data.category.encodeForHash}\""),
             "Article card category badge should link to the archives page filtered by category");
@@ -39,7 +44,7 @@ class CategoryArchiveLinkingTest {
 
     @Test
     void archivesPageContainsCategoryFilteringHook() throws IOException {
-        String archivesPage = Files.readString(Path.of("content/archives.html"));
+        String archivesPage = readProjectFile("content/archives.html");
 
         assertTrue(archivesPage.contains("function filterByCategory()"),
             "Archives page should define category filtering logic");
