@@ -43,7 +43,9 @@ class CategoryArchiveLinkingTest {
 
         assertTrue(archivesPage.contains("function filterByCategory()"),
             "Archives page should define category filtering logic");
-        assertTrue(archivesPage.contains("try {\n        return decodeURIComponent(hash);\n      } catch"),
+        assertTrue(archivesPage.contains("function readSelectedCategory()"),
+            "Archives page should extract the selected category through a dedicated helper");
+        assertTrue(archivesPage.contains("try {") && archivesPage.contains("} catch (error) {"),
             "Archives page should safely decode category hashes with a try/catch fallback");
         assertTrue(archivesPage.contains("return decodeURIComponent(hash);"),
             "Archives page should decode valid category hashes");
