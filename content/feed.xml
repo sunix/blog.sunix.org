@@ -5,19 +5,23 @@ title: Feed
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" xml:base="https://blog.sunix.org">
   <title>{site.title}</title>
   <subtitle>{site.description}</subtitle>
-  <link href="/feed.xml" rel="self" type="application/atom+xml"/>
+  <link href="https://blog.sunix.org/feed.xml" rel="self" type="application/atom+xml"/>
   <link href="/" rel="alternate" type="text/html"/>
-  <id>/feed.xml</id>
+  <id>https://blog.sunix.org/feed.xml</id>
+  {#if site.collections.posts.size > 0}
   <updated>{site.collections.posts.get(0).date.format('yyyy-MM-dd')}T00:00:00Z</updated>
+  {#else}
+  <updated>1970-01-01T00:00:00Z</updated>
+  {/if}
   {#for post in site.collections.posts}
   <entry>
     <title>{post.title}</title>
-    <link href="{post.url}" rel="alternate" type="text/html"/>
-    <id>{post.url}</id>
-    <updated>{#if post.data.modified}{post.data.modified}T00:00:00Z{#else}{post.date.format('yyyy-MM-dd')}T00:00:00Z{/if}</updated>
+    <link href="https://blog.sunix.org{post.url}" rel="alternate" type="text/html"/>
+    <id>https://blog.sunix.org{post.url}</id>
+    <updated>{post.date.format('yyyy-MM-dd')}T00:00:00Z</updated>
     <published>{post.date.format('yyyy-MM-dd')}T00:00:00Z</published>
     {#if post.excerpt()}
-    <summary>{post.excerpt()}</summary>
+    <summary type="text">{post.excerpt()}</summary>
     {/if}
   </entry>
   {/for}
