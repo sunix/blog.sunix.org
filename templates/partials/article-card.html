@@ -2,9 +2,9 @@
   <!-- Tags at the top -->
   <div class="flex flex-wrap gap-2 mb-4">
     {#if post.data.category}
-    <span class="text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20">
+    <a href="/archives#{post.data.category.encodeForHash}" class="post-category-link text-xs font-bold rounded-full px-3 py-1 bg-cyan-200/70 text-cyan-900 dark:bg-cyan-300/20 dark:text-cyan-200 border border-cyan-300/40 dark:border-cyan-300/20 hover:bg-cyan-300/90 transition">
       {post.data.category}
-    </span>
+    </a>
     {/if}
     {#if post.data.tags}
     {#for tag in post.data.tags}
