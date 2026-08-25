@@ -338,5 +338,19 @@ the manifests above would today read `version: 1.1.0`, or simply omit the line t
 should compute from the tag list, and a major-only tag reads like a pin while quietly
 moving underneath you.
 
-[Part three](https://github.com/sunix/diderot/blob/main/doc/making-of/03-packaging-and-install.md)
-covers the packaging, and the two defects that using diderot for real promptly exposed in it.
+## The series
+
+diderot's journal, one post per chapter. You are on part 2:
+
+1. [From a name to a git-backed lockfile](/posts/building-diderot-a-package-manager-for-ai-agent-skills-one-prompt-at-a-time-part-1/) - the gap survey, the Go-vs-Java reversal, stealing Helm's homework, and `update` / `install` / `status` over git sources with content-digest locking.
+2. **OCI at last: skills in real registries** - `push` as an OCI artifact, `oci://` sources pinned by digest, and a skill published by a GitHub Action then installed into a project that had never heard of diderot. **You are reading this one.**
+3. One line to install it - GraalVM native binaries, a `curl | sh` installer that refuses tampered bytes, a JBang catalog entry, and the version-reporting bug only a packaging milestone would have found. Written, but not on the blog yet; [read the chapter in the repo](https://github.com/sunix/diderot/blob/main/doc/making-of/03-packaging-and-install.md) in the meantime. **Read this next.**
+4. All I wanted was versioned skills - using diderot for real to publish an actual library of skills: per-skill versions, the design argument I lost, and the five things in the way. Written, but not on the blog yet; [read the chapter in the repo](https://github.com/sunix/diderot/blob/main/doc/making-of/04-releasing-the-skills.md) in the meantime.
+
+And the chapters that don't exist yet, in the order they are queued:
+
+- **`add` and `remove`** - declaring a skill still means hand-editing `diderot.yaml`, which is the next thing to fix.
+- **Semver ranges** - `version: "^1.0.0"` resolved from the tag list - the feature part four built the prerequisite for ([#19](https://github.com/sunix/diderot/issues/19)).
+- **Signing** - cosign and sigstore-java, drafted in [#7](https://github.com/sunix/diderot/pull/7) and deliberately parked until it has a milestone to belong to.
+
+The journal is written as the work happens, so the list grows from the top of that queue.
