@@ -51,7 +51,7 @@ and pull images already? I contributed to those projects - jkube-kit, the fabric
 tooling - but I didn't write their registry clients, so we went and read the code
 instead of trusting my memory. Two different answers in there: the default `docker` build
 strategy never speaks to a registry at all - `DockerAccessWithHcClient` (inherited from
-docker-maven-plugin) POSTs to the **Docker daemon**'s `/images/{name}/push` with the
+docker-maven-plugin) POSTs to the **Docker daemon**'s `/images/\{name}/push` with the
 credentials in an `X-Registry-Auth` header, and the daemon does the talking. The `jib`
 strategy is the interesting one: it embeds Google's jib-core, which speaks the registry
 protocol in pure Java, no daemon anywhere.
@@ -220,7 +220,7 @@ still M3) and running `diderot push` on a chosen skill:
 - name: Push skill
   run: |
     java -jar diderot/target/quarkus-app/quarkus-run.jar push \
-      "skills/${{ inputs.skill_path }}" "ghcr.io/${{ github.repository_owner }}/skills/${skill_name}:${{ inputs.tag }}"
+      "skills/$\{{ inputs.skill_path }}" "ghcr.io/$\{{ github.repository_owner }}/skills/$\{skill_name}:$\{{ inputs.tag }}"
 ```
 
 Two platform limits surfaced before it ran even once. `workflow_dispatch` cannot be
@@ -242,7 +242,7 @@ Then I got the verification wrong, and it's worth keeping exactly because it was
 First check on whether the pushed package was actually pullable by a stranger:
 
 ```console
-$ curl -o /dev/null -w "%{http_code}\n" https://ghcr.io/v2/sunix/skills/making-of/manifests/v1
+$ curl -o /dev/null -w "%\{http_code}\n" https://ghcr.io/v2/sunix/skills/making-of/manifests/v1
 401
 ```
 
@@ -255,7 +255,7 @@ public image), and retry:
 ```console
 $ curl -s "https://ghcr.io/token?scope=repository:sunix/skills/making-of:pull&service=ghcr.io" \
   | python3 -c "import json,sys;print(json.load(sys.stdin)['token'])" > /tmp/tok
-$ curl -o /dev/null -w "%{http_code}\n" https://ghcr.io/v2/sunix/skills/making-of/manifests/v1 \
+$ curl -o /dev/null -w "%\{http_code}\n" https://ghcr.io/v2/sunix/skills/making-of/manifests/v1 \
   -H "Authorization: Bearer $(cat /tmp/tok)"
 200
 ```
