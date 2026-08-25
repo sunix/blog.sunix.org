@@ -2,7 +2,7 @@
 layout: layouts/post.html
 title: "Building diderot: a package manager for AI agent skills, one prompt at a time (part 1)"
 date: 2026-08-21
-modified: 2026-08-21
+modified: 2026-08-25
 category: making-of
 tags:
   - AI-Assisted Development
@@ -218,3 +218,20 @@ Final cross-check, the one that made me smile: `git rev-parse origin/main:skills
 The git chapter ends here, and it ends whole: a project can declare its skills, lock them, install them byte-for-byte anywhere, and catch anyone - human or agent - who bends an installed file. Two stories are already queued for part two: the welcoming `install` (resolve by itself when there's no lock yet, `--frozen` for unattended runs), and M2, where ORAS finally enters - `push` to a real registry, `oci://` sources resolved by digest, and cosign.
 
 The full journal lives in the repo: [github.com/sunix/diderot](https://github.com/sunix/diderot) - MAKING-OF.md, dead ends included - and everything this chapter describes is in [PR #2](https://github.com/sunix/diderot/pull/2). See you in part two.
+
+## The series
+
+diderot's journal, one post per chapter. You are on part 1:
+
+1. **From a name to a git-backed lockfile** - the gap survey, the Go-vs-Java reversal, stealing Helm's homework, and `update` / `install` / `status` over git sources with content-digest locking. **You are reading this one.**
+2. [OCI at last: skills in real registries](/posts/building-diderot-skills-in-real-oci-registries-one-prompt-at-a-time-part-2/) - `push` as an OCI artifact, `oci://` sources pinned by digest, and a skill published by a GitHub Action then installed into a project that had never heard of diderot. **Read this next.**
+3. One line to install it - GraalVM native binaries, a `curl | sh` installer that refuses tampered bytes, a JBang catalog entry, and the version-reporting bug only a packaging milestone would have found. Written, but not on the blog yet; [read the chapter in the repo](https://github.com/sunix/diderot/blob/main/doc/making-of/03-packaging-and-install.md) in the meantime.
+4. All I wanted was versioned skills - using diderot for real to publish an actual library of skills: per-skill versions, the design argument I lost, and the five things in the way. Written, but not on the blog yet; [read the chapter in the repo](https://github.com/sunix/diderot/blob/main/doc/making-of/04-releasing-the-skills.md) in the meantime.
+
+And the chapters that don't exist yet, in the order they are queued:
+
+- **`add` and `remove`** - declaring a skill still means hand-editing `diderot.yaml`, which is the next thing to fix.
+- **Semver ranges** - `version: "^1.0.0"` resolved from the tag list - the feature part four built the prerequisite for ([#19](https://github.com/sunix/diderot/issues/19)).
+- **Signing** - cosign and sigstore-java, drafted in [#7](https://github.com/sunix/diderot/pull/7) and deliberately parked until it has a milestone to belong to.
+
+The journal is written as the work happens, so the list grows from the top of that queue.
