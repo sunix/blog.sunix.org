@@ -107,6 +107,19 @@ html {
 }
 .prose a {
   font-weight: 500;
+  color: rgb(99 102 241);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s;
+}
+.prose a:hover {
+  color: rgb(79 70 229);
+}
+.dark .prose a {
+  color: rgb(129 140 248);
+}
+.dark .prose a:hover {
+  color: rgb(165 180 252);
 }
 .prose strong {
   font-weight: 700;
