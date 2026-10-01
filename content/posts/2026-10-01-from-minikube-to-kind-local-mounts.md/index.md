@@ -21,10 +21,12 @@ I moved a local Kubernetes dev environment from minikube to [kind](https://kind.
 
 With minikube, the recipe was:
 
-1. Start the cluster with the mount: `minikube start --mount --mount-string="/path/to/project:/home/docker/project"`.
+1. Start the cluster with the mount: `minikube start --mount-string="/path/to/project:/home/docker/project"`.
 2. Patch the deployment to add a `hostPath` volume pointing to `/home/docker/project`, and mount it in the container.
 
-`minikube mount /path/to/project:/home/docker/project` does the same job as `--mount-string`, as a foreground process in a separate terminal. You need one or the other, not both.
+Before minikube 1.37, `--mount-string` only worked together with `--mount`. Since 1.37, `--mount` is ignored and `--mount-string` is enough.
+
+`minikube mount /path/to/project:/home/docker/project` still exists, but it is not the same thing: it runs in the foreground in a separate terminal and always uses 9p, which is slow and unreliable on large directories. The [minikube handbook](https://minikube.sigs.k8s.io/docs/handbook/mount/) recommends `--mount-string`, and keeps `minikube mount` for extra or temporary mounts.
 
 ### How it works with kind
 
@@ -89,7 +91,7 @@ A few notes:
 
 Mount a **directory**, never a single file. Many editors save by writing a temporary file and renaming it over the original. A single-file mount keeps showing the old version, while a directory mount sees the change.
 
-Dev servers (Vite, nodemon, webpack, Quarkus dev mode...) detect changes through inotify on Linux. minikube's `mount` uses 9p, which does not forward inotify events, which is why polling was often needed there. kind's `extraMounts` are plain Docker bind mounts, and the events reach the container.
+Dev servers (Vite, nodemon, webpack, Quarkus dev mode...) detect changes through inotify on Linux. With minikube, `minikube mount` and VM drivers such as kvm or hyperv use 9p, which does not forward inotify events, which is why polling was often needed there. kind's `extraMounts` are plain Docker bind mounts, like `--mount-string` with minikube's docker driver, and the events reach the container.
 
 On Linux, kind is known to hit inotify limits (`too many open files`, or reload silently stopping). Raise them:
 
