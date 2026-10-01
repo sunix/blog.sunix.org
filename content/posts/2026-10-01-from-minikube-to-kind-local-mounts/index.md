@@ -213,3 +213,215 @@ make delete
 ```
 
 The only constraint left from kind is that `PROJECTS_DIR` is read when the cluster is created. To mount a different parent directory, run `make delete` then `make cluster`. Everything else can change while the cluster is running.
+
+### Trying it for real
+
+To check all of this, I ran the Makefile above, unchanged, against a throwaway kind cluster. The demo folder looks like this:
+
+```
+demo/
+├── Makefile           # the one above
+├── local.mk
+├── image/             # the "production" image
+│   ├── Dockerfile
+│   └── server.js
+└── projects/          # mounted in the node as /projects
+    ├── api/server.js
+    └── my-project/server.js
+```
+
+The app is a tiny Node.js server that returns a message. It runs with `node --watch`, which restarts the process when a source file changes, like a dev server would:
+
+```js
+const http = require('http');
+const message = 'Hello from the image';
+http.createServer((req, res) => res.end(message + '\n')).listen(3000);
+console.log('listening on 3000');
+```
+
+```dockerfile
+FROM node:22-alpine
+WORKDIR /app
+COPY server.js .
+CMD ["node", "--watch", "server.js"]
+```
+
+The image has `Hello from the image` built in. `projects/my-project/server.js` and `projects/api/server.js` are the same file, saying `Hello from my laptop` and `Hello from the api project`.
+
+`local.mk` uses a relative `PROJECTS_DIR` (`abspath` takes care of it). It also sets the container name, because `kubectl create deployment` names the container after the image:
+
+```makefile
+PROJECTS_DIR = ./projects
+CLUSTER      = demo
+CONTAINER    = my-image
+IMAGE        = my-image:1.0
+```
+
+#### Create the cluster and load the image
+
+```
+$ docker build -q -t my-image:1.0 image
+sha256:34ab32c108135c3b9f607f568735358bc494eb8fae516dbcd5abd2cfa78217ed
+
+$ make cluster
+kind get clusters | grep -qx demo || echo "$KIND_CONFIG" | kind create cluster --name demo --config=-
+Creating cluster "demo" ...
+ ✓ Ensuring node image (kindest/node:v1.34.0) 🖼
+ ✓ Preparing nodes 📦
+ ✓ Writing configuration 📜
+ ✓ Starting control-plane 🕹️
+ ✓ Installing CNI 🔌
+ ✓ Installing StorageClass 💾
+Set kubectl context to "kind-demo"
+```
+
+The projects directory is now visible inside the node, at `/projects`:
+
+```
+$ docker exec demo-control-plane ls -R /projects
+/projects:
+api
+my-project
+
+/projects/api:
+server.js
+
+/projects/my-project:
+server.js
+```
+
+```
+$ make load
+kind load docker-image my-image:1.0 --name demo
+Image: "my-image:1.0" with ID "sha256:34ab32c108135c3b9f607f568735358bc494eb8fae516dbcd5abd2cfa78217ed" not yet present on node "demo-control-plane", loading...
+```
+
+#### A real deployment, before the mount
+
+```
+$ kubectl create deployment my-deployment --image=my-image:1.0 --port=3000
+deployment.apps/my-deployment created
+
+$ kubectl rollout status deployment/my-deployment
+Waiting for deployment "my-deployment" rollout to finish: 0 of 1 updated replicas are available...
+deployment "my-deployment" successfully rolled out
+```
+
+With a non-`latest` tag, `kubectl create deployment` sets `imagePullPolicy: IfNotPresent`, so the loaded image is used. In another terminal, `kubectl port-forward deploy/my-deployment 3000:3000`, then:
+
+```
+$ curl -s localhost:3000
+Hello from the image
+```
+
+#### Mount the local sources
+
+```
+$ make mount
+kubectl patch deployment my-deployment -p "$PATCH"
+deployment.apps/my-deployment patched
+kubectl rollout status deployment/my-deployment
+Waiting for deployment "my-deployment" rollout to finish: 1 old replicas are pending termination...
+deployment "my-deployment" successfully rolled out
+
+$ curl -s localhost:3000
+Hello from my laptop
+```
+
+The code now comes from my disk, not from the image. Note that `port-forward` is bound to a **pod**, not to the deployment: after each rollout, the old pod is gone and the port-forward stops with `lost connection to pod`. Restart it after each `make mount`.
+
+#### Edit on the laptop, see it in the pod
+
+I edit the file on my laptop with `sed -i`, which writes a new file and renames it over the old one, like many editors do:
+
+```
+$ sed -i 's/Hello from my laptop/Hello again, edited on my laptop/' projects/my-project/server.js
+
+$ curl -s localhost:3000
+Hello again, edited on my laptop
+
+$ kubectl logs deploy/my-deployment
+listening on 3000
+Restarting 'server.js'
+listening on 3000
+
+$ kubectl get pods
+NAME                             READY   STATUS    RESTARTS   AGE
+my-deployment-7dc776757d-8sp5b   1/1     Running   0          8s
+```
+
+`node --watch` received the inotify event through the two mounts and restarted the process. The pod itself did not restart (`RESTARTS 0`).
+
+#### Switch project without recreating the cluster
+
+```
+$ make mount PROJECT=api
+kubectl patch deployment my-deployment -p "$PATCH"
+deployment.apps/my-deployment patched
+kubectl rollout status deployment/my-deployment
+Waiting for deployment "my-deployment" rollout to finish: 1 old replicas are pending termination...
+deployment "my-deployment" successfully rolled out
+
+$ curl -s localhost:3000
+Hello from the api project
+```
+
+#### A project that doesn't exist
+
+With `type: Directory`, a typo in `PROJECT` fails loudly instead of mounting an empty directory:
+
+```
+$ timeout 30 make mount PROJECT=does-not-exist
+kubectl patch deployment my-deployment -p "$PATCH"
+deployment.apps/my-deployment patched
+kubectl rollout status deployment/my-deployment
+Waiting for deployment "my-deployment" rollout to finish: 1 old replicas are pending termination...
+make: *** [Makefile:50: mount] Error 1
+
+$ kubectl get pods
+NAME                             READY   STATUS              RESTARTS   AGE
+my-deployment-74bfcf657f-lbmtw   0/1     ContainerCreating   0          30s
+my-deployment-89668c7f4-cpw8m    1/1     Running             0          34s
+
+$ kubectl get events --field-selector reason=FailedMount -o custom-columns=REASON:.reason,MESSAGE:.message | tail -1
+FailedMount   MountVolume.SetUp failed for volume "project-src" : hostPath type check failed: /projects/does-not-exist is not a directory
+```
+
+The new pod stays in `ContainerCreating`. The rolling update keeps the old pod running, so the app is still up. `make mount` with the right project fixes it.
+
+#### The inotify limit, for real
+
+On my first try, the mount worked but hot reload did nothing: the file had changed in the pod, `node --watch` didn't restart, and there was no error in the logs. Watching the directory by hand inside the pod showed why:
+
+```
+$ kubectl exec deploy/my-deployment -- node -e "const fs=require('fs');fs.watch('/app',(e,f)=>console.log('dir',e,f));fs.watch('/app/server.js',(e,f)=>console.log('file',e,f));setTimeout(()=>{},7000)"
+node:internal/fs/watchers:262
+    throw error;
+    ^
+
+Error: EMFILE: too many open files, watch '/app'
+    at FSWatcher.<computed> (node:internal/fs/watchers:254:19)
+    at Object.watch (node:fs:2554:36)
+    ...
+command terminated with exit code 1
+```
+
+I had a few other kind clusters running, and the default limit of 128 inotify instances was used up:
+
+```
+$ find /proc/*/fd -lname 'anon_inode:inotify' 2>/dev/null | wc -l
+120
+$ sysctl fs.inotify.max_user_instances
+fs.inotify.max_user_instances = 128
+```
+
+After `sudo sysctl fs.inotify.max_user_instances=512` and a `kubectl rollout restart deployment/my-deployment`, hot reload worked as shown above. `node --watch` gave up silently when it couldn't watch, so if reload stops working on Linux, check this limit first.
+
+#### Clean up
+
+```
+$ make delete
+kind delete cluster --name demo
+Deleting cluster "demo" ...
+Deleted nodes: ["demo-control-plane"]
+```
