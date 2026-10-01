@@ -37,6 +37,7 @@ public class ExcerptExtractionTest {
      */
     @ParameterizedTest(name = "[{index}] {0}")
     @CsvSource({
+        "'From minikube to kind', posts/from-minikube-to-kind-mounting-your-local-sources-into-a-pod, 2026-10-01-from-minikube-to-kind-local-mounts.md",
         "'Feeling Powerful with Just a Browser', posts/feeling-powerful-with-just-a-browser-working-around-a-broken-tennis-booking-system, 2026-01-11-feeling-powerful-with-just-a-browser.md",
         "'Building a Gift Card App', posts/building-a-gift-card-management-app-with-github-copilot-my-first-completed-side-project, 2025-11-14-building-gift-card-app-with-github-copilot.md",
         "'Why Git Flow Doesn''t Fit', posts/why-i-think-git-flow-doesn-t-fit-most-projects-anymore, 2025-11-07-git-flow-doesnt-fit-anymore.md",
