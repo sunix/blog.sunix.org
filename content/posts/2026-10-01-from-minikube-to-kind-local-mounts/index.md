@@ -226,7 +226,6 @@ demo/
 │   ├── Dockerfile
 │   └── server.js
 └── projects/          # mounted in the node as /projects
-    ├── api/server.js
     └── my-project/server.js
 ```
 
@@ -246,7 +245,7 @@ COPY server.js .
 CMD ["node", "--watch", "server.js"]
 ```
 
-The image has `Hello from the image` built in. `projects/my-project/server.js` and `projects/api/server.js` are the same file, saying `Hello from my laptop` and `Hello from the api project`.
+The image has `Hello from the image` built in. `projects/my-project/server.js` is the same file, saying `Hello from my laptop`.
 
 `local.mk` uses a relative `PROJECTS_DIR` (`abspath` takes care of it). It also sets the container name, because `kubectl create deployment` names the container after the image:
 
@@ -280,11 +279,7 @@ The projects directory is now visible inside the node, at `/projects`:
 ```
 $ docker exec demo-control-plane ls -R /projects
 /projects:
-api
 my-project
-
-/projects/api:
-server.js
 
 /projects/my-project:
 server.js
@@ -352,20 +347,6 @@ my-deployment-7dc776757d-8sp5b   1/1     Running   0          8s
 
 `node --watch` received the inotify event through the two mounts and restarted the process. The pod itself did not restart (`RESTARTS 0`).
 
-#### Switch project without recreating the cluster
-
-```
-$ make mount PROJECT=api
-kubectl patch deployment my-deployment -p "$PATCH"
-deployment.apps/my-deployment patched
-kubectl rollout status deployment/my-deployment
-Waiting for deployment "my-deployment" rollout to finish: 1 old replicas are pending termination...
-deployment "my-deployment" successfully rolled out
-
-$ curl -s localhost:3000
-Hello from the api project
-```
-
 #### A project that doesn't exist
 
 With `type: Directory`, a typo in `PROJECT` fails loudly instead of mounting an empty directory:
@@ -388,34 +369,6 @@ FailedMount   MountVolume.SetUp failed for volume "project-src" : hostPath type 
 ```
 
 The new pod stays in `ContainerCreating`. The rolling update keeps the old pod running, so the app is still up. `make mount` with the right project fixes it.
-
-#### The inotify limit, for real
-
-On my first try, the mount worked but hot reload did nothing: the file had changed in the pod, `node --watch` didn't restart, and there was no error in the logs. Watching the directory by hand inside the pod showed why:
-
-```
-$ kubectl exec deploy/my-deployment -- node -e "const fs=require('fs');fs.watch('/app',(e,f)=>console.log('dir',e,f));fs.watch('/app/server.js',(e,f)=>console.log('file',e,f));setTimeout(()=>{},7000)"
-node:internal/fs/watchers:262
-    throw error;
-    ^
-
-Error: EMFILE: too many open files, watch '/app'
-    at FSWatcher.<computed> (node:internal/fs/watchers:254:19)
-    at Object.watch (node:fs:2554:36)
-    ...
-command terminated with exit code 1
-```
-
-I had a few other kind clusters running, and the default limit of 128 inotify instances was used up:
-
-```
-$ find /proc/*/fd -lname 'anon_inode:inotify' 2>/dev/null | wc -l
-120
-$ sysctl fs.inotify.max_user_instances
-fs.inotify.max_user_instances = 128
-```
-
-After `sudo sysctl fs.inotify.max_user_instances=512` and a `kubectl rollout restart deployment/my-deployment`, hot reload worked as shown above. `node --watch` gave up silently when it couldn't watch, so if reload stops working on Linux, check this limit first.
 
 #### Clean up
 
